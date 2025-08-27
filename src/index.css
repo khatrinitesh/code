@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "poppins-regular";
+  src: url("./fonts/poppins-regular.eot");
+  src: url("./fonts/poppins-regular.eot") format("embedded-opentype"),
+    url("./fonts/poppins-regular.woff2") format("woff2"),
+    url("./fonts/poppins-regular.woff") format("woff"),
+    url("./fonts/poppins-regular.ttf") format("truetype"),
+    url("./fonts/poppins-regular.svg#poppins-regular") format("svg");
+}
+@font-face {
+  font-family: "poppins-medium";
+  src: url("./fonts/poppins-medium.eot");
+  src: url("./fonts/poppins-medium.eot") format("embedded-opentype"),
+    url("./fonts/poppins-medium.woff2") format("woff2"),
+    url("./fonts/poppins-medium.woff") format("woff"),
+    url("./fonts/poppins-medium.ttf") format("truetype"),
+    url("./fonts/poppins-medium.svg#poppins-medium") format("svg");
+}
+@font-face {
+  font-family: "poppins-bold";
+  src: url("./fonts/poppins-bold.eot");
+  src: url("./fonts/poppins-bold.eot") format("embedded-opentype"),
+    url("./fonts/poppins-bold.woff2") format("woff2"),
+    url("./fonts/poppins-bold.woff") format("woff"),
+    url("./fonts/poppins-bold.ttf") format("truetype"),
+    url("./fonts/poppins-bold.svg#poppins-bold") format("svg");
+}
+
+:root {
+  --color1: #010d4a;
+  --color2: #b5f5f8;
+  --color3: #eb973a;
+  --ff-poppins-regular: "poppins-regular";
+  --ff-poppins-medium: "poppins-medium";
+  --ff-poppins-bold: "poppins-bold";
+  --headTitle: 2rem;
+  --subTitle: 1.5rem;
+  --description: 1rem;
+  --small-description: 0.875rem;
+  --extra-small-description: 0.75rem;
+}
+
+body {
+  font-family: var(--ff-poppins-regular);
+  font-size: 16px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.poppins-regular {
+  font-family: var(--ff-poppins-regular);
+}
+.poppins-medium {
+  font-family: var(--ff-poppins-medium);
+}
+.poppins-bold {
+  font-family: var(--ff-poppins-bold);
+}
+
+/* 32px */
+.text-headTitle {
+  font-size: var(--headTitle);
+}
+/* 24px */
+.text-subTitle {
+  font-size: var(--subTitle);
+}
+/* 16px */
+.text-description {
+  font-size: var(--description);
+}
+/* 14px */
+.text-smallDescription {
+  font-size: var(--small-description);
+}
+/* 12px */
+.text-extraSmallDescription {
+  font-size: var(--extra-small-description);
+}
+
+.text-color1 {
+  color: var(--color1);
+}
+.text-color2 {
+  color: var(--color2);
+}
+.text-color3 {
+  color: var(--color3);
+}
+
+.body-login-bg {
+  background: url("../img/bg-login.jpg") no-repeat center center fixed;
+  background-size: cover;
+}

@@ -6,7 +6,6 @@ import { FiMenu } from "react-icons/fi";
 const DashboardLayout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const location = useLocation();
-
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };

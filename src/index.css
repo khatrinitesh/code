@@ -2,30 +2,30 @@
 
 @font-face {
   font-family: "poppins-regular";
-  src: url("./fonts/poppins-regular.eot");
-  src: url("./fonts/poppins-regular.eot") format("embedded-opentype"),
-    url("./fonts/poppins-regular.woff2") format("woff2"),
-    url("./fonts/poppins-regular.woff") format("woff"),
-    url("./fonts/poppins-regular.ttf") format("truetype"),
-    url("./fonts/poppins-regular.svg#poppins-regular") format("svg");
+  src: url("../fonts/poppins-regular.eot");
+  src: url("../fonts/poppins-regular.eot") format("embedded-opentype"),
+    url("../fonts/poppins-regular.woff2") format("woff2"),
+    url("../fonts/poppins-regular.woff") format("woff"),
+    url("../fonts/poppins-regular.ttf") format("truetype"),
+    url("../fonts/poppins-regular.svg#poppins-regular") format("svg");
 }
 @font-face {
   font-family: "poppins-medium";
-  src: url("./fonts/poppins-medium.eot");
-  src: url("./fonts/poppins-medium.eot") format("embedded-opentype"),
-    url("./fonts/poppins-medium.woff2") format("woff2"),
-    url("./fonts/poppins-medium.woff") format("woff"),
-    url("./fonts/poppins-medium.ttf") format("truetype"),
-    url("./fonts/poppins-medium.svg#poppins-medium") format("svg");
+  src: url("../fonts/poppins-medium.eot");
+  src: url("../fonts/poppins-medium.eot") format("embedded-opentype"),
+    url("../fonts/poppins-medium.woff2") format("woff2"),
+    url("../fonts/poppins-medium.woff") format("woff"),
+    url("../fonts/poppins-medium.ttf") format("truetype"),
+    url("../fonts/poppins-medium.svg#poppins-medium") format("svg");
 }
 @font-face {
   font-family: "poppins-bold";
-  src: url("./fonts/poppins-bold.eot");
-  src: url("./fonts/poppins-bold.eot") format("embedded-opentype"),
-    url("./fonts/poppins-bold.woff2") format("woff2"),
-    url("./fonts/poppins-bold.woff") format("woff"),
-    url("./fonts/poppins-bold.ttf") format("truetype"),
-    url("./fonts/poppins-bold.svg#poppins-bold") format("svg");
+  src: url("../fonts/poppins-bold.eot");
+  src: url("../fonts/poppins-bold.eot") format("embedded-opentype"),
+    url("../fonts/poppins-bold.woff2") format("woff2"),
+    url("../fonts/poppins-bold.woff") format("woff"),
+    url("../fonts/poppins-bold.ttf") format("truetype"),
+    url("../fonts/poppins-bold.svg#poppins-bold") format("svg");
 }
 
 :root {

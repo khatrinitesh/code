@@ -16,7 +16,7 @@ const FieldInput = ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full p-2 border rounded"
+        className="w-full p-2 border rounded bg-white"
       />
       {/* {error && <p className="text-red-500 text-sm mt-1">{error}</p>} */}
     </div>

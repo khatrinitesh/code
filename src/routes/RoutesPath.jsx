@@ -9,7 +9,7 @@ import DashboardLayout from "./../layout/DashboardLayout";
 import DashboardPage from "./../pages/dashboardPage/DashboardPage";
 
 const RoutesPath = () => {
-  const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
+  // const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
 
   return (
     <Router>
@@ -17,6 +17,14 @@ const RoutesPath = () => {
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginPage />} />
         <Route
+          path="/dashboard"
+          element={
+            <DashboardLayout>
+              <DashboardPage />
+            </DashboardLayout>
+          }
+        />
+        {/* <Route
           path="/dashboard"
           element={
             isAuthenticated ? (
@@ -27,7 +35,7 @@ const RoutesPath = () => {
               <Navigate to="/login" />
             )
           }
-        />
+        /> */}
         <Route path="*" element={<div>404 Page Not Found</div>} />
       </Routes>
     </Router>

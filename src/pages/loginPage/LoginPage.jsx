@@ -14,42 +14,46 @@ const LoginPage = () => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
+  const handleClick = () => {
+    navigate("/dashboard");
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
     setErrors({ ...errors, [name]: "" });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newErrors = {};
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const newErrors = {};
 
-    if (!validateEmail(form.email)) {
-      newErrors.email = "Invalid email format";
-      toast.error("Please enter a valid email address.");
-    }
+  //   if (!validateEmail(form.email)) {
+  //     newErrors.email = "Invalid email format";
+  //     toast.error("Please enter a valid email address.");
+  //   }
 
-    if (!validatePassword(form.password)) {
-      newErrors.password = "Password must be at least 6 characters.";
-      toast.error("Password must be at least 6 characters.");
-    }
+  //   if (!validatePassword(form.password)) {
+  //     newErrors.password = "Password must be at least 6 characters.";
+  //     toast.error("Password must be at least 6 characters.");
+  //   }
 
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
+  //   if (Object.keys(newErrors).length > 0) {
+  //     setErrors(newErrors);
+  //     return;
+  //   }
 
-    if (!isAdminCredentials(form.email, form.password)) {
-      toast.error("Invalid credentials.");
-      return;
-    }
+  //   if (!isAdminCredentials(form.email, form.password)) {
+  //     toast.error("Invalid credentials.");
+  //     return;
+  //   }
 
-    localStorage.setItem("isAuthenticated", "true");
-    setTimeout(() => {
-      toast.success("Login successful!");
-      navigate("/dashboard");
-    }, 500);
-  };
+  //   localStorage.setItem("isAuthenticated", "true");
+  //   setTimeout(() => {
+  //     toast.success("Login successful!");
+  //     navigate("/dashboard");
+  //   }, 500);
+  // };
 
   useEffect(() => {
     // Add class to body on mount
@@ -68,7 +72,7 @@ const LoginPage = () => {
           <img src="/img/logo.png" alt="" className="max-auto block" />
         </div>
         <form
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
           className="grid bg-white px-[20px] lg:px-[50px] py-[20px]"
         >
           <div className="flex flex-col lg:flex-row lg:items-center gap-[10px]">
@@ -114,6 +118,7 @@ const LoginPage = () => {
 
           <div className="btnBlock">
             <Button
+              onClick={handleClick}
               label="Login"
               variant="color4"
               isLoading={false}

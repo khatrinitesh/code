@@ -113,7 +113,7 @@ const LoginPage = () => {
           <div className="btnBlock">
             <Button
               label="Login"
-              variant="darkblue"
+              variant="color4"
               isLoading={false}
               className="rounded-full w-[50%] mx-auto"
             />

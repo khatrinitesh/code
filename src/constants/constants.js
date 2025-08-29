@@ -106,7 +106,7 @@ export const cardData = [
   },
 ];
 
-export const members = [
+export const membersData = [
   {
     field1: "John Doe",
     field2: "john.doe@example.com",
@@ -194,19 +194,25 @@ export const tableHeaders = {
 
 export const colors = {
   caption: {
-    bg: "#1b7398", // Common caption background
-    text: "#ffffff", // Common caption text
+    bg: "#1b7398",
+    text: "#ffffff",
   },
   color1: {
     rowAlt: "#d1e3ea",
+    headerBg: "#8fbacd",
+    headerText: "#122159",
+    borderRight: "#6ca0b7",
   },
   color2: {
     rowAlt: "#fff1d6",
+    headerBg: "#ffbd59",
+    headerText: "#122159",
+    borderRight: "#e1b24c",
   },
   color3: {
     rowAlt: "#e3f3e0",
+    headerBg: "#aed7a8",
+    headerText: "#122159",
+    borderRight: "#a0c49c",
   },
-  headerBg: "#8fbacd",
-  headerText: "#122159",
-  borderRight: "#6ca0b7",
 };

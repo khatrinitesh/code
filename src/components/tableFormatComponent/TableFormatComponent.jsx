@@ -1,19 +1,23 @@
 import React from "react";
 import { colors } from "../../constants/constants";
 
-const TableFormatComponent = ({ caption, rows, colorKey, thead = {} }) => {
+const TableFormatComponent = ({
+  caption,
+  rows,
+  colorKey = "color1",
+  thead = {},
+}) => {
   const {
     fieldCol1 = "Column 1",
     fieldCol2 = "Column 2",
     fieldCol3 = "Column 3",
   } = thead;
-  const {
-    caption: captionStyle,
-    headerBg,
-    headerText,
-    rowAlt,
-    borderRight,
-  } = colors;
+
+  const theme = colors[colorKey] || colors.color1;
+
+  const { caption: captionStyle } = colors;
+
+  const { rowAlt, headerBg, headerText, borderRight } = theme;
 
   return (
     <div className="overflow-x-auto w-full max-w-4xl mx-auto mt-6">
@@ -45,29 +49,31 @@ const TableFormatComponent = ({ caption, rows, colorKey, thead = {} }) => {
           </tr>
         </thead>
         <tbody>
-          {rows.map((member, index) => (
-            <tr
-              key={index}
-              className="border-b last:border-none"
-              style={{
-                backgroundColor: index % 2 === 0 ? "#ffffff" : rowAlt,
-              }}
-            >
-              <td
-                className="px-4 py-2 border-r-[1px]"
-                style={{ borderColor: borderRight }}
+          {rows.map((member, rowIndex) => {
+            const bgColor = rowIndex % 2 === 0 ? "#ffffff" : rowAlt;
+
+            return (
+              <tr
+                key={rowIndex}
+                className="border-b last:border-none"
+                style={{ backgroundColor: bgColor }}
               >
-                {member.field1}
-              </td>
-              <td
-                className="px-4 py-2 border-r-[1px]"
-                style={{ borderColor: borderRight }}
-              >
-                {member.field2}
-              </td>
-              <td className="px-4 py-2">{member.field3}</td>
-            </tr>
-          ))}
+                <td
+                  className="px-4 py-2 border-r-[1px]"
+                  style={{ borderColor: borderRight }}
+                >
+                  {member.field1}
+                </td>
+                <td
+                  className="px-4 py-2 border-r-[1px]"
+                  style={{ borderColor: borderRight }}
+                >
+                  {member.field2}
+                </td>
+                <td className="px-4 py-2">{member.field3}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

@@ -14,6 +14,7 @@ const Button = ({
     color1: "bg-[#1b7398] text-white",
     color2: "bg-[#ffbd59] text-[#122159]",
     color3: "bg-[#aed7a8] text-[#122159]",
+    color4: "bg-[#010d4a] text-white",
   };
 
   return (

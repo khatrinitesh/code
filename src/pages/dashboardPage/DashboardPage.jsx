@@ -7,7 +7,7 @@ import Button from "../../components/button/Button";
 import TableFormatComponent from "../../components/tableFormatComponent/TableFormatComponent";
 import {
   deadlinesData,
-  members,
+  membersData,
   tableHeaders,
   tasksData,
 } from "../../constants/constants";
@@ -29,7 +29,7 @@ const DashboardPage = () => {
     <>
       <div className="innerContent grid gap-[20px] w-full">
         <CardComponent />
-        <div className="grid gap-[20px] grid-cols-1 md:grid-cols-2">
+        <div className="grid gap-[20px] grid-cols-1 md:grid-cols-1 lg:grid-cols-2 items-start">
           <div className="leftBox grid  gap-[20px]">
             <SearchComponent
               placeholder="Search members..."
@@ -39,39 +39,36 @@ const DashboardPage = () => {
             />
 
             <MemberComponent />
+            <div className="btnBlock flex items-start  w-full">
+              <Button
+                label="Search"
+                className="!mx-0"
+                onClick={handleClick}
+                variant="color1"
+              />
+            </div>
           </div>
           <div className="rightBox">
-            {" "}
-            {/* <MemberTableComponent /> */}
             <TableFormatComponent
               caption="Recently Accessed Members"
-              rows={members}
               colorKey="color1"
               thead={tableHeaders.members}
+              rows={membersData}
             />
           </div>
         </div>
-        <div className="btnBlock flex items-start  w-full">
-          <Button
-            label="Search"
-            className="!mx-0"
-            onClick={handleClick}
-            variant="color1"
-          />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
-          {/* <UpComingGrievanceTableComponent /> */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
           <TableFormatComponent
             caption="Upcoming Grievance Tasks"
-            rows={tasksData}
             colorKey="color2"
             thead={tableHeaders.tasks}
+            rows={tasksData}
           />
           <TableFormatComponent
             caption="Upcoming Dates & Deadlines"
-            rows={deadlinesData}
             colorKey="color3"
             thead={tableHeaders.deadlines}
+            rows={deadlinesData}
           />
         </div>
       </div>

@@ -45,8 +45,10 @@ const LoginPage = () => {
     }
 
     localStorage.setItem("isAuthenticated", "true");
-    toast.success("Login successful!");
-    navigate("/dashboard");
+    setTimeout(() => {
+      toast.success("Login successful!");
+      navigate("/dashboard");
+    }, 500);
   };
 
   useEffect(() => {

@@ -1,54 +1,56 @@
 import {
-  FiHome,
   FiUser,
   FiSettings,
   FiMail,
   FiCalendar,
   FiLogOut,
-  FiFileText,
-  FiUsers,
-  FiPackage,
-  FiArchive,
-  FiBriefcase,
   FiGlobe,
-  FiInbox,
 } from "react-icons/fi";
+import {
+  FaBook,
+  FaHandHoldingUsd,
+  FaUsers,
+  FaExclamationCircle,
+  FaDownload,
+  FaShippingFast,
+  FaChartPie,
+} from "react-icons/fa";
 
 export const sidebarNavigation = [
   {
     label: "Dashboard",
     path: "/dashboard",
-    icon: FiHome,
+    icon: FaChartPie,
   },
   {
     label: "Members",
     path: "/members",
-    icon: FiUsers,
+    icon: FaUsers,
   },
   {
     label: "Grievances",
     path: "/grievances",
-    icon: FiInbox,
+    icon: FaExclamationCircle,
   },
   {
     label: "Finances",
     path: "/finances",
-    icon: FiFileText,
+    icon: FaHandHoldingUsd,
   },
   {
     label: "Reports",
     path: "/reports",
-    icon: FiArchive,
+    icon: FaBook,
   },
   {
     label: "Importing",
     path: "/importing",
-    icon: FiPackage,
+    icon: FaDownload,
   },
   {
     label: "Dispatch",
     path: "/dispatch",
-    icon: FiBriefcase,
+    icon: FaShippingFast,
   },
   {
     label: "Apprenticeship",
@@ -108,51 +110,46 @@ export const cardData = [
 
 export const membersData = [
   {
-    field1: "John Doe",
-    field2: "john.doe@example.com",
-    field3: "555-123-4567",
+    field1: "Joel Rosen",
+    field2: "joel@velarium.com",
+    field3: "(310) 995-8653",
   },
   {
-    field1: "Jane Smith",
-    field2: "jane.smith@example.com",
-    field3: "555-987-6543",
+    field1: "Jessie O'donnell",
+    field2: "jesse@youremail.net",
+    field3: "(310) 555-1123",
   },
   {
-    field1: "Robert Johnson",
-    field2: "robert.j@example.com",
-    field3: "555-555-1212",
+    field1: "Steve Brooks",
+    field2: "steve@yourlocal.com",
+    field3: "(310) 555-4454",
   },
   {
-    field1: "Robert Johnson",
-    field2: "robert.j@example.com",
-    field3: "555-555-1212",
-  },
-  {
-    field1: "Robert Johnson",
-    field2: "robert.j@example.com",
-    field3: "555-555-1212",
-  },
-  {
-    name: "Robert Johnson",
-    email: "robert.j@example.com",
-    field3: "555-555-1212",
+    field1: "Kevin Adams",
+    field2: "kevin@yourlocal.com",
+    field3: "(310) 555-1111",
   },
 ];
 export const tasksData = [
   {
-    field1: "Case Review",
-    field2: "In Progress",
-    field3: "Due 2025-09-30",
+    field1: "001-2025",
+    field2: "04/13/2025",
+    field3: "File Grievance Initiation",
   },
   {
-    field1: "Hearing Prep",
-    field2: "Pending",
-    field3: "Due 2025-10-05",
+    field1: "001-2025",
+    field2: "05/10/2025",
+    field3: "Interview witness",
   },
   {
-    field1: "Final Submission",
-    field2: "Completed",
-    field3: "Due 2025-10-12",
+    field1: "003-2025",
+    field2: "04/01/2025",
+    field3: "Investigate body cam footage",
+  },
+  {
+    field1: "003-2025",
+    field2: "04/18/2025",
+    field3: "Follow-up interviews",
   },
 ];
 
@@ -164,14 +161,19 @@ export const deadlinesData = [
     field3: "VUE Demo",
   },
   {
-    field1: "06/09/25",
-    field2: "11:00 am",
-    field3: "VUE Demo",
+    field1: "06/23/25",
+    field2: "02:00 pm",
+    field3: "Planning Meeting",
   },
   {
-    field1: "06/09/25",
-    field2: "11:00 am",
-    field3: "VUE Demo",
+    field1: "04/15/25",
+    field2: "All Day",
+    field3: "Membership Dues",
+  },
+  {
+    field1: "04/13/25",
+    field2: "10:00 am",
+    field3: "Office Meeting",
   },
 ];
 export const tableHeaders = {
@@ -181,9 +183,9 @@ export const tableHeaders = {
     fieldCol3: "Phone",
   },
   tasks: {
-    fieldCol1: "Task",
-    fieldCol2: "Status",
-    fieldCol3: "Due Date",
+    fieldCol1: "Case #",
+    fieldCol2: "Due Date",
+    fieldCol3: "Task",
   },
   deadlines: {
     fieldCol1: "Date",

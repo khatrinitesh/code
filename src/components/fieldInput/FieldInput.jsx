@@ -6,6 +6,7 @@ const FieldInput = ({
   onChange,
   placeholder,
   error,
+  className,
 }) => {
   return (
     <div className="w-full">
@@ -16,7 +17,7 @@ const FieldInput = ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full p-2 border rounded bg-white"
+        className={`${className} w-full h-[35px] outline-none  p-2  border border-[#ccc] rounded bg-white text-smallDescription poppins-medium`}
       />
       {/* {error && <p className="text-red-500 text-sm mt-1">{error}</p>} */}
     </div>

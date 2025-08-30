@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { sidebarNavigation } from "../constants/constants";
 import { FiMenu } from "react-icons/fi";
+import FooterSection from "./footerSection/FooterSection";
 
 const DashboardLayout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -14,12 +15,12 @@ const DashboardLayout = ({ children }) => {
     <div className="min-h-screen flex">
       {/* Sidebar */}
       {sidebarOpen && (
-        <aside className="w-64 bg-color1 text-white p-4 bg-[var(--color1)]">
+        <aside className="w-[200px] bg-color1 text-white p-4 bg-[var(--color1)]">
           <div className="logoBlock">
             <img
               src="/img/logo-dashboard.png"
               alt=""
-              className="max-w-[120px] mx-auto block"
+              className="max-w-[120px]  block"
             />
           </div>
           <nav>
@@ -28,16 +29,14 @@ const DashboardLayout = ({ children }) => {
                 const Icon = item.icon;
                 const isActive = location.pathname === item.path;
                 return (
-                  <li key={index} className="mb-4">
+                  <li key={index} className="">
                     <Link
                       to={item.path}
-                      className={`flex items-center gap-3 p-2 rounded-md ${
-                        isActive
-                          ? "bg-white text-color1 font-semibold"
-                          : "hover:bg-color2"
+                      className={`flex items-center poppins-medium text-smallDescription  gap-[10px] p-[5px] rounded-md ${
+                        isActive ? "text-color4 " : ""
                       }`}
                     >
-                      <Icon />
+                      <Icon className={`${isActive ? "text-color3" : ""}`} />
                       {item.label}
                     </Link>
                   </li>
@@ -56,18 +55,23 @@ const DashboardLayout = ({ children }) => {
           <div className="flex items-center gap-4">
             <button
               onClick={toggleSidebar}
-              className="text-white focus:outline-none cursor-pointer"
+              className="text-[#17668e] focus:outline-none cursor-pointer"
             >
               <FiMenu size={24} />
             </button>
-            <h1 className="text-subTitle poppins-medium">Dashboard</h1>
+            {/* <h1 className="text-subTitle poppins-medium">Dashboard</h1> */}
           </div>
 
           {/* Right Side: Logo */}
           <div className="flex items-center gap-[20px]">
-            <span className="subtitle poppins-bold hidden sm:block">
-              Welcome
-            </span>
+            <div className="profileBlock flex items-center gap-[10px] hidden sm:block">
+              <span className="subtitle ext-smallDescription poppins-regular ">
+                Welcome
+              </span>
+              <span className="text-[var(--color6)] text-smallDescription poppins-regular">
+                Lorem Ipsum
+              </span>
+            </div>
             <img
               src="/img/logo.png" // adjust path as needed
               alt="Logo"
@@ -77,6 +81,7 @@ const DashboardLayout = ({ children }) => {
         </header>
         {/* Main Page Content */}
         <main className="flex-1 p-6 bg-color2">{children}</main>
+        <FooterSection />
       </div>
     </div>
   );

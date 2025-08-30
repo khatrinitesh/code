@@ -32,6 +32,10 @@
   --color1: #010d4a;
   --color2: #b5f5f8;
   --color3: #eb973a;
+  --color4: #a7e3eb;
+  --color5: #1b7398;
+  --color6: #b5f5f8;
+  --color7: #eaf2f6;
   --ff-poppins-regular: "poppins-regular";
   --ff-poppins-medium: "poppins-medium";
   --ff-poppins-bold: "poppins-bold";
@@ -92,6 +96,19 @@ body {
 }
 .text-color3 {
   color: var(--color3);
+}
+
+.text-color4 {
+  color: var(--color4);
+}
+.text-color5 {
+  color: var(--color5);
+}
+.text-color6 {
+  color: var(--color6);
+}
+.text-color7 {
+  color: var(--color7);
 }
 
 .body-login-bg {

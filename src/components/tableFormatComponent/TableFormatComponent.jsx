@@ -23,7 +23,7 @@ const TableFormatComponent = ({
     <div className="overflow-x-auto w-full max-w-4xl mx-auto mt-6">
       <table className="w-full border-collapse text-sm">
         <caption
-          className="text-left px-4 py-2 font-semibold rounded-t-md"
+          className="text-left px-4 py-2 poppins-medium text-smallDescription rounded-t-md"
           style={{
             backgroundColor: captionStyle.bg,
             color: captionStyle.text,
@@ -31,7 +31,7 @@ const TableFormatComponent = ({
         >
           {caption}
         </caption>
-        <thead>
+        <thead className="poppins-regular text-smallDescription">
           <tr style={{ backgroundColor: headerBg, color: headerText }}>
             <th
               className="text-left px-4 py-2 border-r-[1px]"
@@ -48,7 +48,7 @@ const TableFormatComponent = ({
             <th className="text-left px-4 py-2">{fieldCol3}</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="poppins-regular text-smallDescription">
           {rows.map((member, rowIndex) => {
             const bgColor = rowIndex % 2 === 0 ? "#ffffff" : rowAlt;
 
@@ -59,7 +59,7 @@ const TableFormatComponent = ({
                 style={{ backgroundColor: bgColor }}
               >
                 <td
-                  className="px-4 py-2 border-r-[1px]"
+                  className="px-4 py-2 border-r-[1px] text-[var(--color1)]"
                   style={{ borderColor: borderRight }}
                 >
                   {member.field1}

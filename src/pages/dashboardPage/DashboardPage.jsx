@@ -30,12 +30,12 @@ const DashboardPage = () => {
       <div className="innerContent grid gap-[20px] w-full">
         <CardComponent />
         <div className="grid gap-[20px] grid-cols-1 md:grid-cols-1 lg:grid-cols-2 items-start">
-          <div className="leftBox grid  gap-[20px]">
+          <div className="leftBox grid  gap-[10px]">
             <SearchComponent
-              placeholder="Search members..."
+              placeholder="Quick Name Lookup"
               maxLength={50}
               disabled={false}
-              className="w-full max-w-md"
+              className="w-full max-w-[50%] rounded-full"
             />
 
             <MemberComponent />
@@ -58,18 +58,38 @@ const DashboardPage = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
-          <TableFormatComponent
-            caption="Upcoming Grievance Tasks"
-            colorKey="color2"
-            thead={tableHeaders.tasks}
-            rows={tasksData}
-          />
-          <TableFormatComponent
-            caption="Upcoming Dates & Deadlines"
-            colorKey="color3"
-            thead={tableHeaders.deadlines}
-            rows={deadlinesData}
-          />
+          <div className="boxGrid grid gap-[10px]">
+            <TableFormatComponent
+              caption="Upcoming Grievance Tasks"
+              colorKey="color2"
+              thead={tableHeaders.tasks}
+              rows={tasksData}
+            />
+            <div className="btnBlock flex items-start  w-full">
+              <Button
+                label="Open Grievances"
+                className="!mx-0"
+                onClick={handleClick}
+                variant="color2"
+              />
+            </div>
+          </div>
+          <div className="boxGrid grid gap-[10px]">
+            <TableFormatComponent
+              caption="Upcoming Dates & Deadlines"
+              colorKey="color3"
+              thead={tableHeaders.deadlines}
+              rows={deadlinesData}
+            />
+            <div className="btnBlock flex items-start  w-full">
+              <Button
+                label="Open Calendar"
+                className="!mx-0"
+                onClick={handleClick}
+                variant="color3"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </>

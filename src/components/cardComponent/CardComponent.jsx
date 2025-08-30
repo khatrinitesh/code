@@ -14,19 +14,18 @@ const iconMap = {
 
 const CardComponent = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]">
       {cardData.map((card, index) => (
-        <div
-          key={index}
-          className="flex w-full rounded-[10px] overflow-hidden shadow-md"
-        >
+        <div key={index} className="flex w-full overflow-hidden shadow-md">
           {/* Left Side */}
           <div
-            className={`flex flex-col justify-center flex-[2] text-white p-5`}
+            className={`flex flex-col justify-center flex-[2] text-white p-[20px]`}
             style={{ backgroundColor: card.leftColor }}
           >
-            <div className="text-2xl font-bold">{card.number}</div>
-            <div className="text-sm mt-1">{card.headtitle}</div>
+            <h2 className="text-subTitle poppins-bold leading-[20px] ">
+              {card.number}
+            </h2>
+            <span className="text-sm mt-1">{card.headtitle}</span>
           </div>
 
           {/* Right Side */}

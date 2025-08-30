@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  isAdminCredentials,
-  validateEmail,
-  validatePassword,
-} from "../../utils/utils";
+// import {
+//   isAdminCredentials,
+//   validateEmail,
+//   validatePassword,
+// } from "../../utils/utils";
 import Button from "../../components/button/Button";
 import FieldInput from "./../../components/fieldInput/FieldInput";
-import { toast } from "react-toastify";
 
 const LoginPage = () => {
   const [form, setForm] = useState({ email: "", password: "" });

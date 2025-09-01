@@ -22,7 +22,7 @@ const CardComponent = () => {
             className={`flex flex-col justify-center flex-[2] text-white p-[20px]`}
             style={{ backgroundColor: card.leftColor }}
           >
-            <h2 className="text-subTitle poppins-bold leading-[20px] ">
+            <h2 className="text-subTitle montserrat-bold leading-[20px] ">
               {card.number}
             </h2>
             <span className="text-sm mt-1">{card.headtitle}</span>

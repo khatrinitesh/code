@@ -1,31 +1,40 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "poppins-regular";
-  src: url("../fonts/poppins-regular.eot");
-  src: url("../fonts/poppins-regular.eot") format("embedded-opentype"),
-    url("../fonts/poppins-regular.woff2") format("woff2"),
-    url("../fonts/poppins-regular.woff") format("woff"),
-    url("../fonts/poppins-regular.ttf") format("truetype"),
-    url("../fonts/poppins-regular.svg#poppins-regular") format("svg");
+  font-family: "montserrat-regular";
+  src: url("../fonts/montserrat-regular.eot");
+  src: url("../fonts/montserrat-regular.eot") format("embedded-opentype"),
+    url("../fonts/montserrat-regular.woff2") format("woff2"),
+    url("../fonts/montserrat-regular.woff") format("woff"),
+    url("../fonts/montserrat-regular.ttf") format("truetype"),
+    url("../fonts/montserrat-regular.svg#montserrat-regular") format("svg");
 }
 @font-face {
-  font-family: "poppins-medium";
-  src: url("../fonts/poppins-medium.eot");
-  src: url("../fonts/poppins-medium.eot") format("embedded-opentype"),
-    url("../fonts/poppins-medium.woff2") format("woff2"),
-    url("../fonts/poppins-medium.woff") format("woff"),
-    url("../fonts/poppins-medium.ttf") format("truetype"),
-    url("../fonts/poppins-medium.svg#poppins-medium") format("svg");
+  font-family: "montserrat-medium";
+  src: url("../fonts/montserrat-medium.eot");
+  src: url("../fonts/montserrat-medium.eot") format("embedded-opentype"),
+    url("../fonts/montserrat-medium.woff2") format("woff2"),
+    url("../fonts/montserrat-medium.woff") format("woff"),
+    url("../fonts/montserrat-medium.ttf") format("truetype"),
+    url("../fonts/montserrat-medium.svg#montserrat-medium") format("svg");
 }
 @font-face {
-  font-family: "poppins-bold";
-  src: url("../fonts/poppins-bold.eot");
-  src: url("../fonts/poppins-bold.eot") format("embedded-opentype"),
-    url("../fonts/poppins-bold.woff2") format("woff2"),
-    url("../fonts/poppins-bold.woff") format("woff"),
-    url("../fonts/poppins-bold.ttf") format("truetype"),
-    url("../fonts/poppins-bold.svg#poppins-bold") format("svg");
+  font-family: "montserrat-semibold";
+  src: url("../fonts/montserrat-semibold.eot");
+  src: url("../fonts/montserrat-semibold.eot") format("embedded-opentype"),
+    url("../fonts/montserrat-semibold.woff2") format("woff2"),
+    url("../fonts/montserrat-semibold.woff") format("woff"),
+    url("../fonts/montserrat-semibold.ttf") format("truetype"),
+    url("../fonts/montserrat-semibold.svg#montserrat-semibold") format("svg");
+}
+@font-face {
+  font-family: "montserrat-bold";
+  src: url("../fonts/montserrat-bold.eot");
+  src: url("../fonts/montserrat-bold.eot") format("embedded-opentype"),
+    url("../fonts/montserrat-bold.woff2") format("woff2"),
+    url("../fonts/montserrat-bold.woff") format("woff"),
+    url("../fonts/montserrat-bold.ttf") format("truetype"),
+    url("../fonts/montserrat-bold.svg#montserrat-bold") format("svg");
 }
 
 :root {
@@ -36,9 +45,10 @@
   --color5: #1b7398;
   --color6: #b5f5f8;
   --color7: #eaf2f6;
-  --ff-poppins-regular: "poppins-regular";
-  --ff-poppins-medium: "poppins-medium";
-  --ff-poppins-bold: "poppins-bold";
+  --ff-montserrat-regular: "montserrat-regular";
+  --ff-montserrat-medium: "montserrat-medium";
+  --ff-montserrat-semibold: "montserrat-semibold";
+  --ff-montserrat-bold: "montserrat-bold";
   --headTitle: 2rem;
   --subTitle: 1.5rem;
   --description: 1rem;
@@ -47,7 +57,7 @@
 }
 
 body {
-  font-family: var(--ff-poppins-regular);
+  font-family: var(--ff-montserrat-regular);
   font-size: 16px;
 }
 
@@ -57,14 +67,17 @@ body {
   padding: 0;
 }
 
-.poppins-regular {
-  font-family: var(--ff-poppins-regular);
+.montserrat-regular {
+  font-family: var(--ff-montserrat-regular);
 }
-.poppins-medium {
-  font-family: var(--ff-poppins-medium);
+.montserrat-medium {
+  font-family: var(--ff-montserrat-medium);
 }
-.poppins-bold {
-  font-family: var(--ff-poppins-bold);
+.montserrat-semibold {
+  font-family: var(--ff-montserrat-semibold);
+}
+.montserrat-bold {
+  font-family: var(--ff-montserrat-bold);
 }
 
 /* 32px */
@@ -97,7 +110,6 @@ body {
 .text-color3 {
   color: var(--color3);
 }
-
 .text-color4 {
   color: var(--color4);
 }

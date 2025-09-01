@@ -9,7 +9,10 @@ import Button from "../../components/button/Button";
 import FieldInput from "./../../components/fieldInput/FieldInput";
 
 const LoginPage = () => {
-  const [form, setForm] = useState({ email: "", password: "" });
+  const [form, setForm] = useState({
+    email: "Demo@velarium.com",
+    password: "**********",
+  });
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
@@ -75,7 +78,7 @@ const LoginPage = () => {
           className="grid bg-white px-[20px] lg:px-[50px] py-[20px]"
         >
           <div className="flex flex-col lg:flex-row lg:items-center gap-[10px]">
-            <label className="poppins-medium text-black text-smallDescription">
+            <label className="montserrat-medium text-black text-smallDescription">
               Username:
             </label>
             <FieldInput
@@ -96,7 +99,7 @@ const LoginPage = () => {
           <hr className="h-[2px] bg-black border-none my-4" />
 
           <div className="flex flex-col lg:flex-row lg:items-center gap-[10px]">
-            <label className="poppins-medium text-black text-smallDescription">
+            <label className="montserrat-medium text-black text-smallDescription">
               Password:
             </label>
             <FieldInput

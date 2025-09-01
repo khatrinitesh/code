@@ -35,7 +35,7 @@ const DashboardPage = () => {
               placeholder="Quick Name Lookup"
               maxLength={50}
               disabled={false}
-              className="w-full max-w-[50%] rounded-full"
+              className="w-full md:max-w-[50%] rounded-full"
             />
 
             <MemberComponent />

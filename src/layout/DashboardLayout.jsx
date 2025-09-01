@@ -32,7 +32,7 @@ const DashboardLayout = ({ children }) => {
                   <li key={index} className="">
                     <Link
                       to={item.path}
-                      className={`flex items-center poppins-medium text-smallDescription  gap-[10px] p-[5px] rounded-md ${
+                      className={`flex items-center montserrat-medium text-smallDescription  gap-[10px] p-[5px] rounded-md ${
                         isActive ? "text-color4 " : ""
                       }`}
                     >
@@ -59,16 +59,16 @@ const DashboardLayout = ({ children }) => {
             >
               <FiMenu size={24} />
             </button>
-            {/* <h1 className="text-subTitle poppins-medium">Dashboard</h1> */}
+            {/* <h1 className="text-subTitle montserrat-medium">Dashboard</h1> */}
           </div>
 
           {/* Right Side: Logo */}
           <div className="flex items-center gap-[20px]">
-            <div className="profileBlock flex items-center gap-[10px] hidden sm:block">
-              <span className="subtitle ext-smallDescription poppins-regular ">
+            <div className="profileBlock  items-center gap-[10px] hidden sm:flex">
+              <span className="subtitle ext-smallDescription montserrat-regular ">
                 Welcome
               </span>
-              <span className="text-[var(--color6)] text-smallDescription poppins-regular">
+              <span className="text-[var(--color6)] text-smallDescription montserrat-regular">
                 Lorem Ipsum
               </span>
             </div>

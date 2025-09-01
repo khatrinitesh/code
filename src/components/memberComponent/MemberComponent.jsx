@@ -22,7 +22,7 @@ const MemberComponent = () => {
       <div className="flex items-center justify-between px-3 rounded-[10px]">
         <label
           htmlFor="memberNumber"
-          className="text-smallDescription font-medium text-[#122159] poppins-medium"
+          className="text-smallDescription font-medium text-[#122159] montserrat-medium"
         >
           Member #:
         </label>
@@ -33,8 +33,8 @@ const MemberComponent = () => {
             type="text"
             value={formData.memberNumber}
             onChange={handleChange}
-            placeholder="Enter Member #"
-            className="!max-w-[50%]"
+            placeholder=""
+            className="md:!max-w-[50%]"
           />
         </div>
       </div>
@@ -43,7 +43,7 @@ const MemberComponent = () => {
       <div className="flex items-center justify-between  px-3 rounded-md">
         <label
           htmlFor="lastName"
-          className="text-smallDescription text-[#122159] poppins-medium"
+          className="text-smallDescription text-[#122159] montserrat-medium"
         >
           Last Name:
         </label>
@@ -54,8 +54,8 @@ const MemberComponent = () => {
             type="text"
             value={formData.lastName}
             onChange={handleChange}
-            placeholder="Enter Last Name"
-            className="!max-w-[50%]"
+            placeholder=""
+            className="md:!max-w-[50%]"
           />
         </div>
       </div>
@@ -64,7 +64,7 @@ const MemberComponent = () => {
       <div className="flex items-center justify-between px-3  rounded-md">
         <label
           htmlFor="firstName"
-          className="text-smallDescription text-[#122159] poppins-medium"
+          className="text-smallDescription text-[#122159] montserrat-medium"
         >
           First Name:
         </label>
@@ -75,8 +75,8 @@ const MemberComponent = () => {
             type="text"
             value={formData.firstName}
             onChange={handleChange}
-            placeholder="Enter First Name"
-            className="!max-w-[50%]"
+            placeholder=""
+            className="md:!max-w-[50%]"
           />
         </div>
       </div>
@@ -85,7 +85,7 @@ const MemberComponent = () => {
       <div className="flex items-center justify-between px-3 rounded-md">
         <label
           htmlFor="last4ssn"
-          className="text-smallDescription text-[#122159] poppins-medium"
+          className="text-smallDescription text-[#122159] montserrat-medium"
         >
           Last 4 SSN:
         </label>
@@ -97,8 +97,8 @@ const MemberComponent = () => {
             maxLength={4}
             value={formData.last4ssn}
             onChange={handleChange}
-            placeholder="XXXX"
-            className="!max-w-[50%]"
+            placeholder=""
+            className="md:!max-w-[50%]"
           />
         </div>
       </div>

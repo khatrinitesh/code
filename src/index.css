@@ -51,6 +51,7 @@
   --ff-montserrat-bold: "montserrat-bold";
   --headTitle: 2rem;
   --subTitle: 1.5rem;
+  --smallSubTitle: 1.125rem; /*18px*/
   --description: 1rem;
   --small-description: 0.875rem;
   --extra-small-description: 0.75rem;
@@ -87,6 +88,9 @@ body {
 /* 24px */
 .text-subTitle {
   font-size: var(--subTitle);
+}
+.text-smallSubTitle {
+  font-size: var(--smallSubTitle);
 }
 /* 16px */
 .text-description {

@@ -12,10 +12,10 @@ const DashboardLayout = ({ children }) => {
   };
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen lg:h-screen flex desktop:overflow-hidden">
       {/* Sidebar */}
       {sidebarOpen && (
-        <aside className="w-[200px] bg-color1 text-white p-4 bg-[var(--color1)]">
+        <aside className="w-[200px] h-[100vh] bg-color1 text-white p-[5px] bg-[var(--color1)]">
           <div className="logoBlock">
             <img
               src="/img/logo-dashboard.png"
@@ -50,9 +50,9 @@ const DashboardLayout = ({ children }) => {
       {/* Main content */}
       <div className="flex-1 flex flex-col ">
         {/* Header */}
-        <header className="bg-[var(--color1)] text-white p-4 shadow-md flex items-center justify-between">
+        <header className="bg-[var(--color1)] text-white p-[10px] shadow-md flex items-center justify-between">
           {/* Left Side: Hamburger + Title */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-[5px]">
             <button
               onClick={toggleSidebar}
               className="text-[#17668e] focus:outline-none cursor-pointer"
@@ -63,7 +63,7 @@ const DashboardLayout = ({ children }) => {
           </div>
 
           {/* Right Side: Logo */}
-          <div className="flex items-center gap-[20px]">
+          <div className="flex items-center gap-[10px]">
             <div className="profileBlock  items-center gap-[10px] hidden sm:flex">
               <span className="subtitle ext-smallDescription montserrat-regular ">
                 Welcome
@@ -80,7 +80,9 @@ const DashboardLayout = ({ children }) => {
           </div>
         </header>
         {/* Main Page Content */}
-        <main className="flex-1 p-6 bg-color2">{children}</main>
+        <main className="flex-1 p-[10px] bg-color2 md:min-h-[calc(100dvh-200px)] overflow-y-auto">
+          {children}
+        </main>
         <FooterSection />
       </div>
     </div>

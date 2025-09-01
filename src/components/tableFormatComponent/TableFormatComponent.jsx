@@ -20,10 +20,10 @@ const TableFormatComponent = ({
   const { rowAlt, headerBg, headerText, borderRight } = theme;
 
   return (
-    <div className="overflow-x-auto w-full max-w-4xl mx-auto mt-6">
+    <div className="overflow-x-auto w-full max-w-4xl mx-auto">
       <table className="w-full border-collapse text-sm">
         <caption
-          className="text-left px-4 py-2 montserrat-medium text-smallDescription rounded-t-md"
+          className="text-left px-4 py-[5px] montserrat-medium text-extrasmallDescription rounded-t-md"
           style={{
             backgroundColor: captionStyle.bg,
             color: captionStyle.text,
@@ -31,24 +31,24 @@ const TableFormatComponent = ({
         >
           {caption}
         </caption>
-        <thead className="montserrat-regular text-smallDescription">
+        <thead className="montserrat-regular text-extraSmallDescription">
           <tr style={{ backgroundColor: headerBg, color: headerText }}>
             <th
-              className="text-left px-4 py-2 border-r-[1px]"
+              className="text-left px-4 py-[5px] border-r-[1px]"
               style={{ borderColor: borderRight }}
             >
               {fieldCol1}
             </th>
             <th
-              className="text-left px-4 py-2 border-r-[1px]"
+              className="text-left px-4 py-[5px] border-r-[1px]"
               style={{ borderColor: borderRight }}
             >
               {fieldCol2}
             </th>
-            <th className="text-left px-4 py-2">{fieldCol3}</th>
+            <th className="text-left px-4 py-[5px]">{fieldCol3}</th>
           </tr>
         </thead>
-        <tbody className="montserrat-regular text-smallDescription">
+        <tbody className="montserrat-regular text-extraSmallDescription">
           {rows.map((member, rowIndex) => {
             const bgColor = rowIndex % 2 === 0 ? "#ffffff" : rowAlt;
 
@@ -59,18 +59,18 @@ const TableFormatComponent = ({
                 style={{ backgroundColor: bgColor }}
               >
                 <td
-                  className="px-4 py-2 border-r-[1px] text-[var(--color1)]"
+                  className="px-4 py-[5px] border-r-[1px] text-[var(--color1)]"
                   style={{ borderColor: borderRight }}
                 >
                   {member.field1}
                 </td>
                 <td
-                  className="px-4 py-2 border-r-[1px]"
+                  className="px-4 py-[5px] border-r-[1px]"
                   style={{ borderColor: borderRight }}
                 >
                   {member.field2}
                 </td>
-                <td className="px-4 py-2">{member.field3}</td>
+                <td className="px-4 py-[5px]">{member.field3}</td>
               </tr>
             );
           })}

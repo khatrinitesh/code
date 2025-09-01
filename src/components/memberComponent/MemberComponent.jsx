@@ -17,12 +17,12 @@ const MemberComponent = () => {
     }));
   };
   return (
-    <div className="p-4 w-full max-w-xl bg-[#d1e3ea]  border-[1px] border-[#ccc] space-y-3">
+    <div className="p-[3px] w-full max-w-xl bg-[#d1e3ea]  border-[1px] border-[#ccc] space-y-[5px]">
       {/* Member #: */}
       <div className="flex items-center justify-between px-3 rounded-[10px]">
         <label
           htmlFor="memberNumber"
-          className="text-smallDescription font-medium text-[#122159] montserrat-medium"
+          className="text-extraSmallDescription font-medium text-[#122159] montserrat-medium"
         >
           Member #:
         </label>
@@ -43,7 +43,7 @@ const MemberComponent = () => {
       <div className="flex items-center justify-between  px-3 rounded-md">
         <label
           htmlFor="lastName"
-          className="text-smallDescription text-[#122159] montserrat-medium"
+          className="text-extraSmallDescription text-[#122159] montserrat-medium"
         >
           Last Name:
         </label>
@@ -64,7 +64,7 @@ const MemberComponent = () => {
       <div className="flex items-center justify-between px-3  rounded-md">
         <label
           htmlFor="firstName"
-          className="text-smallDescription text-[#122159] montserrat-medium"
+          className="text-extraSmallDescription text-[#122159] montserrat-medium"
         >
           First Name:
         </label>
@@ -85,7 +85,7 @@ const MemberComponent = () => {
       <div className="flex items-center justify-between px-3 rounded-md">
         <label
           htmlFor="last4ssn"
-          className="text-smallDescription text-[#122159] montserrat-medium"
+          className="text-extraSmallDescription text-[#122159] montserrat-medium"
         >
           Last 4 SSN:
         </label>

@@ -27,7 +27,7 @@ const DashboardPage = () => {
   };
   return (
     <>
-      <div className="innerContent grid gap-[20px] w-full">
+      <div className="innerContent grid gap-[10px] w-full">
         <CardComponent />
         <div className="grid gap-[20px] grid-cols-1 md:grid-cols-1 lg:grid-cols-2 items-start">
           <div className="leftBox grid  gap-[10px]">

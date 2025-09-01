@@ -17,7 +17,7 @@ const MemberComponent = () => {
     }));
   };
   return (
-    <div className="p-[3px] w-full max-w-xl bg-[#d1e3ea]  border-[1px] border-[#ccc] space-y-[5px]">
+    <div className="p-[3px] w-full max-w-full bg-[#d1e3ea]  border-[1px] border-[#ccc] space-y-[5px]">
       {/* Member #: */}
       <div className="flex items-center justify-between px-3 rounded-[10px]">
         <label

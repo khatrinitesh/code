@@ -80,7 +80,7 @@ const DashboardLayout = ({ children }) => {
           </div>
         </header>
         {/* Main Page Content */}
-        <main className="flex-1 p-[10px] bg-color2 md:min-h-[calc(100dvh-200px)] overflow-y-auto">
+        <main className="flex-1 bg-color2 md:min-h-[calc(100dvh-200px)] overflow-y-auto">
           {children}
         </main>
         <FooterSection />

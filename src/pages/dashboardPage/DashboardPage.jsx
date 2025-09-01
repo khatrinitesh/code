@@ -27,67 +27,69 @@ const DashboardPage = () => {
   };
   return (
     <>
-      <div className="innerContent grid gap-[10px] w-full">
-        <CardComponent />
-        <div className="grid gap-[20px] grid-cols-1 md:grid-cols-1 lg:grid-cols-2 items-start">
-          <div className="leftBox grid  gap-[10px]">
-            <SearchComponent
-              placeholder="Quick Name Lookup"
-              maxLength={50}
-              disabled={false}
-              className="w-full md:max-w-[50%] rounded-full"
-            />
+      <div className="dashboardPage m-[10px]">
+        <div className="innerContent grid gap-[10px] w-full">
+          <CardComponent />
+          <div className="grid gap-[20px] grid-cols-1 md:grid-cols-1 lg:grid-cols-2 items-start">
+            <div className="leftBox grid  gap-[10px]">
+              <SearchComponent
+                placeholder="Quick Name Lookup"
+                maxLength={50}
+                disabled={false}
+                className="w-full md:max-w-[50%] rounded-full"
+              />
 
-            <MemberComponent />
-            <div className="btnBlock flex items-start  w-full">
-              <Button
-                label="Search"
-                className="!mx-0"
-                onClick={handleClick}
-                variant="color1"
+              <MemberComponent />
+              <div className="btnBlock flex items-start  w-full">
+                <Button
+                  label="Search"
+                  className="!mx-0"
+                  onClick={handleClick}
+                  variant="color1"
+                />
+              </div>
+            </div>
+            <div className="rightBox">
+              <TableFormatComponent
+                caption="Recently Accessed Members"
+                colorKey="color1"
+                thead={tableHeaders.members}
+                rows={membersData}
               />
             </div>
           </div>
-          <div className="rightBox">
-            <TableFormatComponent
-              caption="Recently Accessed Members"
-              colorKey="color1"
-              thead={tableHeaders.members}
-              rows={membersData}
-            />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
-          <div className="boxGrid grid gap-[10px]">
-            <TableFormatComponent
-              caption="Upcoming Grievance Tasks"
-              colorKey="color2"
-              thead={tableHeaders.tasks}
-              rows={tasksData}
-            />
-            <div className="btnBlock flex items-start  w-full">
-              <Button
-                label="Open Grievances"
-                className="!mx-0"
-                onClick={handleClick}
-                variant="color2"
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
+            <div className="boxGrid grid gap-[10px]">
+              <TableFormatComponent
+                caption="Upcoming Grievance Tasks"
+                colorKey="color2"
+                thead={tableHeaders.tasks}
+                rows={tasksData}
               />
+              <div className="btnBlock flex items-start  w-full">
+                <Button
+                  label="Open Grievances"
+                  className="!mx-0"
+                  onClick={handleClick}
+                  variant="color2"
+                />
+              </div>
             </div>
-          </div>
-          <div className="boxGrid grid gap-[10px]">
-            <TableFormatComponent
-              caption="Upcoming Dates & Deadlines"
-              colorKey="color3"
-              thead={tableHeaders.deadlines}
-              rows={deadlinesData}
-            />
-            <div className="btnBlock flex items-start  w-full">
-              <Button
-                label="Open Calendar"
-                className="!mx-0"
-                onClick={handleClick}
-                variant="color3"
+            <div className="boxGrid grid gap-[10px]">
+              <TableFormatComponent
+                caption="Upcoming Dates & Deadlines"
+                colorKey="color3"
+                thead={tableHeaders.deadlines}
+                rows={deadlinesData}
               />
+              <div className="btnBlock flex items-start  w-full">
+                <Button
+                  label="Open Calendar"
+                  className="!mx-0"
+                  onClick={handleClick}
+                  variant="color3"
+                />
+              </div>
             </div>
           </div>
         </div>

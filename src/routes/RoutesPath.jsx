@@ -7,6 +7,7 @@ import {
 import LoginPage from "../pages/loginPage/LoginPage";
 import DashboardLayout from "./../layout/DashboardLayout";
 import DashboardPage from "./../pages/dashboardPage/DashboardPage";
+import CalendarPage from "../pages/calendarPage/CalendarPage";
 
 const RoutesPath = () => {
   // const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
@@ -21,6 +22,14 @@ const RoutesPath = () => {
           element={
             <DashboardLayout>
               <DashboardPage />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <DashboardLayout>
+              <CalendarPage />
             </DashboardLayout>
           }
         />

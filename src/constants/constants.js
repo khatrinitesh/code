@@ -59,7 +59,7 @@ export const sidebarNavigation = [
   },
   {
     label: "Web Portal",
-    path: "/web-portal",
+    path: "/login",
     icon: FiGlobe,
   },
   {

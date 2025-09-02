@@ -8,6 +8,7 @@ import LoginPage from "../pages/loginPage/LoginPage";
 import DashboardLayout from "./../layout/DashboardLayout";
 import DashboardPage from "./../pages/dashboardPage/DashboardPage";
 import CalendarPage from "../pages/calendarPage/CalendarPage";
+import MemberListPage from "./../pages/memberlistPage/MemberListPage";
 
 const RoutesPath = () => {
   // const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
@@ -17,6 +18,7 @@ const RoutesPath = () => {
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginPage />} />
+        {/* dashboard page */}
         <Route
           path="/dashboard"
           element={
@@ -25,14 +27,25 @@ const RoutesPath = () => {
             </DashboardLayout>
           }
         />
+        {/* members list page */}
         <Route
-          path="/dashboard"
+          path="/member-list"
+          element={
+            <DashboardLayout>
+              <MemberListPage />
+            </DashboardLayout>
+          }
+        />
+        {/* calendar page */}
+        <Route
+          path="/calendar"
           element={
             <DashboardLayout>
               <CalendarPage />
             </DashboardLayout>
           }
         />
+
         {/* <Route
           path="/dashboard"
           element={

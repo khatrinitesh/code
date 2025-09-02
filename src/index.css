@@ -45,6 +45,7 @@
   --color5: #1b7398;
   --color6: #b5f5f8;
   --color7: #eaf2f6;
+  --color8: #ffdfaf;
   --ff-montserrat-regular: "montserrat-regular";
   --ff-montserrat-medium: "montserrat-medium";
   --ff-montserrat-semibold: "montserrat-semibold";
@@ -60,6 +61,7 @@
 body {
   font-family: var(--ff-montserrat-regular);
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 html,
@@ -130,4 +132,16 @@ body {
 .body-login-bg {
   background: url("../img/bg-login.jpg") no-repeat center center fixed;
   background-size: cover;
+}
+
+.vertical-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.vertical-scrollbar::-webkit-scrollbar-track {
+  background: #ddd;
+}
+
+.vertical-scrollbar::-webkit-scrollbar-thumb {
+  background: #666;
 }

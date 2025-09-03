@@ -5,8 +5,10 @@ import TableFormatComponent from "../../components/tableFormatComponent/TableFor
 import Button from "./../../components/button/Button";
 import {
   deadlinesData,
+  deadlinesData2,
   tableHeaders,
   tasksData,
+  tasksData2,
 } from "../../constants/constants";
 import { FaCalendarAlt } from "react-icons/fa";
 
@@ -26,6 +28,7 @@ const CalendarPage = () => {
             Calendar
           </h2>
         </SectionTitleComponent>
+        <br />
         <CalendarComponent onChange={setDate} value={date} />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10px] p-[10px]">
           <div className="boxGrid grid gap-[10px]">
@@ -33,7 +36,7 @@ const CalendarPage = () => {
               caption="Upcoming Grievance Tasks"
               colorKey="color2"
               thead={tableHeaders.tasks}
-              rows={tasksData}
+              rows={tasksData2}
             />
             <div className="btnBlock flex items-start  w-full">
               <Button
@@ -49,7 +52,7 @@ const CalendarPage = () => {
               caption="Upcoming Dates & Deadlines"
               colorKey="color3"
               thead={tableHeaders.deadlines}
-              rows={deadlinesData}
+              rows={deadlinesData2}
             />
             <div className="btnBlock flex items-start  w-full">
               <Button

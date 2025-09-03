@@ -9,6 +9,8 @@ import DashboardLayout from "./../layout/DashboardLayout";
 import DashboardPage from "./../pages/dashboardPage/DashboardPage";
 import CalendarPage from "../pages/calendarPage/CalendarPage";
 import MemberListPage from "./../pages/memberlistPage/MemberListPage";
+import DispatchPage from "../pages/dispatchPage/DispatchPage";
+import ImportingPage from "../pages/importingPage/ImportingPage";
 
 const RoutesPath = () => {
   // const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
@@ -33,6 +35,24 @@ const RoutesPath = () => {
           element={
             <DashboardLayout>
               <MemberListPage />
+            </DashboardLayout>
+          }
+        />
+        {/* importing page */}
+        <Route
+          path="/importing"
+          element={
+            <DashboardLayout>
+              <ImportingPage />
+            </DashboardLayout>
+          }
+        />
+        {/* dispatch page */}
+        <Route
+          path="/dispatch"
+          element={
+            <DashboardLayout>
+              <DispatchPage />
             </DashboardLayout>
           }
         />

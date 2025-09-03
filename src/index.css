@@ -46,6 +46,7 @@
   --color6: #b5f5f8;
   --color7: #eaf2f6;
   --color8: #ffdfaf;
+  --color9: #b2bcc7;
   --ff-montserrat-regular: "montserrat-regular";
   --ff-montserrat-medium: "montserrat-medium";
   --ff-montserrat-semibold: "montserrat-semibold";
@@ -135,13 +136,16 @@ body {
 }
 
 .vertical-scrollbar::-webkit-scrollbar {
-  width: 5px;
+  width: 13px;
 }
 
 .vertical-scrollbar::-webkit-scrollbar-track {
-  background: #ddd;
+  background: #dae2e6;
+  border-left: 1px solid #1b7398; /* Border on left side of track */
+  border-right: 1px solid #1b7398; /* Border on left side of track */
 }
 
 .vertical-scrollbar::-webkit-scrollbar-thumb {
-  background: #666;
+  background: #bdd1da;
+  border: 1px solid #1b7398;
 }

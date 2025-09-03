@@ -55,9 +55,9 @@
 
 /* Calendar day numbers (1–30) */
 .calendar-day {
-  text-align: center;
+  text-align: right;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 0.5px solid #ccc;
   background-color: white;
   color: black;
   font-size: 12px;

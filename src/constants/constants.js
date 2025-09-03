@@ -152,6 +152,48 @@ export const tasksData = [
     field3: "Follow-up interviews",
   },
 ];
+export const tasksData2 = [
+  {
+    field1: "001-2025",
+    field2: "06/02/2025",
+    field3: "File Grievance Initiation",
+  },
+  {
+    field1: "001-2025",
+    field2: "06/10/2025",
+    field3: "Interview witness",
+  },
+  {
+    field1: "003-2025",
+    field2: "06/13/2025",
+    field3: "Investigate body cam footage",
+  },
+  {
+    field1: "003-2025",
+    field2: "06/30/2025",
+    field3: "Follow-up interviews",
+  },
+  {
+    field1: "001-2025",
+    field2: "06/02/2025",
+    field3: "File Grievance Initiation",
+  },
+  {
+    field1: "001-2025",
+    field2: "06/10/2025",
+    field3: "Interview witness",
+  },
+  {
+    field1: "003-2025",
+    field2: "06/13/2025",
+    field3: "Investigate body cam footage",
+  },
+  {
+    field1: "003-2025",
+    field2: "06/30/2025",
+    field3: "Follow-up interviews",
+  },
+];
 
 // ✅ Upcoming Dates & Deadlines (Color 3)
 export const deadlinesData = [
@@ -172,6 +214,48 @@ export const deadlinesData = [
   },
   {
     field1: "04/13/25",
+    field2: "10:00 am",
+    field3: "Office Meeting",
+  },
+];
+export const deadlinesData2 = [
+  {
+    field1: "06/09/25",
+    field2: "11:00 am",
+    field3: "VUE Demo",
+  },
+  {
+    field1: "06/11/25",
+    field2: "02:00 pm",
+    field3: "Planning Meeting",
+  },
+  {
+    field1: "06/16/25",
+    field2: "All Day",
+    field3: "Membership Dues",
+  },
+  {
+    field1: "06/30/25",
+    field2: "10:00 am",
+    field3: "Office Meeting",
+  },
+  {
+    field1: "06/09/25",
+    field2: "11:00 am",
+    field3: "VUE Demo",
+  },
+  {
+    field1: "06/11/25",
+    field2: "02:00 pm",
+    field3: "Planning Meeting",
+  },
+  {
+    field1: "06/16/25",
+    field2: "All Day",
+    field3: "Membership Dues",
+  },
+  {
+    field1: "06/30/25",
     field2: "10:00 am",
     field3: "Office Meeting",
   },
@@ -218,3 +302,22 @@ export const colors = {
     borderRight: "#a0c49c",
   },
 };
+
+export const DROPDOWN_OPTIONS_1 = [
+  { value: "", label: "No Layout Selected" },
+  { value: "pending", label: "Pending" },
+  { value: "approved", label: "Approved" },
+  { value: "rejected", label: "Rejected" },
+];
+export const DROPDOWN_OPTIONS_2 = [
+  { value: "", label: "No Layout Selected" },
+  { value: "pending", label: "Pending" },
+  { value: "approved", label: "Approved" },
+  { value: "rejected", label: "Rejected" },
+];
+export const DROPDOWN_OPTIONS_3 = [
+  { value: "", label: "Select Pay Period" },
+  { value: "pending", label: "Pending" },
+  { value: "approved", label: "Approved" },
+  { value: "rejected", label: "Rejected" },
+];

@@ -1,28 +1,86 @@
-import { FaEdit, FaRegEye, FaRegTrashAlt } from "react-icons/fa";
+import {
+  FaEdit,
+  FaRegEye,
+  FaRegTrashAlt,
+  FaSort,
+  FaSortUp,
+  FaSortDown,
+} from "react-icons/fa";
+import { useState } from "react";
 import { fieldCellData, fieldHeadData } from "./dispatchData";
 
 const borderRight = "border-r-[1px] border-[#1b7398]";
 
 const DispatcHTable = () => {
+  const [sortConfig, setSortConfig] = useState({ key: null, direction: null });
+  const [data, setData] = useState(fieldCellData);
+
+  const getFieldKey = (index) => {
+    switch (index) {
+      case 0:
+        return "project";
+      case 1:
+        return "contractor";
+      case 2:
+        return "startDate";
+      case 3:
+        return "requestDate";
+      case 4:
+        return "requestBy";
+      case 5:
+        return "comments";
+      default:
+        return null;
+    }
+  };
+
+  const sortData = (key) => {
+    let direction = "ascending";
+    if (sortConfig.key === key && sortConfig.direction === "ascending") {
+      direction = "descending";
+    }
+
+    const sorted = [...data].sort((a, b) => {
+      if (a[key] < b[key]) return direction === "ascending" ? -1 : 1;
+      if (a[key] > b[key]) return direction === "ascending" ? 1 : -1;
+      return 0;
+    });
+
+    setSortConfig({ key, direction });
+    setData(sorted);
+  };
+
+  const renderSortIcon = (key) => {
+    if (sortConfig.key !== key) return <FaSort />;
+    return sortConfig.direction === "ascending" ? <FaSortUp /> : <FaSortDown />;
+  };
+
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full border-collapse border-[1px] border-[#b2bcc7]">
         <thead style={{ backgroundColor: "#1b7398", color: "white" }}>
           <tr>
-            {fieldHeadData.map((col, index) => (
-              <th
-                key={col.id}
-                className={`text-left px-4 py-[3px] text-extraSmallDescription poppins-semibold ${
-                  index < fieldHeadData.length - 1 ? borderRight : ""
-                }`}
-              >
-                {col.label}
-              </th>
-            ))}
+            {fieldHeadData.map((col, index) => {
+              const key = getFieldKey(index);
+              return (
+                <th
+                  key={col.id}
+                  className={`text-left px-4 py-[3px] text-extraSmallDescription poppins-semibold cursor-pointer select-none ${
+                    index < fieldHeadData.length - 1 ? borderRight : ""
+                  }`}
+                  onClick={() => key && sortData(key)}
+                >
+                  <div className="flex items-center gap-1">
+                    {col.label}
+                    {key && renderSortIcon(key)}
+                  </div>
+                </th>
+              );
+            })}
           </tr>
         </thead>
         <tbody>
-          {fieldCellData.map((row, idx) => (
+          {data.map((row, idx) => (
             <tr
               key={row.id}
               style={{

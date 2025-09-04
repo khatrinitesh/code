@@ -10,7 +10,8 @@ import DashboardPage from "./../pages/dashboardPage/DashboardPage";
 import CalendarPage from "../pages/calendarPage/CalendarPage";
 import MemberListPage from "./../pages/memberlistPage/MemberListPage";
 import DispatchPage from "../pages/dispatchPage/DispatchPage";
-import ImportingPage from "../pages/importingPage/ImportingPage";
+import DuesPage from "../pages/duesPage/DuesPage";
+import MembersPage from "../pages/membersPage/MembersPage";
 
 const RoutesPath = () => {
   // const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
@@ -38,12 +39,21 @@ const RoutesPath = () => {
             </DashboardLayout>
           }
         />
-        {/* importing page */}
+        {/* importing > dues page */}
         <Route
-          path="/importing"
+          path="/import-dues"
           element={
             <DashboardLayout>
-              <ImportingPage />
+              <DuesPage />
+            </DashboardLayout>
+          }
+        />
+        {/* importing > members page */}
+        <Route
+          path="/import-members"
+          element={
+            <DashboardLayout>
+              <MembersPage />
             </DashboardLayout>
           }
         />

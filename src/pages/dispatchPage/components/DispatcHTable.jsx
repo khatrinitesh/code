@@ -104,7 +104,7 @@ const DispatcHTable = () => {
                   {value}
                 </td>
               ))}
-              <td className="px-4 py-[3px] space-x-2">
+              <td className="px-4 py-[3px] space-x-2 flex items-center justify-center">
                 <button className="cursor-pointer" title="View">
                   <FaRegEye className="text-[#1b7398]" />
                 </button>

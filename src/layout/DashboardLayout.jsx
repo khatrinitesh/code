@@ -15,7 +15,7 @@ const DashboardLayout = ({ children }) => {
     <div className="min-h-screen lg:h-screen flex desktop:overflow-hidden">
       {/* Sidebar */}
       {sidebarOpen && (
-        <aside className="w-[200px] h-[100vh] bg-color1 text-white p-[5px] bg-[var(--color1)]">
+        <aside className="w-[200px] min-h-[100dvh] bg-color1 text-white p-[5px] bg-[var(--color1)]">
           <div className="logoBlock">
             <img
               src="/img/logo-dashboard.png"

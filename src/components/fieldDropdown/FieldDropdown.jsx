@@ -22,12 +22,13 @@ const FieldDropdown = ({
       }}
       disabled={disabled}
       className={`
+        h-[30px]
+        text-extraSmallDescription montserrat-medium
         rounded 
         px-3 
-        py-2 
         text-sm 
         bg-[#f2f5ff] 
-        border 
+        border-[1px]
         border-[#747eb2] 
         text-[#6973ab]
         focus:outline-none 

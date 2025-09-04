@@ -22,7 +22,7 @@ const TableFormatComponent = ({
   return (
     <div className="w-full overflow-x-auto">
       {/* Table Header */}
-      <table className="w-full table-fixed border-collapse text-sm">
+      <table className="w-full  border-collapse text-sm">
         <caption
           className="text-left px-4 py-[5px] montserrat-medium text-extraSmallDescription"
           style={{
@@ -38,18 +38,20 @@ const TableFormatComponent = ({
         >
           <tr>
             <th
-              className="w-[33.33%] text-left px-4 py-[5px] border-r"
+              className="md:w-[33.33%] text-left px-4 py-[5px] border-r"
               style={{ borderColor: borderRight }}
             >
               {fieldCol1}
             </th>
             <th
-              className="w-[33.33%] text-left px-4 py-[5px] border-r"
+              className="md:w-[33.33%] text-left px-4 py-[5px] border-r"
               style={{ borderColor: borderRight }}
             >
               {fieldCol2}
             </th>
-            <th className="w-[33.33%] text-left px-4 py-[5px]">{fieldCol3}</th>
+            <th className="md:w-[33.33%] text-left px-4 py-[5px]">
+              {fieldCol3}
+            </th>
           </tr>
         </thead>
       </table>
@@ -68,18 +70,20 @@ const TableFormatComponent = ({
                   style={{ backgroundColor: bgColor }}
                 >
                   <td
-                    className="w-[33.33%] px-4 py-[5px] border-r text-[var(--color1)]"
+                    className="md:w-[33.33%] px-4 py-[5px] border-r text-[var(--color1)]"
                     style={{ borderColor: borderRight }}
                   >
                     {member.field1}
                   </td>
                   <td
-                    className="w-[33.33%] px-4 py-[5px] border-r"
+                    className="md:w-[33.33%] px-4 py-[5px] border-r"
                     style={{ borderColor: borderRight }}
                   >
                     {member.field2}
                   </td>
-                  <td className="w-[33.33%] px-4 py-[5px]">{member.field3}</td>
+                  <td className="md:w-[33.33%] px-4 py-[5px]">
+                    {member.field3}
+                  </td>
                 </tr>
               );
             })}

@@ -43,8 +43,13 @@ export const sidebarNavigation = [
     icon: FaBook,
   },
   {
-    label: "Importing",
-    path: "/importing",
+    label: "Dues",
+    path: "/import-dues",
+    icon: FaDownload,
+  },
+  {
+    label: "Members",
+    path: "/import-members",
     icon: FaDownload,
   },
   {
@@ -310,13 +315,20 @@ export const DROPDOWN_OPTIONS_1 = [
   { value: "rejected", label: "Rejected" },
 ];
 export const DROPDOWN_OPTIONS_2 = [
-  { value: "", label: "No Layout Selected" },
+  { value: "", label: "No File Selected" },
   { value: "pending", label: "Pending" },
   { value: "approved", label: "Approved" },
   { value: "rejected", label: "Rejected" },
 ];
 export const DROPDOWN_OPTIONS_3 = [
   { value: "", label: "Select Pay Period" },
+  { value: "pending", label: "Pending" },
+  { value: "approved", label: "Approved" },
+  { value: "rejected", label: "Rejected" },
+];
+
+export const DROPDOWN_OPTIONS_4 = [
+  { value: "", label: "Select Source" },
   { value: "pending", label: "Pending" },
   { value: "approved", label: "Approved" },
   { value: "rejected", label: "Rejected" },

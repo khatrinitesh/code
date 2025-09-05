@@ -4,7 +4,7 @@ import "./style.css";
 
 const PriorImages = () => {
   return (
-    <div className="overflow-x-auto max-w-[95vw] md:max-w-full">
+    <div className="overflow-x-auto max-w-[95vw] md:max-w-4xl">
       <table className="prior-imports-table w-full  overflow-x-auto border-collapse border-[1px]  border-[#b1bcc6] ">
         <thead className="bg-[#8fbacd]  text-extraSmallDescription montserrat-semibold">
           <tr>
@@ -15,7 +15,7 @@ const PriorImages = () => {
               Prior Imports
             </th>
           </tr>
-          <tr>
+          <tr className="bg-[#8fbacd] text-[#010d4a] whitespace-nowrap">
             <th className="">File Name</th>
             <th className="">Pay Period</th>
             <th className="">Layout Template</th>

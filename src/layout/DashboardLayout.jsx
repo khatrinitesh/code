@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { sidebarNavigation } from "../constants/constants";
 import { FiMenu } from "react-icons/fi";
 import FooterSection from "./footerSection/FooterSection";
+import SidebarNavigation from "../components/sidebarNavigation/SidebarNavigation";
 
 const DashboardLayout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -23,27 +24,7 @@ const DashboardLayout = ({ children }) => {
               className="max-w-[120px]  block"
             />
           </div>
-          <nav>
-            <ul>
-              {sidebarNavigation.map((item, index) => {
-                const Icon = item.icon;
-                const isActive = location.pathname === item.path;
-                return (
-                  <li key={index} className="">
-                    <Link
-                      to={item.path}
-                      className={`flex items-center montserrat-medium text-smallDescription  gap-[10px] p-[5px] rounded-md ${
-                        isActive ? "text-color4 " : ""
-                      }`}
-                    >
-                      <Icon className={`${isActive ? "text-color3" : ""}`} />
-                      {item.label}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
+          <SidebarNavigation />
         </aside>
       )}
 

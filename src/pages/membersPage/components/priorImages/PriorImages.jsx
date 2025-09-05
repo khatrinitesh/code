@@ -4,7 +4,7 @@ import "./style.css";
 
 const PriorImages = () => {
   return (
-    <div className="overflow-x-auto max-w-[95vw] md:max-w-full">
+    <div className="overflow-x-auto max-w-[95vw] md:max-w-4xl">
       <table className="prior-imports-table min-w-[800px] border-collapse border border-[#b1bcc6] w-full">
         <thead className="text-extraSmallDescription montserrat-semibold">
           <tr>

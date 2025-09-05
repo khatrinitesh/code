@@ -14,6 +14,8 @@ import {
   FaDownload,
   FaShippingFast,
   FaChartPie,
+  FaDollarSign,
+  FaCommentDollar,
 } from "react-icons/fa";
 
 export const sidebarNavigation = [
@@ -34,8 +36,11 @@ export const sidebarNavigation = [
   },
   {
     label: "Finances",
-    path: "/finances",
     icon: FaHandHoldingUsd,
+    children: [
+      { label: "Payments", path: "/payments", icon: FaDollarSign },
+      { label: "Batch", path: "/batch", icon: FaCommentDollar },
+    ],
   },
   {
     label: "Reports",
@@ -43,14 +48,12 @@ export const sidebarNavigation = [
     icon: FaBook,
   },
   {
-    label: "Dues",
-    path: "/import-dues",
+    label: "Importing",
     icon: FaDownload,
-  },
-  {
-    label: "Members",
-    path: "/import-members",
-    icon: FaDownload,
+    children: [
+      { label: "Dues", path: "/import-dues", icon: FaDownload },
+      { label: "Members", path: "/import-members", icon: FaDownload },
+    ],
   },
   {
     label: "Dispatch",

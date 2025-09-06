@@ -12,10 +12,17 @@ import DashboardPage from "./../pages/dashboardPage/DashboardPage";
 import CalendarPage from "../pages/calendarPage/CalendarPage";
 import MemberListPage from "./../pages/memberlistPage/MemberListPage";
 import DispatchPage from "../pages/dispatchPage/DispatchPage";
+import ImportMembersPage from "./../pages/importMembersPage/ImportMembersPage";
 import DuesPage from "../pages/duesPage/DuesPage";
-import MembersPage from "../pages/membersPage/MembersPage";
 import PaymentsPage from "./../pages/paymentsPage/PaymentsPage";
 import GrievancesPage from "../pages/grievancesPage/GrievancesPage";
+import BatchPage from "../pages/batchPage/BatchPage";
+import MembersPage from "../pages/membersPage/MembersPage";
+import ReportsPage from "../pages/reportsPage/ReportsPage";
+import ApprenticeshipPage from "../pages/apprenticeshipPage/ApprenticeshipPage";
+import MailPage from "../pages/mailPage/MailPage";
+import SettingsPage from "../pages/settingsPage/SettingsPage";
+import MatterDetailsPage from "./../pages/matterDetailsPage/MatterDetailsPage";
 
 const RoutesPath = () => {
   // const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
@@ -25,7 +32,6 @@ const RoutesPath = () => {
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginPage />} />
-        {/* dashboard page */}
         <Route
           path="/dashboard"
           element={
@@ -34,7 +40,14 @@ const RoutesPath = () => {
             </DashboardLayout>
           }
         />
-        {/* members list page */}
+        <Route
+          path="/members"
+          element={
+            <DashboardLayout>
+              <MembersPage />
+            </DashboardLayout>
+          }
+        />
         <Route
           path="/member-list"
           element={
@@ -43,7 +56,38 @@ const RoutesPath = () => {
             </DashboardLayout>
           }
         />
-        {/* grievances page */}
+        <Route
+          path="/reports"
+          element={
+            <DashboardLayout>
+              <ReportsPage />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/apprenticeship"
+          element={
+            <DashboardLayout>
+              <ApprenticeshipPage />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/mail"
+          element={
+            <DashboardLayout>
+              <MailPage />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/settings"
+          element={
+            <DashboardLayout>
+              <SettingsPage />
+            </DashboardLayout>
+          }
+        />
         <Route
           path="/grievances"
           element={
@@ -52,7 +96,6 @@ const RoutesPath = () => {
             </DashboardLayout>
           }
         />
-        {/* payments page */}
         <Route
           path="/payments"
           element={
@@ -61,7 +104,22 @@ const RoutesPath = () => {
             </DashboardLayout>
           }
         />
-        {/* importing > dues page */}
+        <Route
+          path="/matter-details"
+          element={
+            <DashboardLayout>
+              <MatterDetailsPage />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/batch"
+          element={
+            <DashboardLayout>
+              <BatchPage />
+            </DashboardLayout>
+          }
+        />
         <Route
           path="/import-dues"
           element={
@@ -70,16 +128,14 @@ const RoutesPath = () => {
             </DashboardLayout>
           }
         />
-        {/* importing > members page */}
         <Route
           path="/import-members"
           element={
             <DashboardLayout>
-              <MembersPage />
+              <ImportMembersPage />
             </DashboardLayout>
           }
         />
-        {/* dispatch page */}
         <Route
           path="/dispatch"
           element={
@@ -88,7 +144,6 @@ const RoutesPath = () => {
             </DashboardLayout>
           }
         />
-        {/* calendar page */}
         <Route
           path="/calendar"
           element={

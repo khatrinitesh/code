@@ -9,7 +9,11 @@ const FieldDropdown = ({
   maxLength = null,
   disabled = false,
   className = "",
+  bgVariant = "blue", // default is blue
 }) => {
+  const bgClass = bgVariant === "blue" ? "bg-[#f2f5ff]" : "bg-white";
+  const borderClass =
+    bgVariant === "blue" ? "border-[#747eb2]" : "border-[#1b7398]";
   return (
     <select
       id={id}
@@ -27,10 +31,10 @@ const FieldDropdown = ({
         rounded 
         px-3 
         text-sm 
-        bg-[#f2f5ff] 
+        ${bgClass}
         border-[1px]
-        border-[#747eb2] 
-        text-[#6973ab]
+        ${borderClass}
+        text-[#000]
         focus:outline-none 
         focus:ring-2 
         focus:ring-[#747eb2]

@@ -8,7 +8,7 @@ const SearchComponent = ({
 }) => {
   return (
     <div
-      className={`flex items-center text-extraSmallDescription bg-white  px-4 py-2 shadow-sm border-[1px] border-[var(--color5)] h-[35px]  ${
+      className={`flex items-center text-extraSmallDescription bg-white  px-4 py-2 shadow-sm border-[2px] border-[var(--color5)] h-[35px]  ${
         disabled ? "opacity-50 cursor-not-allowed" : ""
       } ${className}`}
     >

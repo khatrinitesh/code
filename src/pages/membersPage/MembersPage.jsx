@@ -1,122 +1,46 @@
-import { FaFileDownload } from "react-icons/fa";
-import SectionTitleComponent from "../../components/sectionTitleComponent/SectionTitleComponent";
 import {
-  DROPDOWN_OPTIONS_1,
-  DROPDOWN_OPTIONS_2,
-  DROPDOWN_OPTIONS_4,
-} from "../../constants/constants";
-import FieldDropdown from "../../components/fieldDropdown/FieldDropdown";
-import Button from "../../components/button/Button";
-import { Link } from "react-router-dom";
-import PriorImages from "./components/priorImages/PriorImages";
+  FaCaretLeft,
+  FaCaretRight,
+  FaCloudDownloadAlt,
+  FaPlus,
+  FaPrint,
+  FaRegUser,
+} from "react-icons/fa";
+import SectionTitleComponent from "../../components/sectionTitleComponent/SectionTitleComponent";
+import SearchComponent from "../../components/searchComponent/SearchComponent";
+import MembersTable from "./components/membersTable";
 
 const MembersPage = () => {
   return (
-    <div className="importingPage">
-      <div className="innerContent grid gap-[10px] w-full">
-        <SectionTitleComponent>
-          <FaFileDownload className={` text-[var(--color6)]`} />
-          <h2
-            className={`whitespace-nowrap text-[var(--color6)] md:text-smallSubTitle montserrat-regular`}
-          >
-            Import: <span className="text-white">Members</span>
-          </h2>
-        </SectionTitleComponent>
-        <div className="m-[10px]">
-          <div className="flex flex-col grid-cols-1 md:grid-cols-2 gap-[10px]">
-            <div className="fieldBox flex flex-col md:flex-row md:items-center gap-[10px]">
-              <span className="md:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
-                Select Import Layout:
-              </span>
-              <div className="box">
-                <FieldDropdown
-                  id="status"
-                  name="status"
-                  value={status}
-                  onChange={(e) => setStatus(e.target.value)}
-                  options={DROPDOWN_OPTIONS_1}
-                  maxLength={10}
-                  disabled={false}
-                  className="md:w-64"
-                />
-              </div>
-            </div>
-            <div className="fieldBox flex flex-col md:flex-row md:items-center gap-[10px]">
-              <span className="md:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
-                Select Import File:
-              </span>
-              <div className="box flex flex-col md:flex-row md:items-center gap-[10px]">
-                <FieldDropdown
-                  id="status"
-                  name="status"
-                  value={status}
-                  onChange={(e) => setStatus(e.target.value)}
-                  options={DROPDOWN_OPTIONS_2}
-                  maxLength={10}
-                  disabled={false}
-                  className="w-64"
-                />
-                <div className="btnBlock">
-                  <Button className="!mx-0" label="Browse" />
-                </div>
-              </div>
-            </div>
-            <div className="fieldBox flex flex-col md:flex-row md:items-center gap-[10px]">
-              <span className="md:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
-                Pay Period:
-              </span>
-              <div className="box flex flex-col md:flex-row md:items-center gap-[10px]">
-                <FieldDropdown
-                  id="status"
-                  name="status"
-                  value={status}
-                  onChange={(e) => setStatus(e.target.value)}
-                  options={DROPDOWN_OPTIONS_4}
-                  maxLength={10}
-                  disabled={false}
-                  className="w-64"
-                />
-                <div className="btnBlock">
-                  <Button
-                    className="whitespace-nowrap !mx-0"
-                    label="Import File"
-                  />
-                </div>
-              </div>
-            </div>
+    <div className="membersPage ">
+      <SectionTitleComponent>
+        <FaRegUser className={` text-[var(--color6)]`} />
+        <h2
+          className={`whitespace-nowrap text-[var(--color6)] md:text-smallSubTitle montserrat-regular`}
+        >
+          MEMBERS LIST
+        </h2>
+      </SectionTitleComponent>
+      <div className="innerContent grid gap-[10px] w-full p-[20px]">
+        <div className="toolbar flex justify-between gap-[10px] items-center">
+          <SearchComponent
+            className="md:max-w-[30%] rounded-full"
+            placeholder="Quick Member Search"
+          />
+          <div className="optionBlock flex gap-[10px]">
+            <FaPlus className="text-[var(--color5)]" />
+            <FaCloudDownloadAlt className="text-[var(--color5)]" />
+            <FaPrint className="text-[var(--color5)]" />
           </div>
-          <div className="summaryBlock py-[12px] grid gap-[5px]">
-            <div className="boxSummary">
-              <p className="desc text-[#e28351] text-extraSmallDescription montserrat-medium leading-normal">
-                View appropriate template below before import and ensure headers
-                match.
-              </p>
-              <p className="desc text-[#f66641] text-extraSmallDescription montserrat-medium leading-normal">
-                New Import layout? Contact{" "}
-                <Link className="underline montserrat-bold">VUE Support</Link>{" "}
-                for new custom import template.
-              </p>
-            </div>
-            <div className="boxSummary">
-              <p className="desc text-[#010d4a] text-extraSmallDescription montserrat-medium leading-normal">
-                Members Import HQ Template:{" "}
-                <a href="" download className="underline  text-[#1b7398]">
-                  YourLocalMemberImportTemplate1.xls
-                </a>
-              </p>
-              <p className="desc text-[#010d4a] text-extraSmallDescription montserrat-medium leading-normal">
-                Members Import Local Template:{" "}
-                <a
-                  href="javascript:void(0)"
-                  download
-                  className="underline  text-[#1b7398]"
-                >
-                  YourLocalMemberImportTemplate2.xls
-                </a>
-              </p>
-            </div>
-          </div>
-          <PriorImages />
+        </div>
+        <MembersTable />
+        <div className="btnBlock">
+          <button className="cursor-pointer">
+            <FaCaretLeft className="text-[var(--color5)]" />
+          </button>
+          <button className="cursor-pointer">
+            <FaCaretRight className="text-[var(--color5)]" />
+          </button>
         </div>
       </div>
     </div>

@@ -149,3 +149,21 @@ body {
   background: #bdd1da;
   border: 1px solid #1b7398;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+/* Hide the native text placeholder in WebKit browsers */
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: transparent; /* hides the default dd-mm-yyyy text */
+}
+
+/* Firefox */
+input[type="date"]::-moz-placeholder {
+  color: transparent;
+}

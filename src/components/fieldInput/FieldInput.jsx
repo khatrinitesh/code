@@ -1,3 +1,5 @@
+import { FaCalendarAlt } from "react-icons/fa";
+
 const FieldInput = ({
   id,
   name,
@@ -5,22 +7,47 @@ const FieldInput = ({
   value,
   onChange,
   placeholder,
-  error,
   className,
+  borderVariant = "gray", // default gray border
 }) => {
+  const borderClass =
+    borderVariant === "blue" ? "border-[#1b7398]" : "border-[#ccc]";
+
+  // For date type, we hide default icon and add a custom one
+  const isDateType = type === "date";
+
   return (
-    <div className="w-full">
-      <input
-        id={id}
-        name={name}
-        type={type}
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
-        className={`${className} w-full h-[25px] outline-none  p-[5px]  border border-[#ccc] rounded bg-white text-extraSmallDescription montserrat-medium`}
-      />
-      {/* {error && <p className="text-red-500 text-sm mt-1">{error}</p>} */}
-    </div>
+    <>
+      <div className={`relative w-full ${className}`}>
+        <input
+          id={id}
+          name={name}
+          type={type}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          className={`
+          w-full 
+          h-[28px] 
+          outline-none  
+          p-[5px] 
+          border 
+          ${borderClass}
+          rounded 
+          bg-white 
+          text-extraSmallDescription 
+          montserrat-medium
+          ${isDateType ? "appearance-none" : ""}
+        `}
+        />
+        {isDateType && (
+          <FaCalendarAlt
+            size={20}
+            className="absolute right-2 top-1/2 -translate-y-1/2 text-[#1b7398] pointer-events-none"
+          />
+        )}
+      </div>
+    </>
   );
 };
 

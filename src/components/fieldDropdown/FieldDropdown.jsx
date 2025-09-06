@@ -26,7 +26,7 @@ const FieldDropdown = ({
       }}
       disabled={disabled}
       className={`
-        h-[30px]
+        h-[28px]
         text-extraSmallDescription montserrat-medium
         rounded 
         px-3 

@@ -36,10 +36,10 @@ const MembersPage = () => {
         <MembersTable />
         <div className="btnBlock">
           <button className="cursor-pointer">
-            <FaCaretLeft className="text-[var(--color5)]" />
+            <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
           </button>
           <button className="cursor-pointer">
-            <FaCaretRight className="text-[var(--color5)]" />
+            <FaCaretRight className="text-[var(--color5)] text-[20px]" />
           </button>
         </div>
       </div>

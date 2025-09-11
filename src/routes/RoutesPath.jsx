@@ -30,8 +30,8 @@ const RoutesPath = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<LoginPage />} />
+        {/* <Route path="/" element={<Navigate to="/login" />} /> */}
+        <Route path="/" element={<LoginPage />} />
         <Route
           path="/dashboard"
           element={

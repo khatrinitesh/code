@@ -52,6 +52,9 @@ const ReportsPage = () => {
             {activeTab === "finance" && (
               <>
                 <div className="grid gap-[10px]">
+                  <h3 className="montserrat-semibold text-smallSubTitle">
+                    Finance Reports
+                  </h3>
                   <TableSavedTemplates />
                   <div className="flex lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
                     <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
@@ -137,27 +140,447 @@ const ReportsPage = () => {
             )}
             {activeTab === "member" && (
               <>
-                <div className="grid gap-[10px]">tab 2</div>
+                <div className="grid gap-[10px]">
+                  <h3 className="montserrat-semibold text-smallSubTitle">
+                    Member Reports
+                  </h3>
+                  <TableSavedTemplates />
+                  <div className="flex lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
+                    <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
+                      <Button
+                        label="Add New Template"
+                        className="max-w-auto !mx-0"
+                      />
+                      <Button label="Request New Template" className="!mx-0" />
+                      <Button label="Edit/View Selected" className="!mx-0" />
+                      <Button label="Delete Selected" className="!mx-0" />
+                    </div>
+                    <div className="btnBlock">
+                      <button className="cursor-pointer">
+                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                      <button className="cursor-pointer">
+                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="fieldBox flex flex-col md:flex-row md:items-center gap-[10px]">
+                    <span className="md:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
+                      Select Import Layout:
+                    </span>
+                    <div className="box">
+                      <FieldDropdown
+                        id="status"
+                        name="status"
+                        value={status}
+                        onChange={(e) => setStatus(e.target.value)}
+                        options={reportsSelectedData}
+                        maxLength={10}
+                        disabled={true}
+                        className="md:w-64"
+                      />
+                    </div>
+                  </div>
+                  <TableSavedQueries />
+                  <div className="flex  lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
+                    <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
+                      <Button
+                        label="Add New Query"
+                        className="max-w-auto !mx-0"
+                      />
+                      <Button label="Request New Query" className="!mx-0" />
+                      <Button label="Edit/View Selected" className="!mx-0" />
+                      <Button label="Delete Selected" className="!mx-0" />
+                    </div>
+                    <div className="btnBlock">
+                      <button className="cursor-pointer">
+                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                      <button className="cursor-pointer">
+                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="fieldBox flex flex-col lg:flex-row md:items-center gap-[10px]">
+                    <span className="lg:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
+                      Select Import Layout:
+                    </span>
+                    <div className="box">
+                      <FieldDropdown
+                        id="status"
+                        name="status"
+                        value={status}
+                        onChange={(e) => setStatus(e.target.value)}
+                        options={querySelectedData}
+                        maxLength={10}
+                        disabled={true}
+                        className="md:w-64"
+                      />
+                    </div>
+                  </div>
+                  <div className="btnBlock">
+                    <Button
+                      label="RUN REPORT"
+                      className="bg-[#e28351] border-[#1b7398] border-[1px] w-[200px]"
+                    />
+                  </div>
+                </div>
               </>
             )}
             {activeTab === "grievance" && (
               <>
-                <div className="grid gap-[10px]">tab 3</div>
+                <div className="grid gap-[10px]">
+                  <h3 className="montserrat-semibold text-smallSubTitle">
+                    Grievance Reports
+                  </h3>
+                  <TableSavedTemplates />
+                  <div className="flex lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
+                    <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
+                      <Button
+                        label="Add New Template"
+                        className="max-w-auto !mx-0"
+                      />
+                      <Button label="Request New Template" className="!mx-0" />
+                      <Button label="Edit/View Selected" className="!mx-0" />
+                      <Button label="Delete Selected" className="!mx-0" />
+                    </div>
+                    <div className="btnBlock">
+                      <button className="cursor-pointer">
+                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                      <button className="cursor-pointer">
+                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="fieldBox flex flex-col md:flex-row md:items-center gap-[10px]">
+                    <span className="md:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
+                      Select Import Layout:
+                    </span>
+                    <div className="box">
+                      <FieldDropdown
+                        id="status"
+                        name="status"
+                        value={status}
+                        onChange={(e) => setStatus(e.target.value)}
+                        options={reportsSelectedData}
+                        maxLength={10}
+                        disabled={true}
+                        className="md:w-64"
+                      />
+                    </div>
+                  </div>
+                  <TableSavedQueries />
+                  <div className="flex  lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
+                    <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
+                      <Button
+                        label="Add New Query"
+                        className="max-w-auto !mx-0"
+                      />
+                      <Button label="Request New Query" className="!mx-0" />
+                      <Button label="Edit/View Selected" className="!mx-0" />
+                      <Button label="Delete Selected" className="!mx-0" />
+                    </div>
+                    <div className="btnBlock">
+                      <button className="cursor-pointer">
+                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                      <button className="cursor-pointer">
+                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="fieldBox flex flex-col lg:flex-row md:items-center gap-[10px]">
+                    <span className="lg:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
+                      Select Import Layout:
+                    </span>
+                    <div className="box">
+                      <FieldDropdown
+                        id="status"
+                        name="status"
+                        value={status}
+                        onChange={(e) => setStatus(e.target.value)}
+                        options={querySelectedData}
+                        maxLength={10}
+                        disabled={true}
+                        className="md:w-64"
+                      />
+                    </div>
+                  </div>
+                  <div className="btnBlock">
+                    <Button
+                      label="RUN REPORT"
+                      className="bg-[#e28351] border-[#1b7398] border-[1px] w-[200px]"
+                    />
+                  </div>
+                </div>
               </>
             )}
             {activeTab === "dispatch" && (
               <>
-                <div className="grid gap-[10px]">tab 4</div>
+                <div className="grid gap-[10px]">
+                  <h3 className="montserrat-semibold text-smallSubTitle">
+                    Dispatch Reports
+                  </h3>
+                  <TableSavedTemplates />
+                  <div className="flex lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
+                    <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
+                      <Button
+                        label="Add New Template"
+                        className="max-w-auto !mx-0"
+                      />
+                      <Button label="Request New Template" className="!mx-0" />
+                      <Button label="Edit/View Selected" className="!mx-0" />
+                      <Button label="Delete Selected" className="!mx-0" />
+                    </div>
+                    <div className="btnBlock">
+                      <button className="cursor-pointer">
+                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                      <button className="cursor-pointer">
+                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="fieldBox flex flex-col md:flex-row md:items-center gap-[10px]">
+                    <span className="md:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
+                      Select Import Layout:
+                    </span>
+                    <div className="box">
+                      <FieldDropdown
+                        id="status"
+                        name="status"
+                        value={status}
+                        onChange={(e) => setStatus(e.target.value)}
+                        options={reportsSelectedData}
+                        maxLength={10}
+                        disabled={true}
+                        className="md:w-64"
+                      />
+                    </div>
+                  </div>
+                  <TableSavedQueries />
+                  <div className="flex  lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
+                    <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
+                      <Button
+                        label="Add New Query"
+                        className="max-w-auto !mx-0"
+                      />
+                      <Button label="Request New Query" className="!mx-0" />
+                      <Button label="Edit/View Selected" className="!mx-0" />
+                      <Button label="Delete Selected" className="!mx-0" />
+                    </div>
+                    <div className="btnBlock">
+                      <button className="cursor-pointer">
+                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                      <button className="cursor-pointer">
+                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="fieldBox flex flex-col lg:flex-row md:items-center gap-[10px]">
+                    <span className="lg:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
+                      Select Import Layout:
+                    </span>
+                    <div className="box">
+                      <FieldDropdown
+                        id="status"
+                        name="status"
+                        value={status}
+                        onChange={(e) => setStatus(e.target.value)}
+                        options={querySelectedData}
+                        maxLength={10}
+                        disabled={true}
+                        className="md:w-64"
+                      />
+                    </div>
+                  </div>
+                  <div className="btnBlock">
+                    <Button
+                      label="RUN REPORT"
+                      className="bg-[#e28351] border-[#1b7398] border-[1px] w-[200px]"
+                    />
+                  </div>
+                </div>
               </>
             )}
             {activeTab === "apprenticeship" && (
               <>
-                <div className="grid gap-[10px]">tab 5</div>
+                <div className="grid gap-[10px]">
+                  <h3 className="montserrat-semibold text-smallSubTitle">
+                    Apprenticeship Reports
+                  </h3>
+                  <TableSavedTemplates />
+                  <div className="flex lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
+                    <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
+                      <Button
+                        label="Add New Template"
+                        className="max-w-auto !mx-0"
+                      />
+                      <Button label="Request New Template" className="!mx-0" />
+                      <Button label="Edit/View Selected" className="!mx-0" />
+                      <Button label="Delete Selected" className="!mx-0" />
+                    </div>
+                    <div className="btnBlock">
+                      <button className="cursor-pointer">
+                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                      <button className="cursor-pointer">
+                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="fieldBox flex flex-col md:flex-row md:items-center gap-[10px]">
+                    <span className="md:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
+                      Select Import Layout:
+                    </span>
+                    <div className="box">
+                      <FieldDropdown
+                        id="status"
+                        name="status"
+                        value={status}
+                        onChange={(e) => setStatus(e.target.value)}
+                        options={reportsSelectedData}
+                        maxLength={10}
+                        disabled={true}
+                        className="md:w-64"
+                      />
+                    </div>
+                  </div>
+                  <TableSavedQueries />
+                  <div className="flex  lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
+                    <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
+                      <Button
+                        label="Add New Query"
+                        className="max-w-auto !mx-0"
+                      />
+                      <Button label="Request New Query" className="!mx-0" />
+                      <Button label="Edit/View Selected" className="!mx-0" />
+                      <Button label="Delete Selected" className="!mx-0" />
+                    </div>
+                    <div className="btnBlock">
+                      <button className="cursor-pointer">
+                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                      <button className="cursor-pointer">
+                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="fieldBox flex flex-col lg:flex-row md:items-center gap-[10px]">
+                    <span className="lg:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
+                      Select Import Layout:
+                    </span>
+                    <div className="box">
+                      <FieldDropdown
+                        id="status"
+                        name="status"
+                        value={status}
+                        onChange={(e) => setStatus(e.target.value)}
+                        options={querySelectedData}
+                        maxLength={10}
+                        disabled={true}
+                        className="md:w-64"
+                      />
+                    </div>
+                  </div>
+                  <div className="btnBlock">
+                    <Button
+                      label="RUN REPORT"
+                      className="bg-[#e28351] border-[#1b7398] border-[1px] w-[200px]"
+                    />
+                  </div>
+                </div>
               </>
             )}
             {activeTab === "misc" && (
               <>
-                <div className="grid gap-[10px]">tab 6</div>
+                <div className="grid gap-[10px]">
+                  <h3 className="montserrat-semibold text-smallSubTitle">
+                    Misc. Reports
+                  </h3>
+                  <TableSavedTemplates />
+                  <div className="flex lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
+                    <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
+                      <Button
+                        label="Add New Template"
+                        className="max-w-auto !mx-0"
+                      />
+                      <Button label="Request New Template" className="!mx-0" />
+                      <Button label="Edit/View Selected" className="!mx-0" />
+                      <Button label="Delete Selected" className="!mx-0" />
+                    </div>
+                    <div className="btnBlock">
+                      <button className="cursor-pointer">
+                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                      <button className="cursor-pointer">
+                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="fieldBox flex flex-col md:flex-row md:items-center gap-[10px]">
+                    <span className="md:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
+                      Select Import Layout:
+                    </span>
+                    <div className="box">
+                      <FieldDropdown
+                        id="status"
+                        name="status"
+                        value={status}
+                        onChange={(e) => setStatus(e.target.value)}
+                        options={reportsSelectedData}
+                        maxLength={10}
+                        disabled={true}
+                        className="md:w-64"
+                      />
+                    </div>
+                  </div>
+                  <TableSavedQueries />
+                  <div className="flex  lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
+                    <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
+                      <Button
+                        label="Add New Query"
+                        className="max-w-auto !mx-0"
+                      />
+                      <Button label="Request New Query" className="!mx-0" />
+                      <Button label="Edit/View Selected" className="!mx-0" />
+                      <Button label="Delete Selected" className="!mx-0" />
+                    </div>
+                    <div className="btnBlock">
+                      <button className="cursor-pointer">
+                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                      <button className="cursor-pointer">
+                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="fieldBox flex flex-col lg:flex-row md:items-center gap-[10px]">
+                    <span className="lg:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
+                      Select Import Layout:
+                    </span>
+                    <div className="box">
+                      <FieldDropdown
+                        id="status"
+                        name="status"
+                        value={status}
+                        onChange={(e) => setStatus(e.target.value)}
+                        options={querySelectedData}
+                        maxLength={10}
+                        disabled={true}
+                        className="md:w-64"
+                      />
+                    </div>
+                  </div>
+                  <div className="btnBlock">
+                    <Button
+                      label="RUN REPORT"
+                      className="bg-[#e28351] border-[#1b7398] border-[1px] w-[200px]"
+                    />
+                  </div>
+                </div>
               </>
             )}
           </div>

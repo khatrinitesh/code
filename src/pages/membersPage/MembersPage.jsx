@@ -9,8 +9,14 @@ import {
 import SectionTitleComponent from "../../components/sectionTitleComponent/SectionTitleComponent";
 import SearchComponent from "../../components/searchComponent/SearchComponent";
 import MembersTable from "./components/membersTable";
+import { useNavigate } from "react-router-dom";
 
 const MembersPage = () => {
+  const navigator = useNavigate();
+
+  const handleClick = () => {
+    navigator("/members-profile");
+  };
   return (
     <div className="membersPage ">
       <SectionTitleComponent>
@@ -33,7 +39,9 @@ const MembersPage = () => {
             <FaPrint className="text-[var(--color5)]" />
           </div>
         </div>
-        <MembersTable />
+        <div onClick={handleClick}>
+          <MembersTable />
+        </div>
         <div className="btnBlock">
           <button className="cursor-pointer">
             <FaCaretLeft className="text-[var(--color5)] text-[20px]" />

@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // layout
 import DashboardLayout from "./../layout/DashboardLayout";
 // pages
@@ -23,6 +18,7 @@ import ApprenticeshipPage from "../pages/apprenticeshipPage/ApprenticeshipPage";
 import MailPage from "../pages/mailPage/MailPage";
 import SettingsPage from "../pages/settingsPage/SettingsPage";
 import MatterDetailsPage from "./../pages/matterDetailsPage/MatterDetailsPage";
+import MembersProfilePage from "../pages/membersProfilePage/MembersProfilePage";
 
 const RoutesPath = () => {
   // const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
@@ -45,6 +41,14 @@ const RoutesPath = () => {
           element={
             <DashboardLayout>
               <MembersPage />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/members-profile"
+          element={
+            <DashboardLayout>
+              <MembersProfilePage />
             </DashboardLayout>
           }
         />

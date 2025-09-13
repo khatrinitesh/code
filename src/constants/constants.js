@@ -29,6 +29,9 @@ export const sidebarNavigation = [
     label: "Members",
     path: "/members",
     icon: FaUsers,
+    children: [
+      { label: "Members Profile", path: "/members-profile", icon: FiUser },
+    ],
   },
   {
     label: "Grievances",
@@ -103,6 +106,7 @@ export const cardData = [
     leftColor: "#4bcc70",
     rightIcon: "FaUserFriends",
     rightColor: "#00bf63",
+    path: "/members", // ✅ Add this
   },
   {
     number: "14",
@@ -110,9 +114,7 @@ export const cardData = [
     leftColor: "#f49c14",
     rightIcon: "FaExclamationCircle",
     rightColor: "#d08716",
-    children: [
-      { label: "Matter Details", path: "/matter-details", icon: FaSearchPlus },
-    ],
+    path: "/grievances", // ✅ Add this
   },
   {
     number: "$56,575",
@@ -120,6 +122,7 @@ export const cardData = [
     leftColor: "#44b7e4",
     rightIcon: "FaHandHoldingUsd",
     rightColor: "#3f9fc5",
+    path: "/payments", // ✅ Add this
   },
 ];
 

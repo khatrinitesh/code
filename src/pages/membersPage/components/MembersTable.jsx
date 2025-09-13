@@ -98,13 +98,13 @@ const MembersTable = () => {
               <td className={borderRight + " px-4 py-[5px]"}>{row.joinDate}</td>
               <td className={borderRight + " px-4 py-[5px]"}>{row.status}</td>
               <td className="px-4 py-[3px] flex items-center justify-center space-x-2">
-                <button title="View">
+                <button className="cursor-pointer" title="View">
                   <FaRegEye className="text-[#1b7398]" />
                 </button>
-                <button title="Edit">
+                <button className="cursor-pointer" title="Edit">
                   <FaEdit className="text-[#1b7398]" />
                 </button>
-                <button title="Delete">
+                <button className="cursor-pointer" title="Delete">
                   <FaRegTrashAlt className="text-[#1b7398]" />
                 </button>
               </td>

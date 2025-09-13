@@ -11,6 +11,8 @@ import MeetingsTableSection from "./components/meetingsTableSection/MeetingsTabl
 import HistoryTableLastSection from "./components/historyTableLastSection/HistoryTableLastSection";
 import DocumentSection from "./components/documentSection/DocumentSection";
 import DuesSection from "./components/duesSection/DuesSection";
+import MembersSection from "./components/memberSection/MembersSection";
+import InsuranceSection from "./components/insuranceSection/InsuranceSection";
 
 const MembersProfilePage = () => {
   const [activeTab, setActiveTab] = useState("member"); // default active
@@ -50,7 +52,7 @@ const MembersProfilePage = () => {
           {activeTab === "member" && (
             <>
               <div className="grid gap-[10px]">
-                <AddressTableSection />
+                <MembersSection />
                 <div className="btnBlock flex gap-[10px]">
                   <Button className="!mx-0" label="Add" />
                   <Button className="!mx-0" label="Save" />
@@ -101,7 +103,11 @@ const MembersProfilePage = () => {
               </div>
             </div>
           )}
-          {activeTab === "insurance" && <div>Insurance content goes here.</div>}
+          {activeTab === "insurance" && (
+            <div className="grid gap-[10px]">
+              <InsuranceSection />
+            </div>
+          )}
           {activeTab === "grievances" && (
             <div className="grid gap-[10px]">
               <GrievancesTableSection />

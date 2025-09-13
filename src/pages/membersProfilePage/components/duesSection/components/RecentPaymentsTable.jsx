@@ -31,14 +31,14 @@ const RecentPaymentsTable = () => {
     setData(sorted);
   };
 
-  const renderSortIcon = (key) => {
-    if (sortConfig.key !== key) return <FaSort className="text-[#b5f5f8]" />;
-    return sortConfig.direction === "ascending" ? (
-      <FaSortUp className="text-[#b5f5f8]" />
-    ) : (
-      <FaSortDown className="text-[#b5f5f8]" />
-    );
-  };
+  // const renderSortIcon = (key) => {
+  //   if (sortConfig.key !== key) return <FaSort className="text-[#b5f5f8]" />;
+  //   return sortConfig.direction === "ascending" ? (
+  //     <FaSortUp className="text-[#b5f5f8]" />
+  //   ) : (
+  //     <FaSortDown className="text-[#b5f5f8]" />
+  //   );
+  // };
 
   const handleEdit = (id) => {
     alert(`Edit row with id: ${id}`);
@@ -53,7 +53,7 @@ const RecentPaymentsTable = () => {
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full border-collapse border border-[#a0b6ce] text-sm">
-        <thead style={{ backgroundColor: "#5a8baf", color: "#fff" }}>
+        <thead style={{ backgroundColor: "#8db9cb", color: "#fff" }}>
           <tr>
             <th
               colspan="13"
@@ -68,84 +68,96 @@ const RecentPaymentsTable = () => {
               onClick={() => sortData("dues")}
               title="Dues"
             >
-              Dues {renderSortIcon("dues")}
+              Dues
+              {/* {renderSortIcon("dues")} */}
             </th>
             <th
               className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
               onClick={() => sortData("perCapita")}
               title="Per Capita"
             >
-              Per Capita {renderSortIcon("perCapita")}
+              Per Capita
+              {/* {renderSortIcon("perCapita")} */}
             </th>
             <th
               className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
               onClick={() => sortData("massMutual")}
               title="Mass Mutual"
             >
-              Mass Mutual {renderSortIcon("massMutual")}
+              Mass Mutual
+              {/* {renderSortIcon("massMutual")} */}
             </th>
             <th
               className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
               onClick={() => sortData("mmlBayState")}
               title="MML Bay State"
             >
-              MML Bay State {renderSortIcon("mmlBayState")}
+              MML Bay State
+              {/* {renderSortIcon("mmlBayState")} */}
             </th>
             <th
               className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
               onClick={() => sortData("insuranceCo")}
               title="Ins. Co"
             >
-              Ins. Co {renderSortIcon("insuranceCo")}
+              Ins. Co
+              {/* {renderSortIcon("insuranceCo")} */}
             </th>
             <th
               className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
               onClick={() => sortData("offDutyIns")}
               title="Off Duty Ins."
             >
-              Off Duty Ins. {renderSortIcon("offDutyIns")}
+              Off Duty Ins.
+              {/* {renderSortIcon("offDutyIns")} */}
             </th>
             <th
               className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
               onClick={() => sortData("privacyProtection")}
               title="Prvcy Protect."
             >
-              Prvcy Protect. {renderSortIcon("privacyProtection")}
+              Prvcy Protect.
+              {/* {renderSortIcon("privacyProtection")} */}
             </th>
             <th
               className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
               onClick={() => sortData("promissoryNote")}
               title="Prom. Note"
             >
-              Prom. Note {renderSortIcon("promissoryNote")}
+              Prom. Note
+              {/* {renderSortIcon("promissoryNote")} */}
             </th>
             <th
               className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
               onClick={() => sortData("genworth")}
               title="Genworth"
             >
-              Genworth {renderSortIcon("genworth")}
+              Genworth
+              {/* {renderSortIcon("genworth")} */}
             </th>
             <th
               className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer "
               onClick={() => sortData("totalPaid")}
               title="Total Paid"
             >
-              Total Paid {renderSortIcon("totalPaid")}
+              Total Paid
+              {/* {renderSortIcon("totalPaid")} */}
             </th>
             <th
               className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
               onClick={() => sortData("modifiedBy")}
               title="Modified By"
             >
-              Modified By {renderSortIcon("modifiedBy")}
+              Modified By
+              {/* {renderSortIcon("modifiedBy")} */}
             </th>
             <th
               className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
               onClick={() => sortData("paymentDate")}
               title="Payment Date"
             >
-              Payment Date {renderSortIcon("paymentDate")}
+              Payment Date
+              {/* {renderSortIcon("paymentDate")} */}
             </th>
             <th className="px-2 py-1 text-[#010d4a] text-extraSmallDescription ">
               Action

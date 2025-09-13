@@ -101,14 +101,6 @@ const RoutesPath = () => {
           }
         />
         <Route
-          path="/payments"
-          element={
-            <DashboardLayout>
-              <PaymentsPage />
-            </DashboardLayout>
-          }
-        />
-        <Route
           path="/matter-details"
           element={
             <DashboardLayout>
@@ -116,6 +108,15 @@ const RoutesPath = () => {
             </DashboardLayout>
           }
         />
+        <Route
+          path="/payments"
+          element={
+            <DashboardLayout>
+              <PaymentsPage />
+            </DashboardLayout>
+          }
+        />
+
         <Route
           path="/batch"
           element={

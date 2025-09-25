@@ -7,6 +7,7 @@ import FieldDropdown from "./../../components/fieldDropdown/FieldDropdown";
 import { GRIEVANCE_STATUS } from "../../constants/constants";
 import Button from "./../../components/button/Button";
 import TableRecently from "./components/tableRecently/TableRecently";
+import { useNavigate } from "react-router-dom";
 
 const GrievancesPage = () => {
   const [formData, setFormData] = useState({
@@ -27,8 +28,12 @@ const GrievancesPage = () => {
     }));
   };
 
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/matter-details");
+  };
   return (
-    <div className="grievancesPage">
+    <div className="grievancesPage" onClick={handleClick}>
       <SectionTitleComponent>
         <FaExclamationCircle className="text-[var(--color6)]" />
         <h2 className="whitespace-nowrap text-[var(--color6)] md:text-smallSubTitle montserrat-regular">

@@ -10,15 +10,11 @@ import FieldInput from "./../../components/fieldInput/FieldInput";
 
 const LoginPage = () => {
   const [form, setForm] = useState({
-    email: "Demo@velarium.com",
-    password: "**********",
+    email: "demo@velarium.com",
+    password: "password123", // Don't use ********** as actual password
   });
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("/dashboard");
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,55 +22,51 @@ const LoginPage = () => {
     setErrors({ ...errors, [name]: "" });
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const newErrors = {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  //   if (!validateEmail(form.email)) {
-  //     newErrors.email = "Invalid email format";
-  //     toast.error("Please enter a valid email address.");
-  //   }
+    // Dummy validation (you can replace with real one)
+    const { email, password } = form;
+    const newErrors = {};
 
-  //   if (!validatePassword(form.password)) {
-  //     newErrors.password = "Password must be at least 6 characters.";
-  //     toast.error("Password must be at least 6 characters.");
-  //   }
+    if (!email.includes("@")) {
+      newErrors.email = "Invalid email address";
+    }
 
-  //   if (Object.keys(newErrors).length > 0) {
-  //     setErrors(newErrors);
-  //     return;
-  //   }
+    if (password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters";
+    }
 
-  //   if (!isAdminCredentials(form.email, form.password)) {
-  //     toast.error("Invalid credentials.");
-  //     return;
-  //   }
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
 
-  //   localStorage.setItem("isAuthenticated", "true");
-  //   setTimeout(() => {
-  //     toast.success("Login successful!");
-  //     navigate("/dashboard");
-  //   }, 500);
-  // };
+    // Dummy credentials check
+    if (email === "demo@velarium.com" && password === "password123") {
+      localStorage.setItem("isAuthenticated", "true");
+      navigate("/dashboard");
+    } else {
+      alert("Invalid credentials");
+    }
+  };
 
   useEffect(() => {
-    // Add class to body on mount
     document.body.classList.add("body-login-bg");
-
-    // Clean up the class on unmount
     return () => {
       document.body.classList.remove("body-login-bg");
     };
   }, []);
 
   return (
-    <div className="min-h-screen w-full px-[1rem]  flex items-center justify-center bg-color2">
+    <div className="min-h-screen w-full px-[1rem] flex items-center justify-center bg-color2">
       <div className="bg-[#010d4a] shadow rounded-[10px] border-[3px] border-[#b5f5f8] p-[20px] w-full max-w-full md:max-w-[60%] lg:max-w-[40%]">
         <div className="logoBlock flex justify-center">
-          <img src="/img/logo.png" alt="" className="max-auto block" />
+          <img src="/img/logo.png" alt="logo" className="mx-auto block" />
         </div>
+
         <form
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
           className="grid bg-white px-[20px] lg:px-[50px] py-[20px]"
         >
           <div className="flex flex-col lg:flex-row lg:items-center gap-[10px]">
@@ -85,14 +77,11 @@ const LoginPage = () => {
               id="email"
               name="email"
               type="text"
-              label="Username:"
-              placeholder="Enter your username"
+              placeholder="Enter your email"
               value={form.email}
               onChange={handleChange}
               error={errors.email}
               variant="default"
-              className=""
-              animate=""
             />
           </div>
 
@@ -106,13 +95,11 @@ const LoginPage = () => {
               id="password"
               name="password"
               type="password"
-              label="Password:"
               placeholder="Enter your password"
               value={form.password}
               onChange={handleChange}
               error={errors.password}
               variant="default"
-              className=""
             />
           </div>
 
@@ -120,7 +107,7 @@ const LoginPage = () => {
 
           <div className="btnBlock">
             <Button
-              onClick={handleClick}
+              type="submit"
               label="Login"
               variant="color4"
               isLoading={false}

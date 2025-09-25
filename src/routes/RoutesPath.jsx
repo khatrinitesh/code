@@ -25,156 +25,209 @@ import SettingsPage from "../pages/settingsPage/SettingsPage";
 import MatterDetailsPage from "./../pages/matterDetailsPage/MatterDetailsPage";
 import MembersProfilePage from "../pages/membersProfilePage/MembersProfilePage";
 
-const RoutesPath = () => {
-  // const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
+// ✅ Helper component for protected routes
+const PrivateRoute = ({ children }) => {
+  const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
+  return isAuthenticated ? children : <Navigate to="/login" />;
+};
 
+const RoutesPath = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
+        {/* Redirect root to login or dashboard depending on authentication */}
+        <Route
+          path="/"
+          element={
+            localStorage.getItem("isAuthenticated") === "true" ? (
+              <Navigate to="/dashboard" />
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
+        />
+
+        {/* Public Route */}
         <Route path="/login" element={<LoginPage />} />
+
+        {/* Protected Routes */}
         <Route
           path="/dashboard"
           element={
-            <DashboardLayout>
-              <DashboardPage />
-            </DashboardLayout>
+            <PrivateRoute>
+              <DashboardLayout>
+                <DashboardPage />
+              </DashboardLayout>
+            </PrivateRoute>
           }
         />
+
         <Route
           path="/members"
           element={
-            <DashboardLayout>
-              <MembersPage />
-            </DashboardLayout>
+            <PrivateRoute>
+              <DashboardLayout>
+                <MembersPage />
+              </DashboardLayout>
+            </PrivateRoute>
           }
         />
+
         <Route
           path="/members-profile"
           element={
-            <DashboardLayout>
-              <MembersProfilePage />
-            </DashboardLayout>
+            <PrivateRoute>
+              <DashboardLayout>
+                <MembersProfilePage />
+              </DashboardLayout>
+            </PrivateRoute>
           }
         />
+
         <Route
           path="/member-list"
           element={
-            <DashboardLayout>
-              <MemberListPage />
-            </DashboardLayout>
+            <PrivateRoute>
+              <DashboardLayout>
+                <MemberListPage />
+              </DashboardLayout>
+            </PrivateRoute>
           }
         />
+
         <Route
           path="/reports"
           element={
-            <DashboardLayout>
-              <ReportsPage />
-            </DashboardLayout>
+            <PrivateRoute>
+              <DashboardLayout>
+                <ReportsPage />
+              </DashboardLayout>
+            </PrivateRoute>
           }
         />
+
         <Route
           path="/apprenticeship"
           element={
-            <DashboardLayout>
-              <ApprenticeshipPage />
-            </DashboardLayout>
+            <PrivateRoute>
+              <DashboardLayout>
+                <ApprenticeshipPage />
+              </DashboardLayout>
+            </PrivateRoute>
           }
         />
+
         <Route
           path="/mail"
           element={
-            <DashboardLayout>
-              <MailPage />
-            </DashboardLayout>
+            <PrivateRoute>
+              <DashboardLayout>
+                <MailPage />
+              </DashboardLayout>
+            </PrivateRoute>
           }
         />
+
         <Route
           path="/settings"
           element={
-            <DashboardLayout>
-              <SettingsPage />
-            </DashboardLayout>
+            <PrivateRoute>
+              <DashboardLayout>
+                <SettingsPage />
+              </DashboardLayout>
+            </PrivateRoute>
           }
         />
+
         <Route
           path="/grievances"
           element={
-            <DashboardLayout>
-              <GrievancesPage />
-            </DashboardLayout>
+            <PrivateRoute>
+              <DashboardLayout>
+                <GrievancesPage />
+              </DashboardLayout>
+            </PrivateRoute>
           }
         />
+
         <Route
           path="/matter-details"
           element={
-            <DashboardLayout>
-              <MatterDetailsPage />
-            </DashboardLayout>
+            <PrivateRoute>
+              <DashboardLayout>
+                <MatterDetailsPage />
+              </DashboardLayout>
+            </PrivateRoute>
           }
         />
+
         <Route
           path="/payments"
           element={
-            <DashboardLayout>
-              <PaymentsPage />
-            </DashboardLayout>
+            <PrivateRoute>
+              <DashboardLayout>
+                <PaymentsPage />
+              </DashboardLayout>
+            </PrivateRoute>
           }
         />
 
         <Route
           path="/batch"
           element={
-            <DashboardLayout>
-              <BatchPage />
-            </DashboardLayout>
-          }
-        />
-        <Route
-          path="/import-dues"
-          element={
-            <DashboardLayout>
-              <DuesPage />
-            </DashboardLayout>
-          }
-        />
-        <Route
-          path="/import-members"
-          element={
-            <DashboardLayout>
-              <ImportMembersPage />
-            </DashboardLayout>
-          }
-        />
-        <Route
-          path="/dispatch"
-          element={
-            <DashboardLayout>
-              <DispatchPage />
-            </DashboardLayout>
-          }
-        />
-        <Route
-          path="/calendar"
-          element={
-            <DashboardLayout>
-              <CalendarPage />
-            </DashboardLayout>
+            <PrivateRoute>
+              <DashboardLayout>
+                <BatchPage />
+              </DashboardLayout>
+            </PrivateRoute>
           }
         />
 
-        {/* <Route
-          path="/dashboard"
+        <Route
+          path="/import-dues"
           element={
-            isAuthenticated ? (
+            <PrivateRoute>
               <DashboardLayout>
-                <DashboardPage />
+                <DuesPage />
               </DashboardLayout>
-            ) : (
-              <Navigate to="/login" />
-            )
+            </PrivateRoute>
           }
-        /> */}
+        />
+
+        <Route
+          path="/import-members"
+          element={
+            <PrivateRoute>
+              <DashboardLayout>
+                <ImportMembersPage />
+              </DashboardLayout>
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/dispatch"
+          element={
+            <PrivateRoute>
+              <DashboardLayout>
+                <DispatchPage />
+              </DashboardLayout>
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/calendar"
+          element={
+            <PrivateRoute>
+              <DashboardLayout>
+                <CalendarPage />
+              </DashboardLayout>
+            </PrivateRoute>
+          }
+        />
+
+        {/* Catch-all for 404s */}
         <Route path="*" element={<div>404 Page Not Found</div>} />
       </Routes>
     </Router>

@@ -60,14 +60,14 @@ const LoginPage = () => {
 
   return (
     <div className="min-h-screen w-full px-[1rem] flex items-center justify-center bg-color2">
-      <div className="bg-[#010d4a] shadow rounded-[10px] border-[3px] border-[#b5f5f8] p-[20px] w-full max-w-full md:max-w-[60%] lg:max-w-[40%]">
+      <div className="bg-[#010d4a] shadow rounded-[20px] border-[3px] border-[#b5f5f8] p-[20px] w-full max-w-full md:max-w-[60%] lg:max-w-[35%] 2xl:max-w-[30%]">
         <div className="logoBlock flex justify-center">
           <img src="/img/logo.png" alt="logo" className="mx-auto block" />
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="grid bg-white px-[20px] lg:px-[50px] py-[20px]"
+          className="grid bg-white px-[20px] lg:px-[50px] py-[30px]"
         >
           <div className="flex flex-col lg:flex-row lg:items-center gap-[10px]">
             <label className="montserrat-medium text-black text-smallDescription">
@@ -82,10 +82,11 @@ const LoginPage = () => {
               onChange={handleChange}
               error={errors.email}
               variant="default"
+              className="!bg-[#d9e7ee]  "
             />
           </div>
 
-          <hr className="h-[2px] bg-black border-none my-4" />
+          <hr className="h-[2px] bg-black border-none my-5" />
 
           <div className="flex flex-col lg:flex-row lg:items-center gap-[10px]">
             <label className="montserrat-medium text-black text-smallDescription">
@@ -100,10 +101,11 @@ const LoginPage = () => {
               onChange={handleChange}
               error={errors.password}
               variant="default"
+              className="!bg-[#d9e7ee]"
             />
           </div>
 
-          <hr className="h-[2px] bg-black border-none my-4" />
+          <hr className="h-[2px] bg-black border-none my-5" />
 
           <div className="btnBlock">
             <Button
@@ -111,7 +113,7 @@ const LoginPage = () => {
               label="Login"
               variant="color4"
               isLoading={false}
-              className="rounded-full w-[50%] mx-auto"
+              className="rounded-full w-[40%] mx-auto"
             />
           </div>
         </form>

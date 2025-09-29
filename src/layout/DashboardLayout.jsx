@@ -50,7 +50,7 @@ const DashboardLayout = ({ children }) => {
                 Welcome
               </span>
               <span className="text-[var(--color6)] text-smallDescription montserrat-regular">
-                Lorem Ipsum
+                Joel Rosen
               </span>
             </div>
             <img

@@ -34,7 +34,7 @@ const MemberComponent = () => {
             value={formData.memberNumber}
             onChange={handleChange}
             placeholder=""
-            className="md:!max-w-[50%]"
+            className="md:!max-w-[80%]"
           />
         </div>
       </div>
@@ -55,7 +55,7 @@ const MemberComponent = () => {
             value={formData.lastName}
             onChange={handleChange}
             placeholder=""
-            className="md:!max-w-[50%]"
+            className="md:!max-w-[80%]"
           />
         </div>
       </div>
@@ -76,7 +76,7 @@ const MemberComponent = () => {
             value={formData.firstName}
             onChange={handleChange}
             placeholder=""
-            className="md:!max-w-[50%]"
+            className="md:!max-w-[80%]"
           />
         </div>
       </div>
@@ -98,7 +98,7 @@ const MemberComponent = () => {
             value={formData.last4ssn}
             onChange={handleChange}
             placeholder=""
-            className="md:!max-w-[50%]"
+            className="md:!max-w-[80%]"
           />
         </div>
       </div>

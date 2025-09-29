@@ -27,8 +27,8 @@ const DashboardPage = () => {
   };
   return (
     <>
-      <div className="dashboardPage m-[10px]">
-        <div className="innerContent grid gap-[10px] w-full">
+      <div className="dashboardPage m-[20px]">
+        <div className="innerContent grid gap-[30px] w-full">
           <CardComponent />
           <div className="grid gap-[20px] grid-cols-1 md:grid-cols-1 lg:grid-cols-2 items-start">
             <div className="leftBox grid  gap-[10px]">
@@ -36,7 +36,7 @@ const DashboardPage = () => {
                 placeholder="Quick Name Lookup"
                 maxLength={50}
                 disabled={false}
-                className="w-full md:max-w-[50%] rounded-full"
+                className="w-full md:max-w-[50%] 2xl:max-w-[40%] rounded-full"
               />
 
               <MemberComponent />

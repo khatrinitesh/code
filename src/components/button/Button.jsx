@@ -8,7 +8,7 @@ const Button = ({
   variant = "color1", // default theme
 }) => {
   const baseStyles =
-    "px-[10px] h-[25px]  block mx-auto text-extraSmallDescription montserrat-medium cursor-pointer";
+    "px-[10px] h-[35px]  block mx-auto text-extraSmallDescription montserrat-medium cursor-pointer";
 
   const variantStyles = {
     color1: "bg-[#1b7398] text-white",
@@ -22,7 +22,7 @@ const Button = ({
       type={type}
       onClick={onClick}
       disabled={isLoading}
-      className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+      className={`${baseStyles} uppercase ${variantStyles[variant]} ${className}`}
     >
       {isLoading ? "Loading..." : label}
     </button>

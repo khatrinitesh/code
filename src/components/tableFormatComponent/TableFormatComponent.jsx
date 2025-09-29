@@ -20,9 +20,9 @@ const TableFormatComponent = ({
   const { rowAlt, headerBg, headerText, borderRight } = theme;
 
   return (
-    <div className="w-full overflow-x-auto">
+    <div className="w-full overflow-x-auto border-[1px] border-[#b1bcc6]">
       {/* Table Header */}
-      <table className="w-full  border-collapse text-sm">
+      <table className="w-full  border-collapse text-sm ">
         <caption
           className="text-left px-4 py-[5px] montserrat-medium text-extraSmallDescription"
           style={{

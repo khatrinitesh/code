@@ -60,9 +60,13 @@ const LoginPage = () => {
 
   return (
     <div className="min-h-screen w-full px-[1rem] flex items-center justify-center bg-color2">
-      <div className="bg-[#010d4a] shadow rounded-[20px] border-[3px] border-[#b5f5f8] p-[20px] w-full max-w-full md:max-w-[60%] lg:max-w-[35%] 2xl:max-w-[30%]">
+      <div className="bg-[#010d4a] shadow rounded-[20px] border-[3px] border-[#b5f5f8] p-[20px] w-full max-w-full md:max-w-[60%] lg:max-w-[40%] 2xl:max-w-[35%]">
         <div className="logoBlock flex justify-center">
-          <img src="/img/logo.png" alt="logo" className="mx-auto block" />
+          <img
+            src="/img/logo-velarium.png"
+            alt="logo"
+            className="mx-auto block max-w-[200px]"
+          />
         </div>
 
         <form

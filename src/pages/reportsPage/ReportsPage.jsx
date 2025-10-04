@@ -23,15 +23,15 @@ const ReportsPage = () => {
           Reports
         </h2>
       </SectionTitleComponent>
-      <div className="innerContent grid gap-[10px] w-full p-[20px]">
-        <div className="tabbedBlock w-full ">
-          <ul className="listTab flex flex-col md:flex-row border-b-[1px] border-b-[#697d98]">
+      <div className="innerContent grid gap-[20px] w-full p-[20px]">
+        <div className="tabbedBlock w-full grid gap-[20px] ">
+          <ul className="listTab flex flex-col md:flex-row ">
             {reportsTabsData.map((tab, index) => (
               <li key={tab.id} className="w-auto">
                 <a
                   onClick={() => setActiveTab(tab.id)}
                   className={`w-full md:w-auto block cursor-pointer px-4 py-[7px] 
-                border-b-0 border border-[#010d4a] text-[14px] 
+                border border-[#010d4a] text-[14px] 
                 text-extraSmallDescription montserrat-medium transition-colors
                 ${
                   activeTab === tab.id
@@ -52,9 +52,9 @@ const ReportsPage = () => {
             {activeTab === "finance" && (
               <>
                 <div className="grid gap-[10px]">
-                  <h3 className="montserrat-semibold text-smallSubTitle">
+                  {/* <h3 className="montserrat-semibold text-smallSubTitle">
                     Finance Reports
-                  </h3>
+                  </h3> */}
                   <TableSavedTemplates />
                   <div className="flex lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
                     <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
@@ -68,16 +68,16 @@ const ReportsPage = () => {
                     </div>
                     <div className="btnBlock">
                       <button className="cursor-pointer">
-                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
                       </button>
                       <button className="cursor-pointer">
-                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretRight className="text-[var(--color5)] text-[30px]" />
                       </button>
                     </div>
                   </div>
-                  <div className="fieldBox flex flex-col md:flex-row md:items-center gap-[10px]">
+                  <div className="fieldBox mb-[20px] flex flex-col md:flex-row md:items-center gap-[10px]">
                     <span className="md:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
-                      Select Import Layout:
+                      Selected Report:
                     </span>
                     <div className="box">
                       <FieldDropdown
@@ -105,16 +105,16 @@ const ReportsPage = () => {
                     </div>
                     <div className="btnBlock">
                       <button className="cursor-pointer">
-                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
                       </button>
                       <button className="cursor-pointer">
-                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretRight className="text-[var(--color5)] text-[30px]" />
                       </button>
                     </div>
                   </div>
-                  <div className="fieldBox flex flex-col lg:flex-row md:items-center gap-[10px]">
+                  <div className="fieldBox  flex flex-col lg:flex-row md:items-center gap-[10px]">
                     <span className="lg:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
-                      Select Import Layout:
+                      Selected Query:
                     </span>
                     <div className="box">
                       <FieldDropdown
@@ -141,9 +141,9 @@ const ReportsPage = () => {
             {activeTab === "member" && (
               <>
                 <div className="grid gap-[10px]">
-                  <h3 className="montserrat-semibold text-smallSubTitle">
+                  {/* <h3 className="montserrat-semibold text-smallSubTitle">
                     Member Reports
-                  </h3>
+                  </h3> */}
                   <TableSavedTemplates />
                   <div className="flex lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
                     <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
@@ -157,16 +157,16 @@ const ReportsPage = () => {
                     </div>
                     <div className="btnBlock">
                       <button className="cursor-pointer">
-                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
                       </button>
                       <button className="cursor-pointer">
-                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretRight className="text-[var(--color5)] text-[30px]" />
                       </button>
                     </div>
                   </div>
-                  <div className="fieldBox flex flex-col md:flex-row md:items-center gap-[10px]">
+                  <div className="fieldBox mb-[20px] flex flex-col md:flex-row md:items-center gap-[10px]">
                     <span className="md:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
-                      Select Import Layout:
+                      Selected Report:
                     </span>
                     <div className="box">
                       <FieldDropdown
@@ -194,16 +194,16 @@ const ReportsPage = () => {
                     </div>
                     <div className="btnBlock">
                       <button className="cursor-pointer">
-                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
                       </button>
                       <button className="cursor-pointer">
-                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretRight className="text-[var(--color5)] text-[30px]" />
                       </button>
                     </div>
                   </div>
                   <div className="fieldBox flex flex-col lg:flex-row md:items-center gap-[10px]">
                     <span className="lg:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
-                      Select Import Layout:
+                      Selected Query:
                     </span>
                     <div className="box">
                       <FieldDropdown
@@ -230,9 +230,9 @@ const ReportsPage = () => {
             {activeTab === "grievance" && (
               <>
                 <div className="grid gap-[10px]">
-                  <h3 className="montserrat-semibold text-smallSubTitle">
+                  {/* <h3 className="montserrat-semibold text-smallSubTitle">
                     Grievance Reports
-                  </h3>
+                  </h3> */}
                   <TableSavedTemplates />
                   <div className="flex lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
                     <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
@@ -246,16 +246,16 @@ const ReportsPage = () => {
                     </div>
                     <div className="btnBlock">
                       <button className="cursor-pointer">
-                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
                       </button>
                       <button className="cursor-pointer">
-                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretRight className="text-[var(--color5)] text-[30px]" />
                       </button>
                     </div>
                   </div>
-                  <div className="fieldBox flex flex-col md:flex-row md:items-center gap-[10px]">
+                  <div className="fieldBox mb-[20px] flex flex-col md:flex-row md:items-center gap-[10px]">
                     <span className="md:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
-                      Select Import Layout:
+                      Selected Report:
                     </span>
                     <div className="box">
                       <FieldDropdown
@@ -283,16 +283,16 @@ const ReportsPage = () => {
                     </div>
                     <div className="btnBlock">
                       <button className="cursor-pointer">
-                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
                       </button>
                       <button className="cursor-pointer">
-                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretRight className="text-[var(--color5)] text-[30px]" />
                       </button>
                     </div>
                   </div>
                   <div className="fieldBox flex flex-col lg:flex-row md:items-center gap-[10px]">
                     <span className="lg:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
-                      Select Import Layout:
+                      Selected Query:
                     </span>
                     <div className="box">
                       <FieldDropdown
@@ -319,9 +319,9 @@ const ReportsPage = () => {
             {activeTab === "dispatch" && (
               <>
                 <div className="grid gap-[10px]">
-                  <h3 className="montserrat-semibold text-smallSubTitle">
+                  {/* <h3 className="montserrat-semibold text-smallSubTitle">
                     Dispatch Reports
-                  </h3>
+                  </h3> */}
                   <TableSavedTemplates />
                   <div className="flex lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
                     <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
@@ -335,16 +335,16 @@ const ReportsPage = () => {
                     </div>
                     <div className="btnBlock">
                       <button className="cursor-pointer">
-                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
                       </button>
                       <button className="cursor-pointer">
-                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretRight className="text-[var(--color5)] text-[30px]" />
                       </button>
                     </div>
                   </div>
-                  <div className="fieldBox flex flex-col md:flex-row md:items-center gap-[10px]">
+                  <div className="fieldBox  mb-[20px] flex flex-col md:flex-row md:items-center gap-[10px]">
                     <span className="md:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
-                      Select Import Layout:
+                      Selected Report:
                     </span>
                     <div className="box">
                       <FieldDropdown
@@ -372,16 +372,16 @@ const ReportsPage = () => {
                     </div>
                     <div className="btnBlock">
                       <button className="cursor-pointer">
-                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
                       </button>
                       <button className="cursor-pointer">
-                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretRight className="text-[var(--color5)] text-[30px]" />
                       </button>
                     </div>
                   </div>
                   <div className="fieldBox flex flex-col lg:flex-row md:items-center gap-[10px]">
                     <span className="lg:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
-                      Select Import Layout:
+                      Selected Query:
                     </span>
                     <div className="box">
                       <FieldDropdown
@@ -408,9 +408,9 @@ const ReportsPage = () => {
             {activeTab === "apprenticeship" && (
               <>
                 <div className="grid gap-[10px]">
-                  <h3 className="montserrat-semibold text-smallSubTitle">
+                  {/* <h3 className="montserrat-semibold text-smallSubTitle">
                     Apprenticeship Reports
-                  </h3>
+                  </h3> */}
                   <TableSavedTemplates />
                   <div className="flex lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
                     <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
@@ -424,16 +424,16 @@ const ReportsPage = () => {
                     </div>
                     <div className="btnBlock">
                       <button className="cursor-pointer">
-                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
                       </button>
                       <button className="cursor-pointer">
-                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretRight className="text-[var(--color5)] text-[30px]" />
                       </button>
                     </div>
                   </div>
-                  <div className="fieldBox flex flex-col md:flex-row md:items-center gap-[10px]">
+                  <div className="fieldBox mb-[20px] flex flex-col md:flex-row md:items-center gap-[10px]">
                     <span className="md:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
-                      Select Import Layout:
+                      Selected Report:
                     </span>
                     <div className="box">
                       <FieldDropdown
@@ -461,16 +461,16 @@ const ReportsPage = () => {
                     </div>
                     <div className="btnBlock">
                       <button className="cursor-pointer">
-                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
                       </button>
                       <button className="cursor-pointer">
-                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretRight className="text-[var(--color5)] text-[30px]" />
                       </button>
                     </div>
                   </div>
                   <div className="fieldBox flex flex-col lg:flex-row md:items-center gap-[10px]">
                     <span className="lg:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
-                      Select Import Layout:
+                      Selected Query:
                     </span>
                     <div className="box">
                       <FieldDropdown
@@ -497,9 +497,9 @@ const ReportsPage = () => {
             {activeTab === "misc" && (
               <>
                 <div className="grid gap-[10px]">
-                  <h3 className="montserrat-semibold text-smallSubTitle">
+                  {/* <h3 className="montserrat-semibold text-smallSubTitle">
                     Misc. Reports
-                  </h3>
+                  </h3> */}
                   <TableSavedTemplates />
                   <div className="flex lg:flex-row flex-col gap-[10px] justify-between lg:items-center">
                     <div className="btnBlock lg:flex-row flex-col flex gap-[10px] items-start justify-start">
@@ -513,16 +513,16 @@ const ReportsPage = () => {
                     </div>
                     <div className="btnBlock">
                       <button className="cursor-pointer">
-                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
                       </button>
                       <button className="cursor-pointer">
-                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretRight className="text-[var(--color5)] text-[30px]" />
                       </button>
                     </div>
                   </div>
-                  <div className="fieldBox flex flex-col md:flex-row md:items-center gap-[10px]">
+                  <div className="fieldBox mb-[20px] flex flex-col md:flex-row md:items-center gap-[10px]">
                     <span className="md:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
-                      Select Import Layout:
+                      Selected Report:
                     </span>
                     <div className="box">
                       <FieldDropdown
@@ -550,16 +550,16 @@ const ReportsPage = () => {
                     </div>
                     <div className="btnBlock">
                       <button className="cursor-pointer">
-                        <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
                       </button>
                       <button className="cursor-pointer">
-                        <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                        <FaCaretRight className="text-[var(--color5)] text-[30px]" />
                       </button>
                     </div>
                   </div>
                   <div className="fieldBox flex flex-col lg:flex-row md:items-center gap-[10px]">
                     <span className="lg:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
-                      Select Import Layout:
+                      Selected Query:
                     </span>
                     <div className="box">
                       <FieldDropdown

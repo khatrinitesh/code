@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaRegCalendarAlt } from "react-icons/fa";
+import FieldInput from "../../../../../../components/fieldInput/FieldInput";
 
 const EmploymentInfoSection = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +24,7 @@ const EmploymentInfoSection = () => {
   return (
     <>
       <div className="employmentInfoBox w-full bg-white">
-        <div className="bg-[#1b7398] text-white px-4 py-2 text-sm font-semibold border-b border-black">
+        <div className="bg-[#1b7398] text-white px-4 py-2 text-smallDescription montserrat-medium">
           Employment Info
         </div>
 
@@ -54,7 +55,7 @@ const EmploymentInfoSection = () => {
             ["End of Watch", formData.endOfWatch, "endOfWatch", "date"],
           ].map(([label, value, name, type = "text", options], idx) => (
             <div key={idx} className="flex items-center gap-2">
-              <label className="w-[50%] text-extraSmallDescription text-[#010d4a] montserrat-semibold">
+              <label className="w-[35%] text-extraSmallDescription text-[#010d4a] montserrat-semibold">
                 {label}:
               </label>
 
@@ -63,7 +64,7 @@ const EmploymentInfoSection = () => {
                   name={name}
                   value={value}
                   onChange={handleChange}
-                  className="w-full !bg-[#f2f5ff] border border-[#6570a9] rounded px-2 py-1 text-extraSmallDescription text-[#010d4a] montserrat-semibold"
+                  className="w-full h-[] !bg-[#f2f5ff] border border-[#6570a9] rounded px-2 py-1 text-extraSmallDescription text-[#010d4a] montserrat-semibold md:max-w-[50%]"
                 >
                   {options.map((option) => (
                     <option key={option} value={option}>
@@ -72,24 +73,26 @@ const EmploymentInfoSection = () => {
                   ))}
                 </select>
               ) : type === "date" ? (
-                <div className="relative w-full">
+                <div className="relative w-full md:max-w-[50%]">
                   <input
                     type="date"
                     name={name}
                     value={value}
                     onChange={handleChange}
-                    className="w-full !bg-[#f2f5ff] border border-[#6570a9] rounded px-2 py-1 text-extraSmallDescription text-[#010d4a] montserrat-semibold pr-8"
+                    className="w-full !bg-[#f2f5ff] border-[1px] border-[#6570a9] rounded px-2 py-1 text-extraSmallDescription text-[#010d4a] montserrat-semibold pr-8 "
                   />
-                  <FaRegCalendarAlt className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 text-sm pointer-events-none" />
+                  <FaRegCalendarAlt className="absolute right-2 top-1/2 -translate-y-1/2 text-[#1b7398] text-sm pointer-events-none " />
                 </div>
               ) : (
-                <input
-                  type="text"
-                  name={name}
-                  value={value}
-                  onChange={handleChange}
-                  className="w-full !bg-[#f2f5ff] border border-[#6570a9] rounded px-2 py-1 text-extraSmallDescription text-[#010d4a] montserrat-semibold"
-                />
+                <div className="relative w-full md:max-w-[50%]">
+                  <input
+                    type="text"
+                    name={name}
+                    value={value}
+                    onChange={handleChange}
+                    className="w-full !bg-[#f2f5ff] border-[1px] border-[#6570a9] rounded px-2 py-1 text-extraSmallDescription text-[#010d4a] montserrat-semibold pr-8"
+                  />
+                </div>
               )}
             </div>
           ))}

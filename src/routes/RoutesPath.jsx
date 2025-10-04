@@ -14,7 +14,7 @@ import MemberListPage from "./../pages/memberlistPage/MemberListPage";
 import DispatchPage from "../pages/dispatchPage/DispatchPage";
 import ImportMembersPage from "./../pages/importMembersPage/ImportMembersPage";
 import DuesPage from "../pages/duesPage/DuesPage";
-import PaymentsPage from "./../pages/paymentsPage/PaymentsPage";
+import PaymentsPage from "../pages/paymentsPage/PaymentsPage";
 import GrievancesPage from "../pages/grievancesPage/GrievancesPage";
 import BatchPage from "../pages/batchPage/BatchPage";
 import MembersPage from "../pages/membersPage/MembersPage";
@@ -35,7 +35,7 @@ const RoutesPath = () => {
   return (
     <Router>
       <Routes>
-        {/* Redirect root to login or dashboard depending on authentication */}
+        {/* Root redirect */}
         <Route
           path="/"
           element={
@@ -62,6 +62,7 @@ const RoutesPath = () => {
           }
         />
 
+        {/* Members parent + child */}
         <Route
           path="/members"
           element={
@@ -72,7 +73,6 @@ const RoutesPath = () => {
             </PrivateRoute>
           }
         />
-
         <Route
           path="/members-profile"
           element={
@@ -83,7 +83,6 @@ const RoutesPath = () => {
             </PrivateRoute>
           }
         />
-
         <Route
           path="/member-list"
           element={
@@ -95,50 +94,7 @@ const RoutesPath = () => {
           }
         />
 
-        <Route
-          path="/reports"
-          element={
-            <PrivateRoute>
-              <DashboardLayout>
-                <ReportsPage />
-              </DashboardLayout>
-            </PrivateRoute>
-          }
-        />
-
-        <Route
-          path="/apprenticeship"
-          element={
-            <PrivateRoute>
-              <DashboardLayout>
-                <ApprenticeshipPage />
-              </DashboardLayout>
-            </PrivateRoute>
-          }
-        />
-
-        <Route
-          path="/mail"
-          element={
-            <PrivateRoute>
-              <DashboardLayout>
-                <MailPage />
-              </DashboardLayout>
-            </PrivateRoute>
-          }
-        />
-
-        <Route
-          path="/settings"
-          element={
-            <PrivateRoute>
-              <DashboardLayout>
-                <SettingsPage />
-              </DashboardLayout>
-            </PrivateRoute>
-          }
-        />
-
+        {/* Grievances parent + child */}
         <Route
           path="/grievances"
           element={
@@ -149,7 +105,6 @@ const RoutesPath = () => {
             </PrivateRoute>
           }
         />
-
         <Route
           path="/matter-details"
           element={
@@ -161,6 +116,47 @@ const RoutesPath = () => {
           }
         />
 
+        {/* Other standalone routes */}
+        <Route
+          path="/reports"
+          element={
+            <PrivateRoute>
+              <DashboardLayout>
+                <ReportsPage />
+              </DashboardLayout>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/apprenticeship"
+          element={
+            <PrivateRoute>
+              <DashboardLayout>
+                <ApprenticeshipPage />
+              </DashboardLayout>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/mail"
+          element={
+            <PrivateRoute>
+              <DashboardLayout>
+                <MailPage />
+              </DashboardLayout>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/settings"
+          element={
+            <PrivateRoute>
+              <DashboardLayout>
+                <SettingsPage />
+              </DashboardLayout>
+            </PrivateRoute>
+          }
+        />
         <Route
           path="/payments"
           element={
@@ -171,7 +167,6 @@ const RoutesPath = () => {
             </PrivateRoute>
           }
         />
-
         <Route
           path="/batch"
           element={
@@ -182,7 +177,6 @@ const RoutesPath = () => {
             </PrivateRoute>
           }
         />
-
         <Route
           path="/import-dues"
           element={
@@ -193,7 +187,6 @@ const RoutesPath = () => {
             </PrivateRoute>
           }
         />
-
         <Route
           path="/import-members"
           element={
@@ -204,7 +197,6 @@ const RoutesPath = () => {
             </PrivateRoute>
           }
         />
-
         <Route
           path="/dispatch"
           element={
@@ -215,7 +207,6 @@ const RoutesPath = () => {
             </PrivateRoute>
           }
         />
-
         <Route
           path="/calendar"
           element={
@@ -227,7 +218,7 @@ const RoutesPath = () => {
           }
         />
 
-        {/* Catch-all for 404s */}
+        {/* 404 fallback */}
         <Route path="*" element={<div>404 Page Not Found</div>} />
       </Routes>
     </Router>

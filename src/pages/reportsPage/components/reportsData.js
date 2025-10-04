@@ -19,7 +19,7 @@ export const savedTemplatesData = [
   {
     id: 2,
     reportName: "Reconciliation Report",
-    description: "expected vs recived dues spreadsheet",
+    description: "expected vs received dues spreadsheet",
     type: ".xsls",
     dateCreated: "03/14/2025",
     createdBy: "Admin Acctg",
@@ -49,7 +49,7 @@ export const reportsSelectedData = [
   { value: "rejected", label: "Rejected" },
 ];
 export const querySelectedData = [
-  { value: "", label: "No Report Selected" },
+  { value: "", label: "No Query Selected" },
   { value: "pending", label: "Pending" },
   { value: "approved", label: "Approved" },
   { value: "rejected", label: "Rejected" },
@@ -77,7 +77,7 @@ export const savedQueriesData = [
   {
     id: 3,
     reportName: "February 2025 Invoicing",
-    description: "Statments for Feb 2025 Dues",
+    description: "Statements for Feb 2025 Dues",
     type: "DueDate, MemberStatus",
     dateCreated: "01/09/2025",
     createdBy: "Admin Acctg",

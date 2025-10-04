@@ -17,7 +17,9 @@ const AttachmentsTabbed = () => {
             ].map((header, idx) => (
               <th
                 key={idx}
-                className="text-left px-3 py-[6px] border border-[#b2bcc7] montserrat-semibold"
+                className={`px-3 py-[6px] border border-[#b2bcc7] montserrat-semibold ${
+                  header === "Is Pinned" ? "text-center" : "text-left"
+                }`}
               >
                 {header}
               </th>
@@ -41,7 +43,7 @@ const AttachmentsTabbed = () => {
               <td className="px-3 py-[6px] border border-[#b2bcc7]">
                 {file.uploadedBy}
               </td>
-              <td className="px-3 py-[6px] border border-[#b2bcc7] text-center">
+              <td className="px-3 py-[6px]  border border-[#b2bcc7] text-center">
                 {file.isPinned && (
                   <FaThumbtack
                     className="text-[#d9534f] rotate-45 inline-block"

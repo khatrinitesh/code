@@ -1,5 +1,5 @@
 export const membersProfileData = [
-  { id: "member", label: "Member" },
+  { id: "member", label: "Profile" },
   { id: "address", label: "Address" },
   { id: "notes", label: "Notes" },
   { id: "dues", label: "Dues" },

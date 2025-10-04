@@ -6,8 +6,6 @@ import {
   borderRight,
   initialMeetings,
   meetingHeadData,
-  meetingTypeOptions,
-  verifiedOptions,
 } from "./meetingsTableData";
 
 const MeetingsTableSection = () => {
@@ -51,7 +49,7 @@ const MeetingsTableSection = () => {
                   selected={row.date}
                   onChange={(date) => updateMeetingField(row.id, "date", date)}
                   dateFormat="MM/dd/yyyy"
-                  className="text-[12px] w-[100px]  rounded px-2 py-[2px]"
+                  className="text-[12px] w-[100px] rounded px-2 py-[2px]"
                 />
               </td>
 
@@ -59,20 +57,9 @@ const MeetingsTableSection = () => {
                 {row.time}
               </td>
 
+              {/* ✅ Meeting Type as plain text */}
               <td className={`px-3 py-[5px] montserrat-medium ${borderRight}`}>
-                <select
-                  value={row.type}
-                  onChange={(e) =>
-                    updateMeetingField(row.id, "type", e.target.value)
-                  }
-                  className="bg-transparent outline-none"
-                >
-                  {meetingTypeOptions.map((type) => (
-                    <option key={type} value={type}>
-                      {type}
-                    </option>
-                  ))}
-                </select>
+                {row.type}
               </td>
 
               <td className={`px-3 py-[5px] montserrat-medium ${borderRight}`}>
@@ -82,20 +69,9 @@ const MeetingsTableSection = () => {
                 {row.line}
               </td>
 
-              <td className={`px-3 py-[5px]  montserrat-medium ${borderRight}`}>
-                <select
-                  value={row.verified}
-                  onChange={(e) =>
-                    updateMeetingField(row.id, "verified", e.target.value)
-                  }
-                  className="bg-transparent outline-none"
-                >
-                  {verifiedOptions.map((v) => (
-                    <option key={v} value={v}>
-                      {v}
-                    </option>
-                  ))}
-                </select>
+              {/* ✅ Verified as plain text */}
+              <td className={`px-3 py-[5px] montserrat-medium ${borderRight}`}>
+                {row.verified}
               </td>
 
               <td className={`px-3 py-[5px] montserrat-medium ${borderRight}`}>

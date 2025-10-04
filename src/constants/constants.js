@@ -29,20 +29,14 @@ export const sidebarNavigation = [
     label: "Members",
     path: "/members",
     icon: FaUsers,
-    children: [
-      { label: "Members Profile", path: "/members-profile", icon: FiUser },
-    ],
   },
   {
     label: "Grievances",
     path: "/grievances",
     icon: FaExclamationCircle,
-    children: [
-      { label: "Matter Details", path: "/matter-details", icon: FaSearchPlus },
-    ],
   },
   {
-    label: "Finances",
+    label: "Financials",
     icon: FaHandHoldingUsd,
     children: [
       { label: "Payments", path: "/payments", icon: FaDollarSign },
@@ -94,7 +88,7 @@ export const sidebarNavigation = [
   },
   {
     label: "Logout",
-    path: "/",
+    path: "/login",
     icon: FiLogOut,
   },
 ];
@@ -305,19 +299,19 @@ export const colors = {
     rowAlt: "#d1e3ea",
     headerBg: "#8fbacd",
     headerText: "#122159",
-    borderRight: "#6ca0b7",
+    borderRight: "#1b7398",
   },
   color2: {
     rowAlt: "#fff1d6",
-    headerBg: "#ffbd59",
+    headerBg: "#ffdfae",
     headerText: "#122159",
-    borderRight: "#e1b24c",
+    borderRight: "#1f285e",
   },
   color3: {
     rowAlt: "#e3f3e0",
-    headerBg: "#aed7a8",
+    headerBg: "#d7ebd4",
     headerText: "#122159",
-    borderRight: "#a0c49c",
+    borderRight: "#418ba9",
   },
 };
 

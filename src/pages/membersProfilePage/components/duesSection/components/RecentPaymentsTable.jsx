@@ -76,7 +76,8 @@ const RecentPaymentsTable = () => {
               onClick={() => sortData("perCapita")}
               title="Per Capita"
             >
-              Per Capita
+              Per <br />
+              Capita
               {/* {renderSortIcon("perCapita")} */}
             </th>
             <th
@@ -84,7 +85,8 @@ const RecentPaymentsTable = () => {
               onClick={() => sortData("massMutual")}
               title="Mass Mutual"
             >
-              Mass Mutual
+              Mass
+              <br /> Mutual
               {/* {renderSortIcon("massMutual")} */}
             </th>
             <th
@@ -92,7 +94,8 @@ const RecentPaymentsTable = () => {
               onClick={() => sortData("mmlBayState")}
               title="MML Bay State"
             >
-              MML Bay State
+              MML <br />
+              Bay State
               {/* {renderSortIcon("mmlBayState")} */}
             </th>
             <th
@@ -108,7 +111,8 @@ const RecentPaymentsTable = () => {
               onClick={() => sortData("offDutyIns")}
               title="Off Duty Ins."
             >
-              Off Duty Ins.
+              Off Duty
+              <br /> Ins.
               {/* {renderSortIcon("offDutyIns")} */}
             </th>
             <th
@@ -116,7 +120,8 @@ const RecentPaymentsTable = () => {
               onClick={() => sortData("privacyProtection")}
               title="Prvcy Protect."
             >
-              Prvcy Protect.
+              Prvcy <br />
+              Protect.
               {/* {renderSortIcon("privacyProtection")} */}
             </th>
             <th
@@ -124,7 +129,8 @@ const RecentPaymentsTable = () => {
               onClick={() => sortData("promissoryNote")}
               title="Prom. Note"
             >
-              Prom. Note
+              Prom.
+              <br /> Note
               {/* {renderSortIcon("promissoryNote")} */}
             </th>
             <th
@@ -140,7 +146,8 @@ const RecentPaymentsTable = () => {
               onClick={() => sortData("totalPaid")}
               title="Total Paid"
             >
-              Total Paid
+              Total <br />
+              Paid
               {/* {renderSortIcon("totalPaid")} */}
             </th>
             <th
@@ -148,7 +155,8 @@ const RecentPaymentsTable = () => {
               onClick={() => sortData("modifiedBy")}
               title="Modified By"
             >
-              Modified By
+              Modified <br />
+              By
               {/* {renderSortIcon("modifiedBy")} */}
             </th>
             <th
@@ -156,7 +164,8 @@ const RecentPaymentsTable = () => {
               onClick={() => sortData("paymentDate")}
               title="Payment Date"
             >
-              Payment Date
+              Payment
+              <br /> Date
               {/* {renderSortIcon("paymentDate")} */}
             </th>
             <th className="px-2 py-1 text-[#010d4a] text-extraSmallDescription ">
@@ -199,7 +208,7 @@ const RecentPaymentsTable = () => {
               <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium">
                 {row.genworth.toFixed(2)}
               </td>
-              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium  text-black">
+              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-semibold  text-black">
                 ${row.totalPaid.toFixed(2)}
               </td>
               <td className="px-2 py-1  text-extraSmallDescription  montserrat-medium">

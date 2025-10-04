@@ -14,81 +14,102 @@ const TableFormatComponent = ({
   } = thead;
 
   const theme = colors[colorKey] || colors.color1;
-
   const { caption: captionStyle } = colors;
-
   const { rowAlt, headerBg, headerText, borderRight } = theme;
 
+  const verticalBorder = `1px solid ${borderRight || "#b1bcc6"}`;
+
   return (
-    <div className="w-full overflow-x-auto border-[1px] border-[#b1bcc6]">
-      {/* Table Header */}
-      <table className="w-full  border-collapse text-sm ">
-        <caption
-          className="text-left px-4 py-[5px] montserrat-medium text-extraSmallDescription"
-          style={{
-            backgroundColor: captionStyle.bg,
-            color: captionStyle.text,
-          }}
-        >
-          {caption}
-        </caption>
-        <thead
-          className="montserrat-regular text-extraSmallDescription"
-          style={{ backgroundColor: headerBg, color: headerText }}
-        >
-          <tr>
-            <th
-              className="md:w-[33.33%] text-left px-4 py-[5px] border-r"
-              style={{ borderColor: borderRight }}
-            >
-              {fieldCol1}
-            </th>
-            <th
-              className="md:w-[33.33%] text-left px-4 py-[5px] border-r"
-              style={{ borderColor: borderRight }}
-            >
-              {fieldCol2}
-            </th>
-            <th className="md:w-[33.33%] text-left px-4 py-[5px]">
-              {fieldCol3}
-            </th>
-          </tr>
-        </thead>
-      </table>
-
-      {/* Scrollable Tbody */}
-      <div className="max-h-[140px] overflow-y-auto vertical-scrollbar">
-        <table className="w-full table-fixed border-collapse text-sm">
-          <tbody className="montserrat-regular text-extraSmallDescription">
-            {rows.map((member, rowIndex) => {
-              const bgColor = rowIndex % 2 === 0 ? "#ffffff" : rowAlt;
-
-              return (
-                <tr
-                  key={rowIndex}
-                  className="border-b border-b-[#b5bfcd] last:border-none"
-                  style={{ backgroundColor: bgColor }}
+    <div className="w-full border-[1px] border-[#b1bcc6] rounded overflow-hidden">
+      {/* Caption */}
+      <div
+        className="text-left px-4 py-[5px] montserrat-semibold text-extraSmallDescription"
+        style={{ backgroundColor: captionStyle.bg, color: captionStyle.text }}
+      >
+        {caption}
+      </div>
+      <div className="tableHeaderBody max-h-[140px]  vertical-scrollbar overflow-y-auto ">
+        {/* Table Header */}
+        <div className="table-header w-full overflow-hidden">
+          <table className="w-full border-collapse text-sm">
+            <thead className="montserrat-regular text-extraSmallDescription">
+              <tr>
+                <th
+                  className="md:w-[33.33%] text-left px-4 py-[5px]"
+                  style={{
+                    borderRight: verticalBorder,
+                    backgroundColor: headerBg,
+                    color: headerText,
+                    position: "sticky",
+                    top: 0,
+                    zIndex: 10,
+                  }}
                 >
-                  <td
-                    className="md:w-[33.33%] px-4 py-[5px] border-r text-[var(--color1)]"
-                    style={{ borderColor: borderRight }}
-                  >
-                    {member.field1}
-                  </td>
-                  <td
-                    className="md:w-[33.33%] px-4 py-[5px] border-r"
-                    style={{ borderColor: borderRight }}
-                  >
-                    {member.field2}
-                  </td>
-                  <td className="md:w-[33.33%] px-4 py-[5px]">
-                    {member.field3}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                  {fieldCol1}
+                </th>
+                <th
+                  className="md:w-[33.33%] text-left px-4 py-[5px]"
+                  style={{
+                    borderRight: verticalBorder,
+                    backgroundColor: headerBg,
+                    color: headerText,
+                    position: "sticky",
+                    top: 0,
+                    zIndex: 10,
+                  }}
+                >
+                  {fieldCol2}
+                </th>
+                <th
+                  className="md:w-[33.33%] text-left px-4 py-[5px]"
+                  style={{
+                    backgroundColor: headerBg,
+                    color: headerText,
+                    position: "sticky",
+                    top: 0,
+                    zIndex: 10,
+                  }}
+                >
+                  {fieldCol3}
+                </th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+
+        {/* Scrollable Tbody */}
+        <div
+          className="overflow-y-auto vertical-scrollbar"
+          style={{ borderTop: verticalBorder }}
+        >
+          <table className="w-full border-collapse table-fixed text-sm">
+            <tbody className="montserrat-regular text-extraSmallDescription">
+              {rows.map((member, rowIndex) => {
+                const bgColor = rowIndex % 2 === 0 ? "#ffffff" : rowAlt;
+
+                return (
+                  <tr key={rowIndex} style={{ backgroundColor: bgColor }}>
+                    <td
+                      className="md:w-[33.33%] px-4 py-[5px]"
+                      style={{ borderRight: verticalBorder }}
+                    >
+                      {member.field1}
+                    </td>
+                    <td
+                      className="md:w-[33.33%] px-4 py-[5px]"
+                      style={{ borderRight: verticalBorder }}
+                    >
+                      {member.field2}
+                    </td>
+                    <td className="md:w-[33.33%] px-4 py-[5px]">
+                      {member.field3}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

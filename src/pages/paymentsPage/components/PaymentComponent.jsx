@@ -4,6 +4,7 @@ import Button from "./../../../components/button/Button";
 import FieldTextAreaComponent from "../../../components/fieldTextAreaComponent/FieldTextAreaComponent";
 import FieldDropdown from "./../../../components/fieldDropdown/FieldDropdown";
 import { paymentMethodData } from "./paymentsData";
+import DatePicker from "react-datepicker";
 
 const PaymentComponent = () => {
   const [formData, setFormData] = useState({
@@ -11,16 +12,16 @@ const PaymentComponent = () => {
     lastName: "",
     memberNumber: "",
     last4ssn: "",
-    paymentDate: "",
-    travelFee: "",
-    paymentMethod: "",
-    lateFee: "",
-    initiationFee: "",
-    fines: "",
-    dues: "",
-    dba: "",
+    paymentDate: "", // Payment Date will show placeholder "/ /"
+    travelFee: "0.00", // default value
+    paymentMethod: "Check",
+    lateFee: "0.00", // default value
+    initiationFee: "0.00", // default value
+    fines: "0.00", // default value
+    dues: "0.00", // default value
+    dba: "0.00", // default value
     notes: "",
-    totalPaid: "",
+    totalPaid: "0.00",
   });
 
   const handleChange = (e) => {
@@ -52,7 +53,7 @@ const PaymentComponent = () => {
                     value={formData.lastName}
                     onChange={handleChange}
                     placeholder=""
-                    className=""
+                    className="rounded !border-[#1b7398]"
                   />
                 </div>
               </div>
@@ -71,7 +72,7 @@ const PaymentComponent = () => {
                     value={formData.firstName}
                     onChange={handleChange}
                     placeholder=""
-                    className=""
+                    className="rounded !border-[#1b7398]"
                   />
                 </div>
               </div>
@@ -92,7 +93,7 @@ const PaymentComponent = () => {
                     value={formData.memberNumber}
                     onChange={handleChange}
                     placeholder=""
-                    className=""
+                    className="rounded !border-[#1b7398]"
                   />
                 </div>
               </div>
@@ -111,7 +112,7 @@ const PaymentComponent = () => {
                     value={formData.last4ssn}
                     onChange={handleChange}
                     placeholder=""
-                    className=""
+                    className="rounded !border-[#1b7398]"
                   />
                 </div>
               </div>
@@ -136,14 +137,15 @@ const PaymentComponent = () => {
                     Payment Date:
                   </label>
                   <div className="ml-3 flex-1 w-full">
-                    <FieldInput
-                      id="memberNumber"
-                      name="memberNumber"
-                      type="text"
-                      value={formData.paymentDate}
-                      onChange={handleChange}
-                      placeholder=""
-                      className=""
+                    <DatePicker
+                      id="paymentDate"
+                      selected={formData.paymentDate}
+                      onChange={(date) =>
+                        setFormData((prev) => ({ ...prev, paymentDate: date }))
+                      }
+                      placeholderText="/ /" // custom placeholder
+                      className="w-full px-2 py-1 text-smallDescription bg-white border-[1px]  !border-[#1b7398] rounded"
+                      dateFormat="MM/dd/yyyy" // optional format
                     />
                   </div>
                 </div>
@@ -164,7 +166,7 @@ const PaymentComponent = () => {
                       value={formData.travelFee}
                       onChange={handleChange}
                       placeholder=""
-                      className=""
+                      className="rounded !border-[#1b7398]"
                     />
                   </div>
                 </div>
@@ -178,15 +180,14 @@ const PaymentComponent = () => {
                     Payment Method:
                   </label>
                   <div className="ml-3 flex-1 w-full">
-                    <FieldDropdown
-                      id="status"
-                      name="status"
-                      value={status}
-                      onChange={(e) => setStatus(e.target.value)}
-                      options={paymentMethodData}
-                      maxLength={10}
-                      disabled={false}
-                      className="bg-white border-[#ccc] w-full"
+                    <FieldInput
+                      id="paymentMethod"
+                      name="paymentMethod"
+                      type="text"
+                      value={formData.paymentMethod}
+                      onChange={handleChange}
+                      placeholder=""
+                      className="rounded !border-[#1b7398]"
                     />
                   </div>
                 </div>
@@ -207,7 +208,7 @@ const PaymentComponent = () => {
                       value={formData.lateFee}
                       onChange={handleChange}
                       placeholder=""
-                      className=""
+                      className="rounded !border-[#1b7398]"
                     />
                   </div>
                 </div>
@@ -228,7 +229,7 @@ const PaymentComponent = () => {
                       value={formData.initiationFee}
                       onChange={handleChange}
                       placeholder=""
-                      className=""
+                      className="rounded !border-[#1b7398]"
                     />
                   </div>
                 </div>
@@ -249,7 +250,7 @@ const PaymentComponent = () => {
                       value={formData.fines}
                       onChange={handleChange}
                       placeholder=""
-                      className=""
+                      className="rounded !border-[#1b7398]"
                     />
                   </div>
                 </div>
@@ -270,7 +271,7 @@ const PaymentComponent = () => {
                       value={formData.dues}
                       onChange={handleChange}
                       placeholder=""
-                      className=""
+                      className="rounded !border-[#1b7398]"
                     />
                   </div>
                 </div>
@@ -291,7 +292,7 @@ const PaymentComponent = () => {
                       value={formData.dba}
                       onChange={handleChange}
                       placeholder=""
-                      className=""
+                      className="rounded !border-[#1b7398]"
                     />
                   </div>
                 </div>
@@ -313,7 +314,7 @@ const PaymentComponent = () => {
                     value={formData.notes}
                     onChange={handleChange}
                     placeholder=""
-                    className=""
+                    className="rounded !border-[#1b7398]"
                   />
                 </div>
               </div>
@@ -332,7 +333,7 @@ const PaymentComponent = () => {
                     value={formData.totalPaid}
                     onChange={handleChange}
                     placeholder=""
-                    className="text-[#eb973a] md:max-w-[30%]"
+                    className="text-[#eb973a] md:max-w-[50%] rounded !border-[#1b7398]"
                   />
                 </div>
               </div>

@@ -32,17 +32,17 @@ const ApprenticeshipPage = () => {
           {/* Tabs */}
           <div className="leftContent md:w-[60%]">
             <div className="tabbedBlock">
-              <ul className="listTab flex flex-col md:flex-row gap-[10px]">
+              <ul className="listTab flex flex-col md:flex-row ">
                 {tabsData.map((tab) => (
                   <li key={tab.id} className="w-auto">
                     <a
                       onClick={() => setActiveTab(tab.id)}
-                      className={`w-full md:w-auto block  cursor-pointer px-4 py-[7px] border-b-0  border border-[#010d4a] text-[14px] text-extraSmallDescription montserrat-medium transition-colors
-                        ${
-                          activeTab === tab.id
-                            ? "bg-[#1b7398] text-white"
-                            : "bg-[#f2f5ff] text-[#010d4a]"
-                        }`}
+                      className={`w-full md:w-auto block cursor-pointer px-4 py-[9px] border border-[#010d4a] border-b-0 text-[14px] text-extraSmallDescription montserrat-semibold transition-colors !last:border-r-[1px]
+    ${
+      activeTab === tab.id
+        ? "bg-[#1b7398] text-white"
+        : "bg-[#f2f5ff] text-[#010d4a]"
+    }`}
                     >
                       {tab.label}
                     </a>
@@ -80,10 +80,10 @@ const ApprenticeshipPage = () => {
                   </div>
                   <div className="btnBlock">
                     <button className="cursor-pointer">
-                      <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                      <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
                     </button>
                     <button className="cursor-pointer">
-                      <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                      <FaCaretRight className="text-[var(--color5)] text-[30px]" />
                     </button>
                   </div>
                 </div>
@@ -98,6 +98,14 @@ const ApprenticeshipPage = () => {
                   <div className="btnBlock flex gap-[10px] items-start justify-start">
                     <Button label="Add" className="max-w-auto !mx-0" />
                     <Button label="Cancel" className="!mx-0" />
+                  </div>
+                  <div className="btnBlock">
+                    <button className="cursor-pointer">
+                      <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
+                    </button>
+                    <button className="cursor-pointer">
+                      <FaCaretRight className="text-[var(--color5)] text-[30px]" />
+                    </button>
                   </div>
                 </div>
               </div>
@@ -115,10 +123,10 @@ const ApprenticeshipPage = () => {
                   </div>
                   <div className="btnBlock">
                     <button className="cursor-pointer">
-                      <FaCaretLeft className="text-[var(--color5)]" />
+                      <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
                     </button>
                     <button className="cursor-pointer">
-                      <FaCaretRight className="text-[var(--color5)]" />
+                      <FaCaretRight className="text-[var(--color5)] text-[30px]" />
                     </button>
                   </div>
                 </div>

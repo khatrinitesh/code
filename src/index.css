@@ -167,3 +167,13 @@ input[type="date"]::-webkit-datetime-edit-year-field {
 input[type="date"]::-moz-placeholder {
   color: transparent;
 }
+
+.calendar-grid .calendar-day {
+  /* border-top: 1px solid #ccc !important;
+  border-left: 1px solid #ccc !important; */
+  border: 0;
+}
+
+/* .calendar-grid .calendar-day:last-child {
+  border-bottom: 1px solid #ccc !important;
+} */

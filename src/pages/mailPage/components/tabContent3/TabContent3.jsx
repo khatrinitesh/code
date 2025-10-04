@@ -18,13 +18,13 @@ export default function TabContent3() {
       <label className="block text-sm mb-1 text-extraSmallDescription montserrat-semibold text-[var(--color1)]">
         {label}
         <br />
-        <span className="text-[10px] text-[#1b7398] font-normal italic">
+        <span className="text-[10px] text-[#1b7398] montserrat-regular italic">
           CTL - Select for multiple
         </span>
       </label>
       <select
         multiple
-        className="w-full h-[75px] border border-gray-300 rounded px-2 py-1 text-sm overflow-y-auto vertical-scrollbar"
+        className="w-full h-[75px] border border-[#1b7398] rounded px-2 text-[10px] montserrat-medium text-[#010d4a] py-1 text-sm overflow-y-auto vertical-scrollbar"
       >
         {list.map((email) => (
           <option key={email} value={email}>
@@ -36,7 +36,7 @@ export default function TabContent3() {
   );
 
   return (
-    <div className="p-4 border mt-3 border-[#1b7398] rounded max-w-6xl mx-auto bg-white font-sans text-[13px] text-[#1a1a1a]">
+    <div className="p-4 border mt-3 border-[#1b7398] rounded-[15px] mx-auto bg-white font-sans text-[10px] text-[#1a1a1a]">
       {/* Top recipient selects */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 ">
         {renderSelectBox("Internal Recipients", emailList)}
@@ -53,7 +53,7 @@ export default function TabContent3() {
           <FieldTextAreaComponent
             value={externalTo}
             onChange={(e) => setExternalTo(e.target.value)}
-            className=""
+            className="!rounded-[0] !border-[#1b7398]"
           />
         </div>
         <div>
@@ -63,7 +63,7 @@ export default function TabContent3() {
           <FieldTextAreaComponent
             value={externalCC}
             onChange={(e) => setExternalCC(e.target.value)}
-            className=""
+            className="!rounded-[0] !border-[#1b7398]"
           />
         </div>
         <div>
@@ -73,37 +73,39 @@ export default function TabContent3() {
           <FieldTextAreaComponent
             value={externalBCC}
             onChange={(e) => setExternalBCC(e.target.value)}
-            className=""
+            className="!rounded-[0] !border-[#1b7398]"
           />
         </div>
       </div>
 
       {/* Subject */}
-      <div className="mb-4 border-b-[#1b7398] border-b-[1px] pb-[10px]">
-        <label className="block text-[var(--color1)] text-extraSmallDescription montserrat-semibold mb-1">
+      <div className="mb-4 flex items-start md:items-center gap-[10px] border-b-[#1b7398] border-b-[1px] pb-[10px]">
+        <label className="block text-[var(--color1)] text-extraSmallDescription montserrat-regular ">
           Subject:
         </label>
         <FieldInput
           type="text"
           value={subject}
           onChange={(e) => setSubject(e.target.value)}
-          className=""
         />
       </div>
 
       {/* From and Signature */}
-      <div className="flex items-center justify-between mb-2 text-sm border-b-[#1b7398] border-b-[1px] pb-[10px]">
+      <div className="flex flex-col md:flex-row gap-[10px] items-start md:items-center justify-between mb-2 text-extraSmallDescription montserrat-regular text-[#010d4a] border-b-[#1b7398] border-b-[1px] pb-[10px]">
         <div>
-          <span className="font-semibold">From:</span> Joel Rosen -
-          joel@velarium.com
+          <span className=" ">From:</span>{" "}
+          <span className="montserrat-medium">
+            Joel Rosen - joel@velarium.com
+          </span>
         </div>
         <div className="flex items-center gap-2">
-          <label className="font-semibold">Signature:</label>
+          <label className="">Signature:</label>
           <FieldDropdown
             value={signature}
             onChange={(e) => setSignature(e.target.value)}
             options={signatureOptions}
-            className="text-sm p-1"
+            className="text-sm p-1 text-[#6570a9]"
+            disabled={true}
           />
         </div>
       </div>
@@ -120,12 +122,12 @@ export default function TabContent3() {
       </div>
 
       {/* Message Text Area */}
-      <textarea
+      <FieldTextAreaComponent
         value={editorContent}
         onChange={(e) => setEditorContent(e.target.value)}
         placeholder="Type your message here..."
         className="w-full h-[200px] resize-none border border-gray-300 rounded-b px-3 py-2 text-sm focus:outline-none focus:ring"
-      ></textarea>
+      />
 
       {/* Action Buttons */}
       <div className="btnBlock mt-3 flex gap-[10px]">

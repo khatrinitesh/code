@@ -4,10 +4,8 @@ import SectionTitleComponent from "../../components/sectionTitleComponent/Sectio
 import TableFormatComponent from "../../components/tableFormatComponent/TableFormatComponent";
 import Button from "./../../components/button/Button";
 import {
-  deadlinesData,
   deadlinesData2,
   tableHeaders,
-  tasksData,
   tasksData2,
 } from "../../constants/constants";
 import { FaCalendarAlt } from "react-icons/fa";
@@ -23,7 +21,7 @@ const CalendarPage = () => {
         <SectionTitleComponent>
           <FaCalendarAlt className={` text-[var(--color6)]`} />
           <h2
-            className={`whitespace-nowrap text-[var(--color6)] md:text-smallSubTitle montserrat-regular`}
+            className={`whitespace-nowrap  text-[var(--color6)] md:text-smallSubTitle montserrat-regular`}
           >
             Calendar
           </h2>

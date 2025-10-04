@@ -1,4 +1,5 @@
 import { useState } from "react";
+import FieldInput from "../../../../components/fieldInput/FieldInput";
 
 const MatterTabbed = () => {
   const [formData, setFormData] = useState({
@@ -31,150 +32,118 @@ const MatterTabbed = () => {
 
   return (
     <div className="w-full bg-[#edf4f7] p-[10px] text-extraSmallDescription montserrat-medium">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-        {/* Row 1 */}
-        <div className="flex gap-[10px] items-start flex-col md:flex-row">
-          <label className="md:w-[30%] block text-[#010d4a] mb-1">
-            Case Number:
-          </label>
-          <input
-            type="text"
-            name="caseNumber"
-            value={formData.caseNumber}
-            onChange={handleChange}
-            className="w-full border border-[#a1b4c4] rounded px-2 py-[4px] bg-white"
-          />
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 md:max-w-[80%]">
+        {/* Utility for all rows */}
+        {/** Reusable field wrapper */}
+        {[
+          { label: "Case Number:", name: "caseNumber", type: "text" },
+          { label: "Internal #:", name: "internalNumber", type: "text" },
+          { label: "Grievance Type:", name: "grievanceType", type: "text" },
+          { label: "Type of Claim:", name: "typeOfClaim", type: "text" },
+          { label: "Attorney:", name: "attorney", type: "text" },
+        ].map((field) => (
+          <div
+            key={field.name}
+            className="flex gap-[10px] items-start md:items-center flex-col md:flex-row"
+          >
+            <label className="md:w-[30%] text-[#010d4a] mb-1">
+              {field.label}
+            </label>
+            <div className="w-full">
+              <FieldInput
+                type={field.type}
+                name={field.name}
+                value={formData[field.name]}
+                onChange={handleChange}
+                className="!border-[#1b7398] rounded w-full"
+              />
+            </div>
+          </div>
+        ))}
 
-        <div className="flex gap-[10px] items-start flex-col md:flex-row">
-          <label className="md:w-[30%] block text-[#010d4a] mb-1">
+        {/* Grievance Owner */}
+        <div className="flex gap-[10px] items-start md:items-center flex-col md:flex-row">
+          <label className="md:w-[30%] text-[#010d4a] mb-1">
             Grievance Owner:
           </label>
-          <select
-            name="grievanceOwner"
-            value={formData.grievanceOwner}
-            onChange={handleChange}
-            className="w-full border border-[#a1b4c4] rounded px-2 py-[4px] bg-white"
-          >
-            {grievanceOwners.map((owner) => (
-              <option key={owner}>{owner}</option>
-            ))}
-          </select>
+          <div className="w-full">
+            <select
+              name="grievanceOwner"
+              value={formData.grievanceOwner}
+              onChange={handleChange}
+              className="w-full h-[35px] border border-[#1b7398] rounded px-2 py-[4px] bg-white"
+            >
+              {grievanceOwners.map((owner) => (
+                <option key={owner}>{owner}</option>
+              ))}
+            </select>
+          </div>
         </div>
 
-        {/* Row 2 */}
-        <div className="flex gap-[10px] items-start flex-col md:flex-row">
-          <label className="md:w-[30%] block text-[#010d4a] mb-1">
-            Internal #:
-          </label>
-          <input
-            type="text"
-            name="internalNumber"
-            value={formData.internalNumber}
-            onChange={handleChange}
-            className="w-full border border-[#a1b4c4] rounded px-2 py-[4px] bg-white"
-          />
-        </div>
-
-        <div className="flex gap-[10px] items-start flex-col md:flex-row">
-          <label className="md:w-[30%] block text-[#010d4a] mb-1">
-            Type of Claim:
-          </label>
-          <input
-            type="text"
-            name="typeOfClaim"
-            value={formData.typeOfClaim}
-            onChange={handleChange}
-            className="w-full border border-[#a1b4c4] rounded px-2 py-[4px] bg-white"
-          />
-        </div>
-
-        {/* Row 3 */}
-        <div className="flex gap-[10px] items-start flex-col md:flex-row">
-          <label className="md:w-[30%] block text-[#010d4a] mb-1">
-            Grievance Type:
-          </label>
-          <input
-            type="text"
-            name="grievanceType"
-            value={formData.grievanceType}
-            onChange={handleChange}
-            className="w-full border border-[#a1b4c4] rounded px-2 py-[4px] bg-white"
-          />
-        </div>
-
-        <div className="flex gap-[10px] items-start flex-col md:flex-row">
-          <label className="md:w-[30%] block text-[#010d4a] mb-1">
-            Attorney :
-          </label>
-          <input
-            type="text"
-            name="attorney"
-            value={formData.attorney}
-            onChange={handleChange}
-            className="w-full border border-[#a1b4c4] rounded px-2 py-[4px] bg-white"
-          />
-        </div>
-
-        {/* Row 4 */}
-        <div className="flex gap-[10px] items-start flex-col md:flex-row">
-          <label className="md:w-[30%] block text-[#010d4a] mb-1">
+        {/* Grievance Status */}
+        <div className="flex gap-[10px] items-start md:items-center flex-col md:flex-row">
+          <label className="md:w-[30%] text-[#010d4a] mb-1">
             Grievance Status:
           </label>
-          <select
-            name="grievanceStatus"
-            value={formData.grievanceStatus}
-            onChange={handleChange}
-            className="w-full border border-[#a1b4c4] rounded px-2 py-[4px] bg-white"
-          >
-            {grievanceStatuses.map((status) => (
-              <option key={status}>{status}</option>
-            ))}
-          </select>
+          <div className="w-full">
+            <select
+              name="grievanceStatus"
+              value={formData.grievanceStatus}
+              onChange={handleChange}
+              className="w-full h-[35px] border border-[#1b7398] rounded px-2 py-[4px] bg-white"
+            >
+              {grievanceStatuses.map((status) => (
+                <option key={status}>{status}</option>
+              ))}
+            </select>
+          </div>
         </div>
 
-        <div className="flex gap-[10px] items-start flex-col md:flex-row">
-          <label className="md:w-[30%] block text-[#010d4a] mb-1">
-            Disposition:
-          </label>
-          <select
-            name="disposition"
-            value={formData.disposition}
-            onChange={handleChange}
-            className="w-full border border-[#a1b4c4] rounded px-2 py-[4px] bg-white"
-          >
-            {dispositions.map((d) => (
-              <option key={d}>{d}</option>
-            ))}
-          </select>
+        {/* Disposition */}
+        <div className="flex gap-[10px] items-start md:items-center flex-col md:flex-row">
+          <label className="md:w-[30%] text-[#010d4a] mb-1">Disposition:</label>
+          <div className="w-full">
+            <select
+              name="disposition"
+              value={formData.disposition}
+              onChange={handleChange}
+              className="w-full h-[35px] border border-[#1b7398] rounded px-2 py-[4px] bg-white"
+            >
+              {dispositions.map((d) => (
+                <option key={d}>{d}</option>
+              ))}
+            </select>
+          </div>
         </div>
 
-        {/* Description */}
-        <div className="flex gap-[10px] items-start flex-col md:flex-row md:col-span-2">
-          <label className="md:w-[12%] block text-[#010d4a] mb-1">
-            Description:
-          </label>
-          <textarea
-            name="description"
-            rows={2}
-            value={formData.description}
-            onChange={handleChange}
-            className="w-full border border-[#a1b4c4] rounded px-2 py-[4px] bg-white resize-none"
-          />
+        {/* Description (spanning 2 columns) */}
+        <div className="flex gap-[10px] items-start md:items-center flex-col md:flex-row md:col-span-2">
+          <label className="md:w-[15%] text-[#010d4a] mb-1">Description:</label>
+          <div className="w-full">
+            <textarea
+              name="description"
+              rows={2}
+              value={formData.description}
+              onChange={handleChange}
+              className="w-full border border-[#1b7398] rounded px-2 py-[4px] bg-white resize-none"
+            />
+          </div>
         </div>
 
-        {/* Grievance Details */}
-        <div className="flex gap-[10px] items-start flex-col md:flex-row md:col-span-2">
-          <label className="md:w-[12%] block text-[#010d4a] mb-1">
+        {/* Grievance Details (spanning 2 columns) */}
+        <div className="flex gap-[10px] items-start md:items-center flex-col md:flex-row md:col-span-2">
+          <label className="md:w-[15%] text-[#010d4a] mb-1">
             Grievance Details:
           </label>
-          <textarea
-            name="grievanceDetails"
-            rows={3}
-            value={formData.grievanceDetails}
-            onChange={handleChange}
-            className="w-full border border-[#a1b4c4] rounded px-2 py-[4px] bg-white resize-none"
-          />
+          <div className="w-full">
+            <textarea
+              name="grievanceDetails"
+              rows={2}
+              value={formData.grievanceDetails}
+              onChange={handleChange}
+              className="w-full border border-[#1b7398] rounded px-2 py-[4px] bg-white resize-none"
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -22,7 +22,7 @@ const DispatchPage = () => {
             Dispatch
           </h2>
         </SectionTitleComponent>
-        <div className="m-[10px] grid gap-[10px] ">
+        <div className="m-[20px] grid gap-[10px] ">
           <div className="toolbar flex justify-end gap-[10px] items-center">
             <SearchComponent
               className="md:max-w-[30%] rounded-full"
@@ -42,10 +42,10 @@ const DispatchPage = () => {
             </div>
             <div className="btnBlock">
               <button className="cursor-pointer">
-                <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+                <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
               </button>
               <button className="cursor-pointer">
-                <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+                <FaCaretRight className="text-[var(--color5)] text-[30px]" />
               </button>
             </div>
           </div>

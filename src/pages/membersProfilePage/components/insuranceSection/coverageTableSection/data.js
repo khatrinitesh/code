@@ -1,16 +1,16 @@
 export const coverageData = [
   {
-    planName: "Local S5000",
+    planName: "Local $5000",
     groupNumber: "",
     memberId: "",
-    effectiveDate: "2025-01-01",
+    effectiveDate: "01-01-2025",
     notes: "",
   },
   {
-    planName: "City S3500",
+    planName: "City $3500",
     groupNumber: "",
     memberId: "",
-    effectiveDate: "2025-01-01",
+    effectiveDate: "01-01-2025",
     notes: "",
   },
   {

@@ -27,16 +27,34 @@ const MembersPage = () => {
           MEMBERS LIST
         </h2>
       </SectionTitleComponent>
-      <div className="innerContent grid gap-[10px] w-full p-[20px]">
+      <div className="innerContent grid gap-[5px] w-full p-[20px]">
         <div className="toolbar flex justify-between gap-[10px] items-center">
           <SearchComponent
             className="md:max-w-[30%] rounded-full"
             placeholder="Quick Member Search"
           />
-          <div className="optionBlock flex gap-[10px]">
-            <FaPlus className="text-[var(--color5)]" />
-            <FaCloudDownloadAlt className="text-[var(--color5)]" />
-            <FaPrint className="text-[var(--color5)]" />
+          <div className="optionBlock cursor-pointer flex gap-[10px]">
+            <a href="javascript:void()">
+              <img
+                src="/img/icons/icon-plus.png"
+                alt=""
+                className="w-[18px] h-[18px]"
+              />
+            </a>
+            <a href="javascript:void()">
+              <img
+                src="/img/icons/icon-cloud-computing.png"
+                alt=""
+                className="w-[18px] h-[18px]"
+              />
+            </a>
+            <a href="javascript:void()">
+              <img
+                src="/img/icons/icon-printer.png"
+                alt=""
+                className="w-[18px] h-[18px]"
+              />
+            </a>
           </div>
         </div>
         <div onClick={handleClick}>
@@ -44,10 +62,10 @@ const MembersPage = () => {
         </div>
         <div className="btnBlock">
           <button className="cursor-pointer">
-            <FaCaretLeft className="text-[var(--color5)] text-[20px]" />
+            <FaCaretLeft className="text-[var(--color5)] text-[30px]" />
           </button>
           <button className="cursor-pointer">
-            <FaCaretRight className="text-[var(--color5)] text-[20px]" />
+            <FaCaretRight className="text-[var(--color5)] text-[30px]" />
           </button>
         </div>
       </div>

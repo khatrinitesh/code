@@ -14,11 +14,11 @@ const PaymentsPage = () => {
   return (
     <div className="paymentsPage">
       <SectionTitleComponent>
-        <FaHandHoldingUsd className={` text-[var(--color6)]`} />
+        <FaHandHoldingUsd className={` text-[20px] text-[var(--color6)]`} />
         <h2
           className={`whitespace-nowrap text-[var(--color6)] md:text-smallSubTitle montserrat-regular`}
         >
-          Financial: <span className="text-white">Payments</span>
+          Financials: <span className="text-white">Payments</span>
         </h2>
       </SectionTitleComponent>
       <div className="innerContent grid gap-[10px] w-full  p-[20px]">
@@ -46,49 +46,49 @@ const PaymentsPage = () => {
         <div className="tab-content mt-4">
           {activeTab === "payments" && (
             <div className="grid gap-[10px]">
-              <h3 className="montserrat-semibold text-smallSubTitle">
+              {/* <h3 className="montserrat-semibold text-smallSubTitle">
                 Add Payments
-              </h3>
+              </h3> */}
               <PaymentComponent />
             </div>
           )}
           {activeTab === "wage" && (
             <div className="grid gap-[10px]">
-              <h3 className="montserrat-semibold text-smallSubTitle">
+              {/* <h3 className="montserrat-semibold text-smallSubTitle">
                 Add Wage
-              </h3>
+              </h3> */}
               <WageComponent />
             </div>
           )}
           {activeTab === "dba" && (
             <div className="grid gap-[10px]">
-              <h3 className="montserrat-semibold text-smallSubTitle">
+              {/* <h3 className="montserrat-semibold text-smallSubTitle">
                 Add DBA
-              </h3>
+              </h3> */}
               <DbaComponent />
             </div>
           )}
           {activeTab === "fees" && (
             <div className="grid gap-[10px]">
-              <h3 className="montserrat-semibold text-smallSubTitle">
+              {/* <h3 className="montserrat-semibold text-smallSubTitle">
                 Add Fees
-              </h3>
+              </h3> */}
               <FeesComponent />
             </div>
           )}
           {activeTab === "waiver" && (
             <div className="grid gap-[10px]">
-              <h3 className="montserrat-semibold text-smallSubTitle">
+              {/* <h3 className="montserrat-semibold text-smallSubTitle">
                 Add Waiver
-              </h3>
+              </h3> */}
               <WaiverComponent />
             </div>
           )}
           {activeTab === "importPayments" && (
             <div className="grid gap-[10px]">
-              <h3 className="montserrat-semibold text-smallSubTitle">
+              {/* <h3 className="montserrat-semibold text-smallSubTitle">
                 Import Payments
-              </h3>
+              </h3> */}
               <ImportPaymentsComponent />
             </div>
           )}

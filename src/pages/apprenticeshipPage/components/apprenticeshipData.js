@@ -1,6 +1,6 @@
 export const tabsData = [
   { id: "tab1", label: "Class List", placeholder: "Class Lookup" },
-  { id: "tab2", label: "Training Course Name", placeholder: "Course Lookup" },
+  { id: "tab2", label: "Training Course List", placeholder: "Course Lookup" },
   { id: "tab3", label: "Instructor List", placeholder: "Instructor Lookup" },
 ];
 

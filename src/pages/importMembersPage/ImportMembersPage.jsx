@@ -15,14 +15,14 @@ const ImportMembersPage = () => {
     <div className="importingPage">
       <div className="innerContent grid gap-[10px] w-full">
         <SectionTitleComponent>
-          <FaFileDownload className={` text-[var(--color6)]`} />
+          <FaFileDownload className={` text-[20px] text-[var(--color6)]`} />
           <h2
             className={`whitespace-nowrap text-[var(--color6)] md:text-smallSubTitle montserrat-regular`}
           >
             Import: <span className="text-white">Members</span>
           </h2>
         </SectionTitleComponent>
-        <div className="m-[10px]">
+        <div className="m-[20px]">
           <div className="flex flex-col grid-cols-1 md:grid-cols-2 gap-[10px]">
             <div className="fieldBox flex flex-col md:flex-row md:items-center gap-[10px]">
               <span className="md:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
@@ -36,8 +36,8 @@ const ImportMembersPage = () => {
                   onChange={(e) => setStatus(e.target.value)}
                   options={DROPDOWN_OPTIONS_1}
                   maxLength={10}
-                  disabled={false}
-                  className="md:w-64"
+                  disabled={true}
+                  className="md:w-64 text-[#6570a9]"
                 />
               </div>
             </div>
@@ -53,8 +53,8 @@ const ImportMembersPage = () => {
                   onChange={(e) => setStatus(e.target.value)}
                   options={DROPDOWN_OPTIONS_2}
                   maxLength={10}
-                  disabled={false}
-                  className="w-64"
+                  disabled={true}
+                  className="w-64 text-[#6570a9]"
                 />
                 <div className="btnBlock">
                   <Button className="!mx-0" label="Browse" />
@@ -73,8 +73,8 @@ const ImportMembersPage = () => {
                   onChange={(e) => setStatus(e.target.value)}
                   options={DROPDOWN_OPTIONS_4}
                   maxLength={10}
-                  disabled={false}
-                  className="w-64"
+                  disabled={true}
+                  className="w-64 text-[#6570a9]"
                 />
                 <div className="btnBlock">
                   <Button
@@ -100,7 +100,7 @@ const ImportMembersPage = () => {
             <div className="boxSummary">
               <p className="desc text-[#010d4a] text-extraSmallDescription montserrat-medium leading-normal">
                 Members Import HQ Template:{" "}
-                <a href="" download className="underline  text-[#1b7398]">
+                <a href="" className="underline  text-[#1b7398]">
                   YourLocalMemberImportTemplate1.xls
                 </a>
               </p>
@@ -108,7 +108,6 @@ const ImportMembersPage = () => {
                 Members Import Local Template:{" "}
                 <a
                   href="javascript:void(0)"
-                  download
                   className="underline  text-[#1b7398]"
                 >
                   YourLocalMemberImportTemplate2.xls

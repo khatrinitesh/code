@@ -102,7 +102,7 @@ const CalendarComponent = () => {
             <button onClick={prevMonth}>
               <FaCaretLeft />
             </button>
-            <span className="whitespace-nowrap text-[var(--color6)] montserrat-regular text-smallSubTitle montserrat-semibold">
+            <span className="uppercase whitespace-nowrap text-[var(--color6)] montserrat-regular text-smallSubTitle montserrat-semibold">
               {monthName} {currentDate.getFullYear()}
             </span>
             <button onClick={nextMonth}>
@@ -115,11 +115,11 @@ const CalendarComponent = () => {
         </div>
 
         {/* Days Grid */}
-        <div className="calendar-grid">
+        <div className="calendar-grid !text-center flex items-center justify-center">
           {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
             <div
               key={day}
-              className="calendar-day header montserrat-regular text-extraSmallDescription"
+              className="calendar-day !text-center header montserrat-regular text-extraSmallDescription"
             >
               {day}
             </div>

@@ -19,3 +19,30 @@ export const matterDetailsData = [
     placeholder: "Search Attachments...",
   },
 ];
+
+export const tabHeaderText = {
+  grievance: {
+    main: "GRIEVANCES:",
+    span: "Initiation - Case # 003-2025",
+  },
+  step1: {
+    main: "GRIEVANCES:",
+    span: "Step 1 - Case # 003-2025",
+  },
+  tasks: {
+    main: "GRIEVANCES:",
+    span: "Tasks - Case # 003-2025",
+  },
+  notes: {
+    main: "GRIEVANCES:",
+    span: "Notes - Case # 003-2025",
+  },
+  linkedNames: {
+    main: "GRIEVANCES:",
+    span: "Linked Names",
+  },
+  attachments: {
+    main: "GRIEVANCES:",
+    span: "Attachments - Case # 003-2025",
+  },
+};

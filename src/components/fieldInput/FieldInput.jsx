@@ -53,6 +53,7 @@ const FieldInput = ({
           outline-none  
           p-[5px] 
           border-[1px]
+          relative
           ${className}
           ${borderClass}
           bg-white 

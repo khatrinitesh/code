@@ -30,94 +30,107 @@ const StepOneTabbed = () => {
       <div className="grid max-w-[80%]">
         {/* Dates and Contact */}
         <div className="grid grid-cols-1 gap-3 ">
-          <div className="flex items-center gap-3">
-            <label className="w-[30%] min-w-[130px]">
-              Step 1 Initiation Date:
-            </label>
-            <FieldInput
-              type="date"
-              name="step1InitiationDate"
-              value={formData.step1InitiationDate}
-              onChange={handleChange}
-            />
+          <div className="flex md:items-center flex-col md:flex-row items-start gap-3">
+            <label className="md:w-[20%]">Step 1 Initiation Date:</label>
+            <div className="md:w-[20%] w-full">
+              <FieldInput
+                type="date"
+                name="step1InitiationDate"
+                value={formData.step1InitiationDate}
+                onChange={handleChange}
+                className="!border-[#1b7398] rounded w-full"
+              />
+            </div>
           </div>
 
-          <div className="flex items-center gap-3">
-            <label className="w-[30%] min-w-[130px]">Response Due Date:</label>
-            <FieldInput
-              type="date"
-              name="responseDueDate"
-              value={formData.responseDueDate}
-              onChange={handleChange}
-            />
+          <div className="flex md:items-center flex-col md:flex-row items-start gap-3">
+            <label className="md:w-[20%]">Response Due Date:</label>
+            <div className="md:w-[20%] w-full">
+              <FieldInput
+                type="date"
+                name="responseDueDate"
+                value={formData.responseDueDate}
+                onChange={handleChange}
+                className="!border-[#1b7398] rounded w-full"
+              />
+            </div>
           </div>
 
-          <div className="flex items-center gap-3">
-            <label className="w-[30%] min-w-[130px]">
-              Step 1 Meeting Date:
-            </label>
-            <FieldInput
-              type="date"
-              name="step1MeetingDate"
-              value={formData.step1MeetingDate}
-              onChange={handleChange}
-            />
+          <div className="flex md:items-center flex-col md:flex-row items-start gap-3">
+            <label className="md:w-[20%] w-full">Step 1 Meeting Date:</label>
+            <div className="md:w-[20%]">
+              <FieldInput
+                type="date"
+                name="step1MeetingDate"
+                value={formData.step1MeetingDate}
+                onChange={handleChange}
+                className="!border-[#1b7398] rounded w-full"
+              />
+            </div>
           </div>
 
-          <div className="flex items-center gap-3">
-            <label className="w-[30%] min-w-[130px]">
-              Response Received on:
-            </label>
-            <FieldInput
-              type="date"
-              name="responseReceivedDate"
-              value={formData.responseReceivedDate}
-              onChange={handleChange}
-            />
+          <div className="flex md:items-center flex-col md:flex-row items-start gap-3">
+            <label className="md:w-[20%]">Response Received on:</label>
+            <div className="md:w-[20%] w-full">
+              <FieldInput
+                type="date"
+                name="responseReceivedDate"
+                value={formData.responseReceivedDate}
+                onChange={handleChange}
+                className="!border-[#1b7398] rounded w-full"
+              />
+            </div>
           </div>
         </div>
 
         {/* Management Contact */}
-        <div className="mt-3 flex items-center gap-3">
-          <label className="w-[30%] min-w-[130px]">Management Contact:</label>
-          <FieldInput
-            type="text"
-            name="managementContact"
-            value={formData.managementContact}
-            onChange={handleChange}
-          />
+        <div className="mt-3 flex md:items-center flex-col md:flex-row items-start gap-3">
+          <label className="md:w-[20%]">Management Contact:</label>
+          <div className="md:w-[20%] w-full">
+            <FieldInput
+              type="text"
+              name="managementContact"
+              value={formData.managementContact}
+              onChange={handleChange}
+              className="!border-[#1b7398] rounded w-full"
+            />
+          </div>
         </div>
 
         {/* Summary */}
-        <div className="mt-4 flex flex-col md:flex-row gap-3">
-          <label className="md:w-[30%] min-w-[130px]">Step 1 Summary:</label>
-          <FieldTextAreaComponent
-            name="step1Summary"
-            value={formData.step1Summary}
-            onChange={handleChange}
-            rows={3}
-            className="resize-none"
-          />
+        <div className="mt-4 flex md:items-center flex-col md:flex-row items-start gap-3">
+          <label className="md:w-[20%] w-full">Step 1 Summary:</label>
+          <div className="md:w-[70%]">
+            <FieldTextAreaComponent
+              name="step1Summary"
+              value={formData.step1Summary}
+              onChange={handleChange}
+              className="resize-none !border-[#1b7398] rounded w-full"
+              rows={2}
+            />
+          </div>
         </div>
 
         {/* Decision Checkboxes */}
-        <div className="mt-4 ml-[25%] space-y-2">
+        <div className="mt-4 md:ml-[21%] space-y-2">
           <label className="flex items-center gap-2">
             <input
               type="checkbox"
               value="no-appeal"
               checked={formData.step1Decision === "no-appeal"}
               onChange={handleChange}
+              className="!border-[#1b7398] rounded w-4 h-4"
             />
             I agree with the response and will not appeal further
           </label>
 
-          <label className="flex items-center gap-2">
+          <label className="flex items-center md:items-start text-left gap-2">
             <input
               type="checkbox"
               value="next-level"
               checked={formData.step1Decision === "next-level"}
               onChange={handleChange}
+              className="!border-[#1b7398] rounded w-4 h-4"
             />
             I disagree and wish to proceed to the next appeal level
           </label>
@@ -128,6 +141,7 @@ const StepOneTabbed = () => {
               value="arbitration"
               checked={formData.step1Decision === "arbitration"}
               onChange={handleChange}
+              className="!border-[#1b7398] rounded w-4 h-4"
             />
             I disagree and request arbitration
           </label>
@@ -138,6 +152,7 @@ const StepOneTabbed = () => {
               value="bypass"
               checked={formData.step1Decision === "bypass"}
               onChange={handleChange}
+              className="!border-[#1b7398] rounded w-4 h-4"
             />
             I choose to bypass this step and escalate to the next level
           </label>

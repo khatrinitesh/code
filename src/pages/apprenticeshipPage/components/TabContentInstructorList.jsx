@@ -59,7 +59,7 @@ const TabContentInstructorList = () => {
                 </div>
               </th>
             ))}
-            <th className="px-4 py-[3px] text-extraSmallDescription montserrat-medium">
+            <th className="px-4 py-[3px]  w-[6%]  text-extraSmallDescription montserrat-medium">
               Action
             </th>
           </tr>

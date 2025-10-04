@@ -39,10 +39,10 @@ const PriorImages = () => {
               <td>{item.uploadedBy}</td>
               <td className="action-icons flex gap-[8px]">
                 <button className="cursor-pointer" title="View">
-                  <FaRegEye className="text-[#1b7398]" />
+                  <FaRegEye className="text-[15px] text-[#1b7398] " />
                 </button>
                 <button className="cursor-pointer" title="Delete">
-                  <FaRegTrashAlt className="text-[#1b7398]" />
+                  <FaRegTrashAlt className="text-[#1b7398] text-[15px]" />
                 </button>
               </td>
             </tr>

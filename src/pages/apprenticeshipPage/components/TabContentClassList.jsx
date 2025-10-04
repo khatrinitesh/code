@@ -51,7 +51,7 @@ const TabContentClassList = () => {
         <thead style={{ backgroundColor: "#1b7398", color: "white" }}>
           <tr>
             <th
-              className={`text-left px-4 py-[3px] w-[12%] text-extraSmallDescription poppins-semibold cursor-pointer select-none ${borderRight}`}
+              className={`text-left px-4 py-[3px] w-[10%] text-extraSmallDescription poppins-semibold cursor-pointer select-none ${borderRight}`}
               onClick={() => sortData("type")}
             >
               <div className="flex items-center gap-1">
@@ -59,14 +59,14 @@ const TabContentClassList = () => {
               </div>
             </th>
             <th
-              className={`text-left px-4 py-[3px] w-[80%] text-extraSmallDescription poppins-semibold cursor-pointer select-none ${borderRight}`}
+              className={`text-left px-4 py-[3px] text-extraSmallDescription poppins-semibold cursor-pointer select-none ${borderRight}`}
               onClick={() => sortData("name")}
             >
               <div className="flex items-center gap-1">
                 Class Name {renderSortIcon("name")}
               </div>
             </th>
-            <th className="px-4 py-[3px] w-[8%] text-extraSmallDescription poppins-semibold">
+            <th className="px-4 py-[3px] w-[6%] text-extraSmallDescription poppins-semibold">
               Action
             </th>
           </tr>

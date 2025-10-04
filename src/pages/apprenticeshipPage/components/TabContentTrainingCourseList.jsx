@@ -48,18 +48,18 @@ const TabContentTrainingCourseList = () => {
             {trainingCourseHeadData.map((col, index) => (
               <th
                 key={col.id}
-                className={`text-left px-4 py-[3px] text-extraSmallDescription montserrat-medium cursor-pointer select-none ${
+                className={`px-4 py-[3px]  text-extraSmallDescription montserrat-medium cursor-pointer select-none ${
                   index < trainingCourseHeadData.length - 1 ? borderRight : ""
-                }`}
+                } ${col.key === "hours" ? "text-center w-[5%]" : "text-left"}`}
                 onClick={() => sortData(col.key)}
               >
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1 ">
                   {col.label}
                   {renderSortIcon(col.key)}
                 </div>
               </th>
             ))}
-            <th className="px-4 py-[3px] text-extraSmallDescription poppins-semibold">
+            <th className="px-4 py-[3px] w-[6%] text-extraSmallDescription poppins-semibold">
               Action
             </th>
           </tr>
@@ -93,7 +93,7 @@ const TabContentTrainingCourseList = () => {
                 {row.time}
               </td>
               <td
-                className={`text-extraSmallDescription montserrat-medium px-4 py-[3px] ${borderRight}`}
+                className={`text-extraSmallDescription montserrat-medium text-center px-4 py-[3px] ${borderRight}`}
               >
                 {row.hours}
               </td>

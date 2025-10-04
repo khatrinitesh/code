@@ -18,9 +18,9 @@ const DocumentTable = () => {
             ].map((label, idx, arr) => (
               <th
                 key={idx}
-                className={`text-left px-3 py-[6px] montserrat-semibold ${
+                className={`px-3 py-[6px] montserrat-semibold ${
                   idx < arr.length - 1 ? borderRight : ""
-                }`}
+                } ${label === "Is Pinned" ? "text-center" : "text-left"}`}
               >
                 {label}
               </th>
@@ -49,13 +49,15 @@ const DocumentTable = () => {
                 {row.uploadedBy}
               </td>
               <td
-                className={`px-3 py-[5px] montserrat-medium text-extraSmallDescription ${borderRight}`}
+                className={`px-3 py-[5px]  montserrat-medium text-extraSmallDescription ${borderRight}`}
               >
                 {row.isPinned && (
-                  <FaThumbtack
-                    className="text-[#d9534f] rotate-45 inline-block"
-                    title="Pinned"
-                  />
+                  <div className="flex items-center justify-center ">
+                    <FaThumbtack
+                      className="text-[#d9534f] rotate-45 "
+                      title="Pinned"
+                    />
+                  </div>
                 )}
               </td>
               <td className="px-3 py-[5px] flex items-center space-x-2 justify-center">

@@ -10,7 +10,7 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import { historyData } from "./historyData";
 
-const borderRight = "border-r-[1px] border-[#1b7398]";
+const borderRight = "border-r-[1px] border-[#010d4a]";
 
 const HistoryTableSection = () => {
   const [sortConfig, setSortConfig] = useState({ key: null, direction: null });

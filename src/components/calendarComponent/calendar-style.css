@@ -57,10 +57,11 @@
 .calendar-day {
   text-align: right;
   padding: 8px;
-  border: 0.5px solid #ccc;
+  font-size: 12px;
   background-color: white;
   color: black;
-  font-size: 12px;
+  outline: 0.5px solid #ccc; /* thin grid line without doubling */
+  box-sizing: border-box;
 }
 
 /* Highlight today */

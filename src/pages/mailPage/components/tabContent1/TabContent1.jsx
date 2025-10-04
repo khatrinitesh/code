@@ -18,13 +18,13 @@ export default function TabContent1() {
       <label className="block text-sm mb-1 text-extraSmallDescription montserrat-semibold text-[var(--color1)]">
         {label}
         <br />
-        <span className="text-[10px] text-[#1b7398] font-normal italic">
+        <span className="text-[10px] text-[#1b7398] montserrat-regular italic">
           CTL - Select for multiple
         </span>
       </label>
       <select
         multiple
-        className="w-full h-[75px] border border-gray-300 rounded px-2 py-1 text-sm overflow-y-auto vertical-scrollbar"
+        className="w-full h-[75px] border border-[#1b7398] rounded px-2 text-[10px] montserrat-medium text-[#010d4a] py-1 text-sm overflow-y-auto vertical-scrollbar"
       >
         {list.map((email) => (
           <option key={email} value={email}>
@@ -36,7 +36,7 @@ export default function TabContent1() {
   );
 
   return (
-    <div className="p-4 border mt-3 border-[#1b7398] rounded mx-auto bg-white font-sans text-[10px] text-[#1a1a1a]">
+    <div className="p-4 border mt-3 border-[#1b7398] rounded-[15px] mx-auto bg-white font-sans text-[10px] text-[#1a1a1a]">
       {/* Top recipient selects */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 ">
         {renderSelectBox("Internal Recipients", emailList)}
@@ -80,7 +80,7 @@ export default function TabContent1() {
 
       {/* Subject */}
       <div className="mb-4 flex items-start md:items-center gap-[10px] border-b-[#1b7398] border-b-[1px] pb-[10px]">
-        <label className="block text-[var(--color1)] text-extraSmallDescription montserrat-semibold ">
+        <label className="block text-[var(--color1)] text-extraSmallDescription montserrat-regular ">
           Subject:
         </label>
         <FieldInput
@@ -91,18 +91,21 @@ export default function TabContent1() {
       </div>
 
       {/* From and Signature */}
-      <div className="flex flex-col md:flex-row gap-[10px] items-start md:items-center justify-between mb-2 text-sm border-b-[#1b7398] border-b-[1px] pb-[10px]">
+      <div className="flex flex-col md:flex-row gap-[10px] items-start md:items-center justify-between mb-2 text-extraSmallDescription montserrat-regular text-[#010d4a] border-b-[#1b7398] border-b-[1px] pb-[10px]">
         <div>
-          <span className="font-semibold">From:</span> Joel Rosen -
-          joel@velarium.com
+          <span className=" ">From:</span>{" "}
+          <span className="montserrat-medium">
+            Joel Rosen - joel@velarium.com
+          </span>
         </div>
         <div className="flex items-center gap-2">
-          <label className="font-semibold">Signature:</label>
+          <label className="">Signature:</label>
           <FieldDropdown
             value={signature}
             onChange={(e) => setSignature(e.target.value)}
             options={signatureOptions}
-            className="text-sm p-1"
+            className="text-sm p-1 text-[#6570a9]"
+            disabled={true}
           />
         </div>
       </div>

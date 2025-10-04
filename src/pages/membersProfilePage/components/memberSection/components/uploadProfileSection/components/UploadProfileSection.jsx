@@ -33,7 +33,7 @@ const UploadProfileSection = () => {
 
   return (
     <div className="w-full border border-[#ccc] bg-white">
-      <div className="bg-[#1b7398] text-white px-4 py-2 text-sm font-semibold border-b border-black">
+      <div className="bg-[#1b7398] text-white px-4 py-2 text-smallDescription montserrat-medium">
         Profile Information
       </div>
 
@@ -76,7 +76,7 @@ const UploadProfileSection = () => {
               "select",
               ["Male", "Female", "Other"],
             ],
-            ["Last Name", formData.lastName, "lastName"],
+            ["*Last Name", formData.lastName, "lastName"],
             ["DOB", formData.dob, "dob", "date"],
             [
               "Marital Status",
@@ -85,7 +85,7 @@ const UploadProfileSection = () => {
               "select",
               ["Single", "Married", "Divorced"],
             ],
-            ["First Name", formData.firstName, "firstName"],
+            ["*First Name", formData.firstName, "firstName"],
             ["Age", formData.age, "age"],
             ["Beneficiary", formData.beneficiary, "beneficiary"],
             ["Middle Name", formData.middleName, "middleName"],

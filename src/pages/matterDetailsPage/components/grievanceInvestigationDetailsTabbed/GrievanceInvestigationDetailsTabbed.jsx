@@ -29,149 +29,154 @@ const GrievanceInvestigationDetailsTabbed = () => {
 
   return (
     <div className="w-full bg-[#edf4f7] p-3 text-[13px] text-[#010d4a] montserrat-medium">
-      <div className="grid grid-cols-1  gap-4">
-        {/* Left Column */}
-        <div className="space-y-2">
+      <div className="grid grid-cols-1 gap-4">
+        {/* Dates */}
+        <div className="space-y-2 ">
           <div className="flex flex-col md:flex-row md:items-center gap-2">
-            <label className="md:w-[20%]">Date of Incident:</label>
-            <FieldInput
-              type="date"
-              name="incidentDate"
-              value={formData.incidentDate}
-              onChange={handleChange}
-              className=""
-            />
+            <label className="md:w-[15%]">Date of Incident:</label>
+            <div className="md:w-[10%]">
+              <FieldInput
+                type="date"
+                name="incidentDate"
+                value={formData.incidentDate}
+                onChange={handleChange}
+                className="!border-[#1b7398] rounded w-full"
+              />
+            </div>
           </div>
 
           <div className="flex flex-col md:flex-row md:items-center gap-2">
-            <label className="md:w-[20%]">Submitted Date:</label>
-            <FieldInput
-              type="date"
-              name="submittedDate"
-              value={formData.submittedDate}
-              onChange={handleChange}
-              className=""
-            />
+            <label className="md:w-[15%]">Submitted Date:</label>
+            <div className="md:w-[10%]">
+              <FieldInput
+                type="date"
+                name="submittedDate"
+                value={formData.submittedDate}
+                onChange={handleChange}
+                className="w-full  !border-[#1b7398] rounded "
+              />
+            </div>
           </div>
         </div>
 
         {/* Provision Violated */}
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-[10px]">
-          <label className="flex flex-col md:flex-row md:w-[20%]">
-            Provision Violated:
-          </label>
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
+          <label className="md:w-[15%]">Provision Violated:</label>
           <FieldInput
             type="text"
             name="provisionViolated"
             value={formData.provisionViolated}
             onChange={handleChange}
-            className=""
+            className="w-full md:w-[60%] !border-[#1b7398] rounded"
           />
         </div>
 
-        {/* Right Column */}
+        {/* Article + Section */}
         <div className="space-y-2">
           <div className="flex flex-col md:flex-row md:items-center gap-2">
-            <label className="md:w-[20%]">Article Number:</label>
+            <label className="md:w-[15%]">Article Number:</label>
             <FieldInput
               type="text"
               name="articleNumber"
               value={formData.articleNumber}
               onChange={handleChange}
-              className=""
+              className="w-full md:w-[40%] !border-[#1b7398] rounded"
             />
           </div>
 
           <div className="flex flex-col md:flex-row md:items-center gap-2">
-            <label className="md:w-[20%]">Section Number:</label>
+            <label className="md:w-[15%]">Section Number:</label>
             <FieldInput
               type="text"
               name="sectionNumber"
               value={formData.sectionNumber}
               onChange={handleChange}
-              className=""
+              className="w-full md:w-[40%] !border-[#1b7398] rounded"
             />
           </div>
         </div>
-      </div>
 
-      {/* Contacts */}
-      <div className="mt-3 grid grid-cols-1 gap-3">
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-[10px]">
-          <label className="md:w-[20%]">Other Contact:</label>
-          <FieldInput
-            type="text"
-            name="otherContact"
-            value={formData.otherContact}
-            onChange={handleChange}
-            className=""
-          />
-        </div>
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-[10px]">
-          <label className="md:w-[20%]">Mailing Address:</label>
-          <FieldInput
-            type="text"
-            name="mailingAddress"
-            value={formData.mailingAddress}
-            onChange={handleChange}
-            className=""
-          />
-        </div>
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-[10px]">
-          <label className="md:w-[20%]">Contact Role:</label>
-          <FieldInput
-            type="text"
-            name="contactRole"
-            value={formData.contactRole}
-            onChange={handleChange}
-            className=""
-          />
-        </div>
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-[10px]">
-          <label className="md:w-[20%]">Additional Contacts:</label>
-          <FieldInput
-            type="text"
-            name="additionalContacts"
-            value={formData.additionalContacts}
-            onChange={handleChange}
-            className=""
-          />
-        </div>
-      </div>
+        {/* Contact Info */}
+        <div className="mt-3 grid grid-cols-1 gap-3">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
+            <label className="md:w-[15%]">Other Contact:</label>
+            <FieldInput
+              type="text"
+              name="otherContact"
+              value={formData.otherContact}
+              onChange={handleChange}
+              className="w-full md:w-[60%] !border-[#1b7398] rounded"
+            />
+          </div>
 
-      {/* Summary Sections */}
-      <div className="mt-3 space-y-3">
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-[10px]">
-          <label className="md:w-[20%]">Incident Summary:</label>
-          <FieldTextAreaComponent
-            name="incidentSummary"
-            value={formData.incidentSummary}
-            onChange={handleChange}
-            rows={3}
-            className=" resize-none"
-          />
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
+            <label className="md:w-[15%]">Mailing Address:</label>
+            <FieldInput
+              type="text"
+              name="mailingAddress"
+              value={formData.mailingAddress}
+              onChange={handleChange}
+              className="w-full md:w-[60%] !border-[#1b7398] rounded"
+            />
+          </div>
+
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
+            <label className="md:w-[15%]">Contact Role:</label>
+            <FieldInput
+              type="text"
+              name="contactRole"
+              value={formData.contactRole}
+              onChange={handleChange}
+              className="w-full md:w-[60%] !border-[#1b7398] rounded"
+            />
+          </div>
+
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
+            <label className="md:w-[15%]">Additional Contacts:</label>
+            <FieldInput
+              type="text"
+              name="additionalContacts"
+              value={formData.additionalContacts}
+              onChange={handleChange}
+              className="w-full md:w-[60%] !border-[#1b7398] rounded"
+            />
+          </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-[10px]">
-          <label className="md:w-[20%]">Requested Remedy:</label>
-          <FieldTextAreaComponent
-            name="requestedRemedy"
-            value={formData.requestedRemedy}
-            onChange={handleChange}
-            rows={2}
-            className=" resize-none"
-          />
-        </div>
+        {/* Textareas */}
+        <div className="mt-3 space-y-3">
+          <div className="flex flex-col md:flex-row items-start md:items-start gap-2">
+            <label className="md:w-[15%]">Incident Summary:</label>
+            <FieldTextAreaComponent
+              name="incidentSummary"
+              value={formData.incidentSummary}
+              onChange={handleChange}
+              rows={3}
+              className="w-full md:w-[60%] resize-none !border-[#1b7398] rounded"
+            />
+          </div>
 
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-[10px]">
-          <label className="md:w-[20%]">Supervisor Response:</label>
-          <FieldTextAreaComponent
-            name="supervisorResponse"
-            value={formData.supervisorResponse}
-            onChange={handleChange}
-            rows={2}
-            className=" resize-none"
-          />
+          <div className="flex flex-col md:flex-row items-start md:items-start gap-2">
+            <label className="md:w-[15%]">Requested Remedy:</label>
+            <FieldTextAreaComponent
+              name="requestedRemedy"
+              value={formData.requestedRemedy}
+              onChange={handleChange}
+              rows={2}
+              className="w-full md:w-[60%] resize-none !border-[#1b7398] rounded"
+            />
+          </div>
+
+          <div className="flex flex-col md:flex-row items-start md:items-start gap-2">
+            <label className="md:w-[15%]">Supervisor Response:</label>
+            <FieldTextAreaComponent
+              name="supervisorResponse"
+              value={formData.supervisorResponse}
+              onChange={handleChange}
+              rows={2}
+              className="w-full md:w-[60%] resize-none !border-[#1b7398] rounded"
+            />
+          </div>
         </div>
       </div>
     </div>

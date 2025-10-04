@@ -62,17 +62,23 @@ const DispatcHTable = () => {
           <tr>
             {fieldHeadData.map((col, index) => {
               const key = getFieldKey(index);
+              const isLast = index === fieldHeadData.length - 1;
+
               return (
                 <th
                   key={col.id}
-                  className={`text-left px-4 py-[3px] text-extraSmallDescription poppins-semibold cursor-pointer select-none ${
-                    index < fieldHeadData.length - 1 ? borderRight : ""
-                  }`}
+                  className={`px-4 py-[3px] text-extraSmallDescription poppins-semibold cursor-pointer select-none
+          ${isLast ? "text-center" : "text-left"}
+          ${index < fieldHeadData.length - 1 ? borderRight : ""}`}
                   onClick={() => key && sortData(key)}
                 >
-                  <div className="flex items-center gap-1">
-                    {col.label}
-                    {key && renderSortIcon(key)}
+                  <div
+                    className={`flex gap-1 ${
+                      isLast ? "justify-center" : "items-center"
+                    }`}
+                  >
+                    <span>{col.label}</span>
+                    {!isLast && key && renderSortIcon(key)}
                   </div>
                 </th>
               );

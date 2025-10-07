@@ -105,9 +105,9 @@ const NotesTableSection = () => {
                 </div>
               </td>
               <td className="px-4 py-[3px] flex items-center space-x-2 justify-center">
-                <button title="View">
+                {/* <button title="View">
                   <FaRegEye className="text-[#1b7398]" />
-                </button>
+                </button> */}
                 <button title="Edit">
                   <FaEdit className="text-[#1b7398]" />
                 </button>

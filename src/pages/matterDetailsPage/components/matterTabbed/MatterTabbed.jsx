@@ -33,33 +33,19 @@ const MatterTabbed = () => {
   return (
     <div className="w-full bg-[#edf4f7] p-[10px] text-extraSmallDescription montserrat-medium">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 md:max-w-[80%]">
-        {/* Utility for all rows */}
-        {/** Reusable field wrapper */}
-        {[
-          { label: "Case Number:", name: "caseNumber", type: "text" },
-          { label: "Internal #:", name: "internalNumber", type: "text" },
-          { label: "Grievance Type:", name: "grievanceType", type: "text" },
-          { label: "Type of Claim:", name: "typeOfClaim", type: "text" },
-          { label: "Attorney:", name: "attorney", type: "text" },
-        ].map((field) => (
-          <div
-            key={field.name}
-            className="flex gap-[10px] items-start md:items-center flex-col md:flex-row"
-          >
-            <label className="md:w-[30%] text-[#010d4a] mb-1">
-              {field.label}
-            </label>
-            <div className="w-full">
-              <FieldInput
-                type={field.type}
-                name={field.name}
-                value={formData[field.name]}
-                onChange={handleChange}
-                className="!border-[#1b7398] rounded w-full"
-              />
-            </div>
+        {/* Case Number */}
+        <div className="flex gap-[10px] items-start md:items-center flex-col md:flex-row">
+          <label className="md:w-[30%] text-[#010d4a] mb-1">Case Number:</label>
+          <div className="w-full">
+            <FieldInput
+              type="text"
+              name="caseNumber"
+              value={formData.caseNumber}
+              onChange={handleChange}
+              className="!border-[#1b7398] rounded w-full"
+            />
           </div>
-        ))}
+        </div>
 
         {/* Grievance Owner */}
         <div className="flex gap-[10px] items-start md:items-center flex-col md:flex-row">
@@ -77,6 +63,66 @@ const MatterTabbed = () => {
                 <option key={owner}>{owner}</option>
               ))}
             </select>
+          </div>
+        </div>
+
+        {/* Internal # */}
+        <div className="flex gap-[10px] items-start md:items-center flex-col md:flex-row">
+          <label className="md:w-[30%] text-[#010d4a] mb-1">Internal #:</label>
+          <div className="w-full">
+            <FieldInput
+              type="text"
+              name="internalNumber"
+              value={formData.internalNumber}
+              onChange={handleChange}
+              className="!border-[#1b7398] rounded w-full"
+            />
+          </div>
+        </div>
+
+        {/* Type of Claim */}
+        <div className="flex gap-[10px] items-start md:items-center flex-col md:flex-row">
+          <label className="md:w-[30%] text-[#010d4a] mb-1">
+            Type of Claim:
+          </label>
+          <div className="w-full">
+            <FieldInput
+              type="text"
+              name="typeOfClaim"
+              value={formData.typeOfClaim}
+              onChange={handleChange}
+              className="!border-[#1b7398] rounded w-full"
+            />
+          </div>
+        </div>
+
+        {/* Grievance Type */}
+        <div className="flex gap-[10px] items-start md:items-center flex-col md:flex-row">
+          <label className="md:w-[30%] text-[#010d4a] mb-1">
+            Grievance Type:
+          </label>
+          <div className="w-full">
+            <FieldInput
+              type="text"
+              name="grievanceType"
+              value={formData.grievanceType}
+              onChange={handleChange}
+              className="!border-[#1b7398] rounded w-full"
+            />
+          </div>
+        </div>
+
+        {/* Attorney */}
+        <div className="flex gap-[10px] items-start md:items-center flex-col md:flex-row">
+          <label className="md:w-[30%] text-[#010d4a] mb-1">Attorney:</label>
+          <div className="w-full">
+            <FieldInput
+              type="text"
+              name="attorney"
+              value={formData.attorney}
+              onChange={handleChange}
+              className="!border-[#1b7398] rounded w-full"
+            />
           </div>
         </div>
 
@@ -116,9 +162,11 @@ const MatterTabbed = () => {
           </div>
         </div>
 
-        {/* Description (spanning 2 columns) */}
+        {/* Description */}
         <div className="flex gap-[10px] items-start md:items-center flex-col md:flex-row md:col-span-2">
-          <label className="md:w-[15%] text-[#010d4a] mb-1">Description:</label>
+          <label className="md:w-[12.5%] text-[#010d4a] mb-1">
+            Description:
+          </label>
           <div className="w-full">
             <textarea
               name="description"
@@ -130,9 +178,9 @@ const MatterTabbed = () => {
           </div>
         </div>
 
-        {/* Grievance Details (spanning 2 columns) */}
+        {/* Grievance Details */}
         <div className="flex gap-[10px] items-start md:items-center flex-col md:flex-row md:col-span-2">
-          <label className="md:w-[15%] text-[#010d4a] mb-1">
+          <label className="md:w-[12.5%] text-[#010d4a] mb-1">
             Grievance Details:
           </label>
           <div className="w-full">

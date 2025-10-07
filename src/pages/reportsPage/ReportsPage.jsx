@@ -76,7 +76,7 @@ const ReportsPage = () => {
                     </div>
                   </div>
                   <div className="fieldBox mb-[20px] flex flex-col md:flex-row md:items-center gap-[10px]">
-                    <span className="md:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
+                    <span className="md:w-[8%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
                       Selected Report:
                     </span>
                     <div className="box">
@@ -113,7 +113,7 @@ const ReportsPage = () => {
                     </div>
                   </div>
                   <div className="fieldBox  flex flex-col lg:flex-row md:items-center gap-[10px]">
-                    <span className="lg:w-[15%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
+                    <span className="lg:w-[8%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
                       Selected Query:
                     </span>
                     <div className="box">

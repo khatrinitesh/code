@@ -34,7 +34,7 @@ const TableSavedQueries = () => {
     return sortConfig.direction === "ascending" ? (
       <FaSortUp className="!text-[#b5f5f8]" />
     ) : (
-      <FaSortDown className="text-[#b5f5f8]" />
+      <FaSortDown className="!text-[#b5f5f8]" />
     );
   };
 
@@ -44,67 +44,47 @@ const TableSavedQueries = () => {
     );
     setData(updatedData);
   };
+
   return (
     <div className="overflow-x-auto">
-      <table className="min-w-full border-collapse border border-[#b1bcc6]">
+      <table className="w-full table-fixed border-collapse border border-[#b1bcc6]">
         <thead style={{ backgroundColor: "#8fbacd", color: "#07134f" }}>
           <tr>
             <th
-              colSpan={6}
+              colSpan={5}
               className="text-white bg-[#1b7398] text-extraSmallDescription montserrat-semibold text-left p-[10px]"
             >
               Saved Queries
             </th>
           </tr>
           <tr>
-            <th
-              className="px-4 py-[6px] text-left text-extraSmallDescription montserrat-semibold border-r border-[#1b7398] cursor-pointer"
-              onClick={() => sortData("reportName")}
-            >
-              <div className="flex items-center gap-1">
-                Query Name {renderSortIcon("reportName")}
-              </div>
-            </th>
-            <th
-              className="px-4 py-[6px] text-left text-extraSmallDescription montserrat-semibold border-r border-[#1b7398] cursor-pointer"
-              onClick={() => sortData("description")}
-            >
-              <div className="flex items-center gap-1">
-                Description {renderSortIcon("description")}
-              </div>
-            </th>
-            <th
-              className="px-4 py-[6px] text-left text-extraSmallDescription montserrat-semibold border-r border-[#1b7398] cursor-pointer"
-              onClick={() => sortData("type")}
-            >
-              <div className="flex items-center gap-1">
-                Criteria Fields {renderSortIcon("type")}
-              </div>
-            </th>
-            <th
-              className="px-4 py-[6px] text-left text-extraSmallDescription montserrat-semibold border-r border-[#1b7398] cursor-pointer"
-              onClick={() => sortData("dateCreated")}
-            >
-              <div className="flex items-center gap-1">
-                Date Created {renderSortIcon("dateCreated")}
-              </div>
-            </th>
-            <th
-              className="px-4 py-[6px] text-left text-extraSmallDescription montserrat-semibold border-r border-[#1b7398] cursor-pointer"
-              onClick={() => sortData("createdBy")}
-            >
-              <div className="flex items-center gap-1">
-                Created By {renderSortIcon("createdBy")}
-              </div>
-            </th>
-            <th
-              className="px-4 py-[6px] text-center text-extraSmallDescription montserrat-semibold cursor-pointer"
-              onClick={() => sortData("selected")}
-            >
-              <div className="flex items-center justify-center gap-1">
-                Select {renderSortIcon("selected")}
-              </div>
-            </th>
+            {[
+              { label: "Query Name", key: "queryName", align: "left" },
+              { label: "Description", key: "description", align: "left" },
+              {
+                label: "Criteria Fields",
+                key: "criteriaFields",
+                align: "left",
+              },
+              { label: "Date Created", key: "dateCreated", align: "left" },
+              { label: "Select", key: "selected", align: "center" },
+            ].map((col, idx) => (
+              <th
+                key={idx}
+                className={`w-1/5 px-3 py-[6px] montserrat-semibold border-r border-[#1b7398] cursor-pointer ${
+                  col.align === "center" ? "text-center" : "text-left"
+                }`}
+                onClick={() => sortData(col.key)}
+              >
+                <div
+                  className={`flex items-center gap-1 ${
+                    col.align === "center" ? "justify-center" : ""
+                  }`}
+                >
+                  {col.label} {renderSortIcon(col.key)}
+                </div>
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
@@ -115,22 +95,19 @@ const TableSavedQueries = () => {
                 backgroundColor: idx % 2 === 0 ? "#f3f8fa" : "#d1e3ea",
               }}
             >
-              <td className="text-extraSmallDescription montserrat-semibold px-4 py-[6px]  border-r border-[#1b7398]">
-                {row.reportName}
+              <td className="w-1/5 px-3 py-[6px] text-[13px] text-left montserrat-medium border-r border-[#1b7398]">
+                {row.queryName}
               </td>
-              <td className="text-extraSmallDescription montserrat-medium px-4 py-[6px]  border-r border-[#1b7398]">
+              <td className="w-1/5 px-3 py-[6px] text-[13px] text-left montserrat-medium border-r border-[#1b7398]">
                 {row.description}
               </td>
-              <td className="text-extraSmallDescription montserrat-medium px-4 py-[6px]  border-r border-[#1b7398]">
-                {row.type}
+              <td className="w-1/5 px-3 py-[6px] text-[13px] text-left montserrat-medium border-r border-[#1b7398]">
+                {row.criteriaFields}
               </td>
-              <td className="text-extraSmallDescription montserrat-medium px-4 py-[6px]  border-r border-[#1b7398]">
+              <td className="w-1/5 px-3 py-[6px] text-[13px] text-left montserrat-medium border-r border-[#1b7398]">
                 {row.dateCreated}
               </td>
-              <td className="text-extraSmallDescription montserrat-medium px-4 py-[6px]  border-r border-[#1b7398]">
-                {row.createdBy}
-              </td>
-              <td className="text-extraSmallDescription montserrat-medium px-4 py-[6px] text-center">
+              <td className="w-1/5 px-3 py-[6px] text-[13px] text-center montserrat-medium">
                 <input
                   type="checkbox"
                   checked={row.selected}

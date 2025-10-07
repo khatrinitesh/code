@@ -1,3 +1,5 @@
+export const CASE_NUMBER = "003-2025";
+
 export const matterDetailsData = [
   { id: "matter", label: "Matter", placeholder: "Search Matter..." },
   {
@@ -21,28 +23,39 @@ export const matterDetailsData = [
 ];
 
 export const tabHeaderText = {
-  grievance: {
+  tab1: {
+    display: "Matter Details",
     main: "GRIEVANCES:",
-    span: "Initiation - Case # 003-2025",
+    span: `Matter Details - Case # ${CASE_NUMBER}`,
+  },
+  grievance: {
+    display: "Grievance Initiation",
+    main: "GRIEVANCES:",
+    span: `Initiation - Case # ${CASE_NUMBER}`,
   },
   step1: {
+    display: "Step 1",
     main: "GRIEVANCES:",
-    span: "Step 1 - Case # 003-2025",
+    span: `Step 1 - Case # ${CASE_NUMBER}`,
   },
   tasks: {
+    display: "Tasks",
     main: "GRIEVANCES:",
-    span: "Tasks - Case # 003-2025",
+    span: `Tasks - Case # ${CASE_NUMBER}`,
   },
   notes: {
+    display: "Notes",
     main: "GRIEVANCES:",
-    span: "Notes - Case # 003-2025",
+    span: `Notes - Case # ${CASE_NUMBER}`,
   },
   linkedNames: {
+    display: "Linked Names",
     main: "GRIEVANCES:",
-    span: "Linked Names",
+    span: `Linked Names`, // no case number
   },
   attachments: {
+    display: "Attachments",
     main: "GRIEVANCES:",
-    span: "Attachments - Case # 003-2025",
+    span: `Attachments - Case # ${CASE_NUMBER}`,
   },
 };

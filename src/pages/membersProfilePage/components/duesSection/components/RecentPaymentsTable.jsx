@@ -57,14 +57,14 @@ const RecentPaymentsTable = () => {
           <tr>
             <th
               colspan="13"
-              className=" p-[5px] bg-[#1b7398] text-white montserrat-semibold text-extraSmallDescription w-full text-start"
+              className=" p-[5px] bg-[#1b7398] text-white montserrat-semibold text-extraSmallDescription w-full text-start border-r-[#010d4a] border-r-[1px]"
             >
               Recent Payments
             </th>
           </tr>
           <tr>
             <th
-              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
+              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer border-r-[#010d4a] border-r-[1px]"
               onClick={() => sortData("dues")}
               title="Dues"
             >
@@ -72,7 +72,7 @@ const RecentPaymentsTable = () => {
               {/* {renderSortIcon("dues")} */}
             </th>
             <th
-              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
+              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer border-r-[#010d4a] border-r-[1px]"
               onClick={() => sortData("perCapita")}
               title="Per Capita"
             >
@@ -81,7 +81,7 @@ const RecentPaymentsTable = () => {
               {/* {renderSortIcon("perCapita")} */}
             </th>
             <th
-              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
+              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer border-r-[#010d4a] border-r-[1px]"
               onClick={() => sortData("massMutual")}
               title="Mass Mutual"
             >
@@ -90,7 +90,7 @@ const RecentPaymentsTable = () => {
               {/* {renderSortIcon("massMutual")} */}
             </th>
             <th
-              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
+              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer border-r-[#010d4a] border-r-[1px]"
               onClick={() => sortData("mmlBayState")}
               title="MML Bay State"
             >
@@ -99,7 +99,7 @@ const RecentPaymentsTable = () => {
               {/* {renderSortIcon("mmlBayState")} */}
             </th>
             <th
-              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
+              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer border-r-[#010d4a] border-r-[1px]"
               onClick={() => sortData("insuranceCo")}
               title="Ins. Co"
             >
@@ -107,7 +107,7 @@ const RecentPaymentsTable = () => {
               {/* {renderSortIcon("insuranceCo")} */}
             </th>
             <th
-              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
+              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer border-r-[#010d4a] border-r-[1px]"
               onClick={() => sortData("offDutyIns")}
               title="Off Duty Ins."
             >
@@ -116,7 +116,7 @@ const RecentPaymentsTable = () => {
               {/* {renderSortIcon("offDutyIns")} */}
             </th>
             <th
-              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
+              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer border-r-[#010d4a] border-r-[1px]"
               onClick={() => sortData("privacyProtection")}
               title="Prvcy Protect."
             >
@@ -125,7 +125,7 @@ const RecentPaymentsTable = () => {
               {/* {renderSortIcon("privacyProtection")} */}
             </th>
             <th
-              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
+              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer border-r-[#010d4a] border-r-[1px]"
               onClick={() => sortData("promissoryNote")}
               title="Prom. Note"
             >
@@ -134,7 +134,7 @@ const RecentPaymentsTable = () => {
               {/* {renderSortIcon("promissoryNote")} */}
             </th>
             <th
-              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
+              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer border-r-[#010d4a] border-r-[1px]"
               onClick={() => sortData("genworth")}
               title="Genworth"
             >
@@ -142,7 +142,7 @@ const RecentPaymentsTable = () => {
               {/* {renderSortIcon("genworth")} */}
             </th>
             <th
-              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer "
+              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer border-r-[#010d4a] border-r-[1px] "
               onClick={() => sortData("totalPaid")}
               title="Total Paid"
             >
@@ -151,7 +151,7 @@ const RecentPaymentsTable = () => {
               {/* {renderSortIcon("totalPaid")} */}
             </th>
             <th
-              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
+              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer border-r-[#010d4a] border-r-[1px]"
               onClick={() => sortData("modifiedBy")}
               title="Modified By"
             >
@@ -160,7 +160,7 @@ const RecentPaymentsTable = () => {
               {/* {renderSortIcon("modifiedBy")} */}
             </th>
             <th
-              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer"
+              className="px-2 py-1 text-[#010d4a] text-extraSmallDescription montserrat-semibold  cursor-pointer border-r-[#010d4a] border-r-[1px]"
               onClick={() => sortData("paymentDate")}
               title="Payment Date"
             >
@@ -181,40 +181,40 @@ const RecentPaymentsTable = () => {
                 backgroundColor: idx % 2 === 0 ? "#f3f8fa" : "#d1e3ea",
               }}
             >
-              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium">
+              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium border-r-[#010d4a] border-r-[1px]">
                 {row.dues.toFixed(2)}
               </td>
-              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium">
+              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium border-r-[#010d4a] border-r-[1px]">
                 {row.perCapita.toFixed(2)}
               </td>
-              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium">
+              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium border-r-[#010d4a] border-r-[1px]">
                 {row.massMutual.toFixed(2)}
               </td>
-              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium">
+              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium border-r-[#010d4a] border-r-[1px]">
                 {row.mmlBayState.toFixed(2)}
               </td>
-              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium">
+              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium border-r-[#010d4a] border-r-[1px]">
                 {row.insuranceCo.toFixed(2)}
               </td>
-              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium">
+              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium border-r-[#010d4a] border-r-[1px]">
                 {row.offDutyIns.toFixed(2)}
               </td>
-              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium">
+              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium border-r-[#010d4a] border-r-[1px]">
                 {row.privacyProtection.toFixed(2)}
               </td>
-              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium">
+              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium border-r-[#010d4a] border-r-[1px]">
                 {row.promissoryNote.toFixed(2)}
               </td>
-              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium">
+              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-medium border-r-[#010d4a] border-r-[1px]">
                 {row.genworth.toFixed(2)}
               </td>
-              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-semibold  text-black">
+              <td className="px-2 py-1  text-extraSmallDescription  text-right montserrat-semibold  text-black border-r-[#010d4a] border-r-[1px]">
                 ${row.totalPaid.toFixed(2)}
               </td>
-              <td className="px-2 py-1  text-extraSmallDescription  montserrat-medium">
+              <td className="px-2 py-1  text-extraSmallDescription  montserrat-medium border-r-[#010d4a] border-r-[1px]">
                 {row.modifiedBy}
               </td>
-              <td className="px-2 py-1  text-extraSmallDescription  montserrat-medium">
+              <td className="px-2 py-1  text-extraSmallDescription  montserrat-medium border-r-[#010d4a] border-r-[1px]">
                 {row.paymentDate}
               </td>
               <td className="px-2 py-1  text-extraSmallDescription  montserrat-medium flex justify-center gap-2 text-[#1b7398] cursor-pointer">

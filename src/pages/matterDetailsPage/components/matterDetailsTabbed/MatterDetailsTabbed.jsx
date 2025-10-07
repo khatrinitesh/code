@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { matterDetailsData, tabHeaderText } from "./data";
+import { CASE_NUMBER, matterDetailsData, tabHeaderText } from "./data";
 import {
   FaCloudDownloadAlt,
   FaExclamationCircle,
@@ -19,6 +19,7 @@ import { DROPDOWN_OPTIONS_2 } from "./../../../../constants/constants";
 import FieldDropdown from "./../../../../components/fieldDropdown/FieldDropdown";
 import SectionTitleComponent from "./../../../../components/sectionTitleComponent/SectionTitleComponent";
 import FieldCheckbox from "../../../../components/fieldCheckbox/FieldCheckbox";
+import FieldInput from "../../../../components/fieldInput/FieldInput";
 
 const MatterDetailsTabbed = () => {
   const [activeTab, setActiveTab] = useState("matter"); // default tab
@@ -28,10 +29,11 @@ const MatterDetailsTabbed = () => {
     <>
       <SectionTitleComponent>
         <FaExclamationCircle className={` text-[var(--color6)]`} />
-        <h2 className="whitespace-nowrap text-[var(--color6)] md:text-smallSubTitle montserrat-regular">
+        <h2 className="whitespace-nowrap text-[var(--color6)] md:text-smallSubTitle montserrat-semibold">
           {tabHeaderText[activeTab]?.main || "GRIEVANCES:"}{" "}
           <span className="text-white">
-            {tabHeaderText[activeTab]?.span || "Matter Details"}
+            {tabHeaderText[activeTab]?.span ||
+              `Matter Details - Case # ${CASE_NUMBER}`}
           </span>
         </h2>
       </SectionTitleComponent>
@@ -144,20 +146,21 @@ const MatterDetailsTabbed = () => {
           {activeTab === "attachments" && (
             <div className="attachmentBlock mt-5 grid gap-[20px]">
               <div className="fieldBox flex flex-col md:flex-row md:items-center gap-[10px]">
-                <span className="md:w-[10%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
+                <span className="md:w-[6%] fieldLbl text-extraSmallDescription text-[#010d4a] montserrat-semibold">
                   Select File:
                 </span>
                 <div className="box flex flex-col md:flex-row md:items-center gap-[10px]">
-                  {/* <FieldDropdown
+                  <FieldInput
                     id="status"
                     name="status"
                     value={status}
                     onChange={(e) => setStatus(e.target.value)}
                     options={DROPDOWN_OPTIONS_2}
                     maxLength={10}
-                    disabled={false}
-                    className="w-64"
-                  /> */}
+                    disable={true}
+                    className="!w-full bg-[#f2f5ff] border-[1px]  text-[#6570a9] border-[#8c95c1] text-extraSmallDescription rounded-[5px] montserrat-semibold"
+                    placeholder="No File Selected"
+                  />
                   <div className="btnBlock flex gap-[10px]">
                     <Button className="!mx-0" label="Browse" />
                     <Button className="!mx-0" label="Upload" />

@@ -35,7 +35,7 @@ const TableFormatComponent = ({
             <thead className="montserrat-regular text-extraSmallDescription">
               <tr>
                 <th
-                  className="md:w-[33.33%] text-left px-4 py-[5px]"
+                  className="md:w-[33.33%] text-left px-4 py-[8px] text-smallDescription montserrat-bold"
                   style={{
                     borderRight: verticalBorder,
                     backgroundColor: headerBg,
@@ -48,7 +48,7 @@ const TableFormatComponent = ({
                   {fieldCol1}
                 </th>
                 <th
-                  className="md:w-[33.33%] text-left px-4 py-[5px]"
+                  className="md:w-[33.33%] text-left px-4 py-[8px] text-smallDescription montserrat-bold"
                   style={{
                     borderRight: verticalBorder,
                     backgroundColor: headerBg,
@@ -61,7 +61,7 @@ const TableFormatComponent = ({
                   {fieldCol2}
                 </th>
                 <th
-                  className="md:w-[33.33%] text-left px-4 py-[5px]"
+                  className="md:w-[33.33%] text-left px-4 py-[8px] text-smallDescription montserrat-bold"
                   style={{
                     backgroundColor: headerBg,
                     color: headerText,
@@ -83,25 +83,25 @@ const TableFormatComponent = ({
           style={{ borderTop: verticalBorder }}
         >
           <table className="w-full border-collapse table-fixed text-sm">
-            <tbody className="montserrat-regular text-extraSmallDescription">
+            <tbody className="montserrat-regular text-extraSmallDescription text-extraSmallDescription montserrat-bold">
               {rows.map((member, rowIndex) => {
                 const bgColor = rowIndex % 2 === 0 ? "#ffffff" : rowAlt;
 
                 return (
                   <tr key={rowIndex} style={{ backgroundColor: bgColor }}>
                     <td
-                      className="md:w-[33.33%] px-4 py-[5px]"
+                      className="md:w-[33.33%] px-4 py-[8px] text-[#010d4a] montserrat-semibold text-extraSmallDescription"
                       style={{ borderRight: verticalBorder }}
                     >
                       {member.field1}
                     </td>
                     <td
-                      className="md:w-[33.33%] px-4 py-[5px]"
+                      className="md:w-[33.33%] px-4 py-[8px] text-[#000] montserrat-medium text-extraSmallDescription"
                       style={{ borderRight: verticalBorder }}
                     >
                       {member.field2}
                     </td>
-                    <td className="md:w-[33.33%] px-4 py-[5px]">
+                    <td className="md:w-[33.33%] px-4 py-[8px] text-[#000] montserrat-medium text-extraSmallDescription">
                       {member.field3}
                     </td>
                   </tr>

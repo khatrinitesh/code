@@ -22,7 +22,7 @@ const Button = ({
       type={type}
       onClick={onClick}
       disabled={isLoading}
-      className={`${baseStyles} uppercase ${variantStyles[variant]} ${className}`}
+      className={`${baseStyles}  ${variantStyles[variant]} ${className}`}
     >
       {isLoading ? "Loading..." : label}
     </button>

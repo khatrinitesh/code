@@ -92,7 +92,6 @@ export const sidebarNavigation = [
     icon: FiLogOut,
   },
 ];
-
 export const cardData = [
   {
     number: "710",

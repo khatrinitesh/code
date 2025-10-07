@@ -1,57 +1,82 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { sidebarNavigation } from "../../constants/constants";
+import {
+  FaFileAlt,
+  FaRegUserCircle,
+  FaSearchPlus,
+  FaUser,
+} from "react-icons/fa";
 
 const SidebarNavigation = () => {
   const location = useLocation();
-  const [openDropdowns, setOpenDropdowns] = useState({});
+  const navigate = useNavigate();
 
-  // Auto open dropdown if child path is active
+  const [openDropdowns, setOpenDropdowns] = useState({});
+  const [showMemberProfile, setShowMemberProfile] = useState(false);
+  const [showMatterDetails, setShowMatterDetails] = useState(false);
+
+  // Detect route change to show dynamic submenus
   useEffect(() => {
-    const newOpenState = {};
-    sidebarNavigation.forEach((item) => {
-      if (item.children) {
-        item.children.forEach((child) => {
-          if (location.pathname === child.path) {
-            newOpenState[item.label] = true;
-          }
-        });
-      }
-    });
-    setOpenDropdowns((prev) => ({ ...prev, ...newOpenState }));
+    if (location.pathname === "/members") {
+      setShowMemberProfile(true);
+      setOpenDropdowns((prev) => ({ ...prev, Members: true }));
+    } else if (location.pathname === "/grievances") {
+      setShowMatterDetails(true);
+      setOpenDropdowns((prev) => ({ ...prev, Grievances: true }));
+    }
   }, [location.pathname]);
 
-  const toggleDropdown = (label) => {
+  const toggleDropdown = (label, path) => {
     setOpenDropdowns((prev) => ({
       ...prev,
       [label]: !prev[label],
     }));
+    navigate(path);
   };
 
-  // Check if item or its children are active
-  const isActive = (item) => {
-    if (item.path === location.pathname) return true;
-    return item.children?.some((child) => child.path === location.pathname);
-  };
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <nav aria-label="Sidebar Navigation">
+    <nav aria-label="Sidebar Navigation" className="p-2">
       <ul>
         {sidebarNavigation.map((item, index) => {
           const Icon = item.icon;
-          const isParentActive = isActive(item);
           const isOpen = openDropdowns[item.label];
+          const isParentActive =
+            isActive(item.path) ||
+            (item.children &&
+              item.children.some((child) => isActive(child.path)));
+
+          // Handle custom dynamic children for Members and Grievances
+          const customChildren = [];
+          if (item.label === "Members" && showMemberProfile) {
+            customChildren.push({
+              label: "Member Profile",
+              path: "/members-profile",
+              icon: FaRegUserCircle,
+            });
+          }
+          if (item.label === "Grievances" && showMatterDetails) {
+            customChildren.push({
+              label: "Matter Details",
+              path: "/matter-details",
+              icon: FaSearchPlus,
+            });
+          }
+
+          const children = [...(item.children || []), ...customChildren];
 
           return (
             <li key={index} className="mb-1">
-              {item.children ? (
+              {children.length > 0 ? (
                 <>
-                  {/* Parent dropdown button */}
+                  {/* Dropdown button */}
                   <button
-                    onClick={() => toggleDropdown(item.label)}
-                    className="flex w-full items-center montserrat-medium text-extraSmallDescription gap-2 px-2 py-1 rounded-md transition focus:outline-none"
-                    aria-expanded={isOpen}
-                    aria-controls={`dropdown-${index}`}
+                    onClick={() => toggleDropdown(item.label, item.path || "#")}
+                    className={`flex w-full items-center gap-2 px-2 py-1 rounded-md transition montserrat-medium text-extraSmallDescription ${
+                      isParentActive ? "text-[#b5f5f8]" : ""
+                    }`}
                   >
                     {Icon && (
                       <Icon
@@ -61,44 +86,31 @@ const SidebarNavigation = () => {
                         }}
                       />
                     )}
-                    <span className={isParentActive ? "text-[#b5f5f8]" : ""}>
-                      {item.label}
-                    </span>
+                    {item.label}
                   </button>
 
                   {/* Dropdown children */}
                   <ul
-                    id={`dropdown-${index}`}
                     className={`pl-6 transition-all duration-300 overflow-hidden space-y-1 ${
                       isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                     }`}
                   >
-                    {item.children.map((child, childIndex) => {
+                    {children.map((child, childIndex) => {
                       const ChildIcon = child.icon;
-                      const childIsActive = location.pathname === child.path;
-
+                      const childIsActive = isActive(child.path);
                       return (
                         <li key={childIndex}>
                           <Link
                             to={child.path}
-                            className="flex items-center text-extraSmallDescription rounded-md px-2 py-1 transition"
-                            style={{
-                              color: childIsActive
-                                ? "#b5f5f8"
-                                : isParentActive
-                                ? "#b5f5f8"
-                                : "inherit",
-                            }}
+                            className={`flex items-center gap-2 px-2 py-1 rounded-md transition text-extraSmallDescription ${
+                              childIsActive ? "text-[#b5f5f8]" : ""
+                            }`}
                           >
                             {ChildIcon && (
                               <ChildIcon
-                                className="mr-2 text-base"
+                                className="text-base"
                                 style={{
-                                  color: childIsActive
-                                    ? "#eb973a"
-                                    : isParentActive
-                                    ? "inherit"
-                                    : "inherit",
+                                  color: childIsActive ? "#eb973a" : "inherit",
                                 }}
                               />
                             )}
@@ -110,13 +122,11 @@ const SidebarNavigation = () => {
                   </ul>
                 </>
               ) : (
-                // No children: Direct Link
                 <Link
                   to={item.path}
-                  className="flex items-center montserrat-medium text-extraSmallDescription gap-2 px-2 py-1 rounded-md transition"
-                  style={{
-                    color: isParentActive ? "#b5f5f8" : "inherit",
-                  }}
+                  className={`flex items-center gap-2 px-2 py-1 rounded-md transition montserrat-medium text-extraSmallDescription ${
+                    isParentActive ? "text-[#b5f5f8]" : ""
+                  }`}
                 >
                   {Icon && (
                     <Icon

@@ -180,14 +180,14 @@ const PaymentComponent = () => {
                     Payment Method:
                   </label>
                   <div className="ml-3 flex-1 w-full">
-                    <FieldInput
+                    <FieldDropdown
                       id="paymentMethod"
                       name="paymentMethod"
-                      type="text"
                       value={formData.paymentMethod}
                       onChange={handleChange}
-                      placeholder=""
-                      className="rounded !border-[#1b7398]"
+                      options={paymentMethodData} // pass dropdown options
+                      placeholder="Select Payment Method"
+                      className="rounded w-full !border-[#1b7398]"
                     />
                   </div>
                 </div>

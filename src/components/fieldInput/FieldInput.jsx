@@ -10,6 +10,7 @@ const FieldInput = ({
   placeholder,
   className,
   borderVariant = "gray", // default gray border
+  disable = false,
 }) => {
   const borderClass =
     borderVariant === "blue" ? "border-[#1b7398]" : "border-[#ccc]";
@@ -47,6 +48,7 @@ const FieldInput = ({
         value={displayValue}
         onChange={handleInputChange}
         placeholder={placeholder}
+        disabled={disable}
         className={`
           w-full 
           h-[35px] 

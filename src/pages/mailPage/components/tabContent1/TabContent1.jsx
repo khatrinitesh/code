@@ -24,7 +24,7 @@ export default function TabContent1() {
       </label>
       <select
         multiple
-        className="w-full h-[75px] border border-[#1b7398] rounded px-2 text-[10px] montserrat-medium text-[#010d4a] py-1 text-sm overflow-y-auto vertical-scrollbar"
+        className="w-full h-[75px] border border-[#1b7398] rounded px-2 text-smallDescription montserrat-medium text-[#010d4a] py-1  overflow-y-auto vertical-scrollbar"
       >
         {list.map((email) => (
           <option key={email} value={email}>

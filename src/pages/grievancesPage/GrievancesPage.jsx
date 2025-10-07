@@ -37,7 +37,8 @@ const GrievancesPage = () => {
       <SectionTitleComponent>
         <FaExclamationCircle className="text-[var(--color6)]" />
         <h2 className="whitespace-nowrap text-[var(--color6)] md:text-smallSubTitle montserrat-regular">
-          Grievances: <span className="text-white">Lookup</span>
+          <strong>Grievances:</strong>{" "}
+          <span className="text-white">Lookup</span>
         </h2>
       </SectionTitleComponent>
 
@@ -48,12 +49,12 @@ const GrievancesPage = () => {
               placeholder="Quick Grievance Search"
               maxLength={50}
               disabled={false}
-              className="w-full md:max-w-[25%] rounded-full"
+              className="w-full md:max-w-[20%] rounded-full"
             />
 
             <div className="innerFillForm bg-[#d1e3ea] border-[1px] border-[#b1bcc6] p-[10px] flex flex-col md:flex-row gap-[30px] md:gap-[50px] w-full md:px-[50px] py-[20px]">
               {/* Left Side */}
-              <div className="leftContent md:w-1/2 flex flex-col gap-[10px]">
+              <div className="leftContent md:w-[35%] flex flex-col gap-[10px]">
                 <div className="fieldGrp w-full flex gap-[10px] items-center">
                   <label
                     htmlFor="memberNumber"
@@ -68,7 +69,7 @@ const GrievancesPage = () => {
                     value={formData.memberNumber}
                     onChange={handleChange}
                     placeholder=""
-                    className="w-1/2"
+                    className="w-1/2 rounded-[5px]"
                     borderVariant="blue"
                   />
                 </div>
@@ -87,7 +88,7 @@ const GrievancesPage = () => {
                     value={formData.firstName}
                     onChange={handleChange}
                     placeholder=""
-                    className="w-1/2"
+                    className="w-1/2 rounded-[5px]"
                     borderVariant="blue"
                   />
                 </div>
@@ -116,7 +117,7 @@ const GrievancesPage = () => {
                     htmlFor="last4ssn"
                     className="text-extraSmallDescription font-medium text-[#122159] montserrat-medium w-1/2"
                   >
-                    Last 4 SSN:
+                    Case Number:
                   </label>
                   <FieldInput
                     id="last4ssn"
@@ -125,14 +126,14 @@ const GrievancesPage = () => {
                     value={formData.last4ssn}
                     onChange={handleChange}
                     placeholder=""
-                    className="w-1/2"
+                    className="w-1/2 rounded-[5px]"
                     borderVariant="blue"
                   />
                 </div>
               </div>
 
               {/* Right Side */}
-              <div className="rightContent md:w-1/2 flex flex-col gap-[10px]">
+              <div className="rightContent md:w-[35%] flex flex-col gap-[10px]">
                 <div className="fieldGrp w-full flex gap-[10px] items-center">
                   <label
                     htmlFor="assignedTo"
@@ -147,7 +148,7 @@ const GrievancesPage = () => {
                     value={formData.assignedTo}
                     onChange={handleChange}
                     placeholder=""
-                    className="w-1/2"
+                    className="w-full rounded-[5px]"
                     borderVariant="blue"
                   />
                 </div>
@@ -167,7 +168,7 @@ const GrievancesPage = () => {
                       value={formData.dueDate}
                       onChange={handleChange}
                       placeholder=""
-                      className="w-1/2"
+                      className="w-full rounded-[5px]"
                       borderVariant="blue"
                     />
                     <FaCalendarAlt className="absolute right-2 top-1/2 -translate-y-1/2 text-[#1b7398] pointer-events-none" />
@@ -188,7 +189,7 @@ const GrievancesPage = () => {
                     value={formData.grievanceType}
                     onChange={handleChange}
                     placeholder=""
-                    className="w-1/2"
+                    className="w-1/2 rounded-[5px]"
                     borderVariant="blue"
                   />
                 </div>
@@ -208,7 +209,7 @@ const GrievancesPage = () => {
                     options={GRIEVANCE_STATUS}
                     maxLength={10}
                     disabled={false}
-                    className="w-full"
+                    className="w-full rounded-[5px]"
                     bgVariant="white"
                   />
                 </div>

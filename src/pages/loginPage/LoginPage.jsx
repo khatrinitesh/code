@@ -117,7 +117,7 @@ const LoginPage = () => {
               label="Login"
               variant="color4"
               isLoading={false}
-              className="rounded-full w-[40%] mx-auto"
+              className="rounded-full w-[40%] mx-auto uppercase"
             />
           </div>
         </form>

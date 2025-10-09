@@ -131,7 +131,7 @@ const UploadProfileSection = () => {
                     onChange={handleChange}
                     className="w-full !bg-[#f2f5ff] border-[1px] border-[#6570a9] rounded px-2 py-1 text-extraSmallDescription text-[#010d4a] montserrat-semibold pr-8"
                   />
-                  <FaRegCalendarAlt className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 text-sm pointer-events-none" />
+                  <FaRegCalendarAlt className="absolute right-2 top-1/2 -translate-y-1/2 text-[#1b7398] text-sm pointer-events-none" />
                 </div>
               ) : (
                 <input

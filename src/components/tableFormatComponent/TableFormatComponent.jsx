@@ -6,6 +6,7 @@ const TableFormatComponent = ({
   rows,
   colorKey = "color1",
   thead = {},
+  showScrollbar = true, // 👈 new prop to control scrollbar
 }) => {
   const {
     fieldCol1 = "Column 1",
@@ -28,65 +29,45 @@ const TableFormatComponent = ({
       >
         {caption}
       </div>
-      <div className="tableHeaderBody max-h-[140px]  vertical-scrollbar overflow-y-auto ">
+
+      <div className="tableHeaderBody">
         {/* Table Header */}
         <div className="table-header w-full overflow-hidden">
           <table className="w-full border-collapse text-sm">
             <thead className="montserrat-regular text-extraSmallDescription">
               <tr>
-                <th
-                  className="md:w-[33.33%] text-left px-4 py-[8px] text-smallDescription montserrat-bold"
-                  style={{
-                    borderRight: verticalBorder,
-                    backgroundColor: headerBg,
-                    color: headerText,
-                    position: "sticky",
-                    top: 0,
-                    zIndex: 10,
-                  }}
-                >
-                  {fieldCol1}
-                </th>
-                <th
-                  className="md:w-[33.33%] text-left px-4 py-[8px] text-smallDescription montserrat-bold"
-                  style={{
-                    borderRight: verticalBorder,
-                    backgroundColor: headerBg,
-                    color: headerText,
-                    position: "sticky",
-                    top: 0,
-                    zIndex: 10,
-                  }}
-                >
-                  {fieldCol2}
-                </th>
-                <th
-                  className="md:w-[33.33%] text-left px-4 py-[8px] text-smallDescription montserrat-bold"
-                  style={{
-                    backgroundColor: headerBg,
-                    color: headerText,
-                    position: "sticky",
-                    top: 0,
-                    zIndex: 10,
-                  }}
-                >
-                  {fieldCol3}
-                </th>
+                {[fieldCol1, fieldCol2, fieldCol3].map((col, index) => (
+                  <th
+                    key={index}
+                    className="md:w-[33.33%] text-left px-4 py-[8px] text-smallDescription montserrat-bold"
+                    style={{
+                      borderRight: index !== 2 ? verticalBorder : undefined,
+                      backgroundColor: headerBg,
+                      color: headerText,
+                      position: "sticky",
+                      top: 0,
+                      zIndex: 10,
+                    }}
+                  >
+                    {col}
+                  </th>
+                ))}
               </tr>
             </thead>
           </table>
         </div>
 
-        {/* Scrollable Tbody */}
+        {/* ✅ Conditional Scrollbar Section */}
         <div
-          className="overflow-y-auto vertical-scrollbar"
-          style={{ borderTop: verticalBorder }}
+          className={`vertical-scrollbar ${
+            showScrollbar ? "overflow-y-auto" : "overflow-y-hidden"
+          }`}
+          style={{ borderTop: verticalBorder, maxHeight: "200px" }}
         >
           <table className="w-full border-collapse table-fixed text-sm">
-            <tbody className="montserrat-regular text-extraSmallDescription text-extraSmallDescription montserrat-bold">
+            <tbody className="montserrat-regular text-extraSmallDescription montserrat-bold">
               {rows.map((member, rowIndex) => {
                 const bgColor = rowIndex % 2 === 0 ? "#ffffff" : rowAlt;
-
                 return (
                   <tr key={rowIndex} style={{ backgroundColor: bgColor }}>
                     <td

@@ -1,4 +1,3 @@
-import { FaCalendarAlt } from "react-icons/fa";
 const SectionTitleComponent = ({ className, children }) => {
   return (
     <div

@@ -24,6 +24,8 @@ import MailPage from "../pages/mailPage/MailPage";
 import SettingsPage from "../pages/settingsPage/SettingsPage";
 import MatterDetailsPage from "./../pages/matterDetailsPage/MatterDetailsPage";
 import MembersProfilePage from "../pages/membersProfilePage/MembersProfilePage";
+import ManageRolesPage from "../pages/manageRolesPage/ManageRolesPage";
+import RoleAccess from "../pages/manageRolesPage/components/RolesAccess/RoleAccess";
 
 // ✅ Helper component for protected routes
 const PrivateRoute = ({ children }) => {
@@ -153,6 +155,26 @@ const RoutesPath = () => {
             <PrivateRoute>
               <DashboardLayout>
                 <SettingsPage />
+              </DashboardLayout>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/manage-roles"
+          element={
+            <PrivateRoute>
+              <DashboardLayout>
+                <ManageRolesPage />
+              </DashboardLayout>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/role-access"
+          element={
+            <PrivateRoute>
+              <DashboardLayout>
+                <RoleAccess />
               </DashboardLayout>
             </PrivateRoute>
           }

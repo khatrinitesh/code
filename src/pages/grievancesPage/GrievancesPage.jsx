@@ -218,7 +218,7 @@ const GrievancesPage = () => {
 
             {/* Buttons */}
             <div className="btnBlock flex items-start gap-[10px]">
-              <Button label="Add" className="!mx-0" />
+              <Button label="Search" className="!mx-0" />
               <Button
                 label="Clear"
                 className="!mx-0"

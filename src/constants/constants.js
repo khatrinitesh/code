@@ -17,6 +17,7 @@ import {
   FaDollarSign,
   FaCommentDollar,
   FaSearchPlus,
+  FaTable,
 } from "react-icons/fa";
 
 export const sidebarNavigation = [
@@ -85,6 +86,29 @@ export const sidebarNavigation = [
     label: "Settings",
     path: "/settings",
     icon: FiSettings,
+    children: [
+      {
+        label: "Users",
+        path: "/manage-roles",
+        icon: FaUsers,
+      },
+      {
+        label: "Role Access",
+        icon: FaBook,
+        children: [
+          {
+            label: "Without Table",
+            path: "/role-access", // ✅ only dropdown
+            icon: FaTable,
+          },
+          {
+            label: "Modules & Forms",
+            path: "/manage-roles", // ✅ dropdown + tables
+            icon: FaTable,
+          },
+        ],
+      },
+    ],
   },
   {
     label: "Logout",

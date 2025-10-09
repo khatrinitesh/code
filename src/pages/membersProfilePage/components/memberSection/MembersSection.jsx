@@ -5,7 +5,7 @@ import UploadProfileSection from "./components/uploadProfileSection/components/U
 const MembersSection = () => {
   return (
     <div className="membersSection grid gap-[10px]">
-      {/* <UploadProfileSection /> */}
+      <UploadProfileSection />
       <EmploymentInfoSection />
       <ContactPhoneNumbersTableSection />
     </div>

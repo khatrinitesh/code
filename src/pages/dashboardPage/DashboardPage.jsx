@@ -50,6 +50,7 @@ const DashboardPage = () => {
               </div>
             </div>
             <div className="rightBox">
+              <span className="mt-[8px] block"></span>
               <TableFormatComponent
                 caption="Recently Accessed Members"
                 colorKey="color1"

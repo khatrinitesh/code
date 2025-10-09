@@ -35,6 +35,7 @@ const CalendarPage = () => {
               colorKey="color2"
               thead={tableHeaders.tasks}
               rows={tasksData2}
+              showScrollbar={true}
             />
             <div className="btnBlock flex items-start  w-full">
               <Button
